@@ -1,7 +1,7 @@
-from pymongo import database
 from typing import List, Dict
+from pymongo import database
 from packaging import version
-from vscns.util import some, every
+from vscn_server.util import some, every
 
 
 class ScanService(object):

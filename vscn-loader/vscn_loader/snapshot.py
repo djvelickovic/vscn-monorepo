@@ -8,8 +8,6 @@ def should_insert(year, sha256: str, db: Database) -> bool:
     if not snapshot_result:
         return True
 
-    return False
-
     return snapshot_result['sha256'] != sha256
 
 

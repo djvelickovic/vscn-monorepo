@@ -1,8 +1,8 @@
 from flask import Flask, request
 from pymongo import MongoClient
-from vscns.matchers import ScanService
-from vscns.cves import CveService
-from vscns.transform import TransformService
+from vscn_server.matchers import ScanService
+from vscn_server.cves import CveService
+from vscn_server.transform import TransformService
 from dotenv import load_dotenv
 import os
 

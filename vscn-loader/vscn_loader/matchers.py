@@ -1,7 +1,7 @@
-from vscnl.const import BIN_DIR, TMP_DIR
-from vscnl.runner import run
 import json
 from pymongo.database import Database
+from vscn_loader.const import BIN_DIR, TMP_DIR
+from vscn_loader.runner import run
 
 
 def load_matchers(year, nvd_path, sha256, database: Database):

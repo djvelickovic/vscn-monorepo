@@ -1,6 +1,6 @@
 from pymongo.database import Database
-from vscnl.const import TMP_DIR, BIN_DIR
-from vscnl.runner import run
+from vscn_loader.const import TMP_DIR, BIN_DIR
+from vscn_loader.runner import run
 import json
 
 

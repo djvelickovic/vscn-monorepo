@@ -1,8 +1,7 @@
-
-from vscnl.const import TMP_DIR
-from urllib import request
 import zipfile
+from urllib import request
 import requests
+from vscn_loader.const import TMP_DIR
 
 
 def nvd_cve_url(year):
@@ -15,7 +14,7 @@ def nvd_meta_url(year):
 
 def download_nvd(year):
     file_name = f'nvdcve-1.1-{year}.json'
-    zip_path = f'{TMP_DIR}{file_name}.zip'
+    zip_path = f'{TMP_DIR}/{file_name}.zip'
     url = nvd_cve_url(year)
 
     print(f'loading nvd file from {url}')
@@ -25,7 +24,7 @@ def download_nvd(year):
 
     extract_zip(zip_path, TMP_DIR)
 
-    return f'{TMP_DIR}{file_name}'
+    return f'{TMP_DIR}/{file_name}'
 
 
 def download_nvd_metadata(year):

@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  vscn-server:
+    image: vscn-loader:latest
+    environment:
+      - YEARS=2022,2021
