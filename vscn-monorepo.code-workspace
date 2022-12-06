@@ -1,19 +1,23 @@
 {
 	"folders": [
 		{
-			"path": "./"
+			"path": "./",
+			"name": "monorepo",
 		},
 		{
 			"path": "./deployment"
 		},
 		{
-			"path": "./src/vscn-cli/"
+			"path": "./src/vscn-cli/",
+			"name": "cli"
 		},
 		{
-			"path": "./src/vscn-loader/"
+			"path": "./src/vscn-loader/",
+			"name": "loader"
 		},
 		{
-			"path": "./src/vscn-server/"
+			"path": "./src/vscn-server/",
+			"name": "server"
 		}
 	],
 	"settings": {
