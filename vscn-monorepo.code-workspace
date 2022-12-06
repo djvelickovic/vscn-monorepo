@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"path": "./"
+		},
+		{
+			"path": "./deployment"
+		},
+		{
+			"path": "./src/vscn-cli/"
+		},
+		{
+			"path": "./src/vscn-loader/"
+		},
+		{
+			"path": "./src/vscn-server/"
+		}
+	],
+	"settings": {
+		"python.analysis.extraPaths": [
+			"./src/vscn-cli/",
+			"./src/vscn-loader/",
+			"./src/vscn-server/"
+		],
+		"python.autoComplete.extraPaths": [
+			"./src/vscn-cli/",
+			"./src/vscn-loader/",
+			"./src/vscn-server/"
+		],
+		"indentRainbow.indicatorStyle": "light",
+		"indentRainbow.lightIndicatorStyleLineWidth": 2
+	},
+}

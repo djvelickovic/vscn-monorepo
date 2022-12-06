@@ -1,4 +1,4 @@
-from vscnc.runner import run
+from vscn_cli.runner import run
 
 
 def scan(project_root_dir):

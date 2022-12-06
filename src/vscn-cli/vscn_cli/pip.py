@@ -1,4 +1,4 @@
-from vscnc.runner import run
+from vscn_cli.runner import run
 import json
 
 

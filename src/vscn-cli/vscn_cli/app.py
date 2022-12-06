@@ -1,4 +1,4 @@
-from vscnc import maven, pip, client, printer, const
+from vscn_cli import maven, pip, client, printer, const
 from os import path
 import click
 
