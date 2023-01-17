@@ -18,7 +18,7 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        vscnc=vscnc.app:cli
+        vscnc=vscn_cli.app:cli
     ''',
     author='Djordje Velickovic'
 )

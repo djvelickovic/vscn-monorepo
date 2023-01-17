@@ -8,13 +8,13 @@ import os
 
 import json
 
-load_dotenv()
+load_dotenv('.env')
+debug = os.environ.get('DEBUG', 'false').lower() == 'true'
+mongo_db_url = os.getenv('MONGO_DB_URL')
+mongo_db_name = os.getenv('MONGODB_DATABASE_NAME')
 
 app = Flask(__name__)
 
-mongo_db_url = os.environ['MONGO_DB_URL']
-mongo_db_name = os.environ['MONGODB_DATABASE_NAME']
-debug = os.environ['DEBUG'].lower() == 'true'
 
 client = MongoClient(mongo_db_url)
 vscn = client.get_database(mongo_db_name)

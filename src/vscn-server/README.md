@@ -20,7 +20,7 @@ python3 -m venv venv
 
 pip install -r requirements.txt
 
-flask --app vscns.app --debug run -p 11001
+flask --app vscn_server.app --debug run -p 1100
 ```
 
 If database doesn't exist, create indexes after initial load.
