@@ -1,10 +1,10 @@
-from pymongo.database import Database
 from vscn_loader.const import TMP_DIR, BIN_DIR
 from vscn_loader.runner import run
+from repository import Repository
 import json
 
 
-def load_cve(year, nvd_path, sha256, db: Database):
+def load_cve(year, nvd_path, sha256, postgresql_db: str):
     final_cve_path = f'{TMP_DIR}/cve-{year}.json'
     output = run([f'{BIN_DIR}/extract-cve.sh', nvd_path, final_cve_path])
     print('Finished command ', output)
@@ -16,12 +16,12 @@ def load_cve(year, nvd_path, sha256, db: Database):
 
     cves = _transform(raw_cves, year, sha256)
 
-    cve_collection = db.get_collection('cve')
+    with Repository(postgresql_db) as repo:
+        repo.insert_cves(cves)
 
-    insert_result = cve_collection.insert_many(cves)
-    print(f'Inserted {len(cves)} rows: ', insert_result.acknowledged)
-    cleanup_result = cve_collection.delete_many({'$and': [{'year': year}, {'sha256': {'$ne': sha256}}]})
-    print('Cleaned up: ', cleanup_result.deleted_count)
+        print(f'Inserted {len(cves)} rows')
+        affected_rows = repo.clean_up_cves(year, sha256)
+        print(f"Cleaned up: {affected_rows}")
 
 
 def _transform(cves, year, sha256):

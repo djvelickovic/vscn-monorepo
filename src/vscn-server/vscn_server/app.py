@@ -1,23 +1,18 @@
 from flask import Flask, request
-from pymongo import MongoClient
 from vscn_server.matchers import ScanService
 from vscn_server.cves import CveService
 from vscn_server.transform import TransformService
 from dotenv import load_dotenv
 import os
+from vscn_server.repository import Repository
 
 import json
 
 load_dotenv('.env')
 debug = os.environ.get('DEBUG', 'false').lower() == 'true'
-mongo_db_url = os.getenv('MONGO_DB_URL')
-mongo_db_name = os.getenv('MONGODB_DATABASE_NAME')
+postgresql_url = os.getenv("POSTGRESQL_DB", "postgresql://postgresql:postgresql@localhost:5432/vscn")
 
 app = Flask(__name__)
-
-
-client = MongoClient(mongo_db_url)
-vscn = client.get_database(mongo_db_name)
 
 products_set = set()
 
@@ -27,12 +22,11 @@ if debug:
         products_set = set(json.load(f))
 else:
     print('Loaded products match from database')
-    matchers = vscn.get_collection('matchers')
-    all_products = matchers.distinct('products')
-    products_set = set(all_products)
+    with Repository(postgresql_url) as repo:
+        products_set = set(repo.get_products())
 
-cve_service = CveService(vscn)
-scan_service = ScanService(products_set, vscn)
+cve_service = CveService(postgresql_url)
+scan_service = ScanService(products_set, postgresql_url)
 transform_service = TransformService()
 
 

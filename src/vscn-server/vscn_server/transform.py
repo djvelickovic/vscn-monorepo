@@ -65,7 +65,10 @@ class TransformService(object):
         return []
 
     def __remove_tokens(self, product: str) -> list:
-        if not (product.endswith('-core') or product.endswith('_core') or product.endswith('_common') or product.endswith('-common')):
+        if (not (product.endswith('-core')
+                 or product.endswith('_core')
+                 or product.endswith('_common')
+                 or product.endswith('-common'))):
             return []
 
         tokens = re.split(r'-|_', product)

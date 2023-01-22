@@ -1,10 +1,10 @@
 import json
-from pymongo.database import Database
 from vscn_loader.const import BIN_DIR, TMP_DIR
 from vscn_loader.runner import run
+from vscn_loader.repository import Repository
 
 
-def load_matchers(year, nvd_path, sha256, database: Database):
+def load_matchers(year, nvd_path, sha256, postgresql_db: str):
     final_matchers_path = f'{TMP_DIR}/matchers-{year}.json'
     output = run([f'{BIN_DIR}/extract-matchers.sh', nvd_path, final_matchers_path])
 
@@ -19,13 +19,11 @@ def load_matchers(year, nvd_path, sha256, database: Database):
 
     print(f'Matchers for insertion: {len(transformed_matchers)}')
 
-    matchers_collection = database.get_collection('matchers')
-
-    insertion_result = matchers_collection.insert_many(transformed_matchers)
-    print(f'inserted {len(transformed_matchers)} data: {insertion_result.acknowledged}')
-
-    cleanup_result = matchers_collection.delete_many({'$and': [{'year': year}, {'sha256': {'$ne': sha256}}]})
-    print(f'Deleted {cleanup_result.deleted_count} matchers')
+    with Repository(postgresql_db) as repo:
+        inserted_rows = repo.insert_matchers(transformed_matchers)
+        print(f'inserted {len(transformed_matchers)} data: {inserted_rows}')
+        deleted_rows = repo.clean_up_matchers(year, sha256)
+        print(f'Deleted {deleted_rows} matchers')
 
 
 def _transform(matchers, year, sha256):

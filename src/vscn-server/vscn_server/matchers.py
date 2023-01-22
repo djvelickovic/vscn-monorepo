@@ -1,12 +1,12 @@
 from typing import List, Dict
-from pymongo import database
 from packaging import version
 from vscn_server.util import some, every
+from vscn_server.repository import Repository
 
 
 class ScanService(object):
-    def __init__(self, products_set, vscn_db: database.Database):
-        self.matchers = vscn_db.get_collection('matchers')
+    def __init__(self, products_set, connection_string: str):
+        self.connection_string = connection_string
         self.products_set = products_set
 
     def scan(self, dependencies: Dict) -> List:
@@ -34,8 +34,9 @@ class ScanService(object):
         return results
 
     def __scan_for_cves(self, product: str) -> List:
-        result = self.matchers.find({'products': product})
-        return result
+        with Repository(self.connection_string) as repo:
+            result = repo.get_matchers(product)
+            return result
 
 
 def get_traverse_cve(dependencies):

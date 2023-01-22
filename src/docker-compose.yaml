@@ -1,18 +1,19 @@
 version: "3.9"
 
 services:
-#  vscn-server:
-#    image: vscn-server:latest
-#    env_file:
-#      - vscn-server/.env
-#    ports:
-#      - "8080:80"
-#  vscn-loader:
-#    image: vscn-loader:latest
-#    env_file:
-#      - vscn-loader/.env
-#    environment:
-#      - YEARS=2023,2022,2021
+  vscn-server:
+    image: vscn-server:latest
+    restart: always
+    env_file:
+      - vscn-server/.env
+    ports:
+      - "11001:80"
+  vscn-loader:
+    image: vscn-loader:latest
+    env_file:
+      - vscn-loader/.env
+    environment:
+      - YEARS=2023,2022,2021
   db:
     image: postgres:15
     restart: always
@@ -22,9 +23,3 @@ services:
       POSTGRES_DB: vscn
     ports:
       - "5432:5432"
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - "8080:8080"
-

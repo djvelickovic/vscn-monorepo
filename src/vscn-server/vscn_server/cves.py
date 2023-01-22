@@ -1,15 +1,11 @@
-from pymongo import database
 from typing import List
+from vscn_server.repository import Repository
 
 
 class CveService(object):
-    def __init__(self, vscn_db: database.Database):
-        self.cves = vscn_db.get_collection('cve')
+    def __init__(self, connection_string: str):
+        self.connection_string = connection_string
 
     def get_cves(self, cve_ids: List[str]):
-        result = self.cves.find({'id': {'$in': cve_ids}})
-        r = []
-        for cve in result:
-            cve.pop('_id')
-            r.append(cve)
-        return r
+        with Repository(self.connection_string) as repo:
+            return repo.get_cves(cve_ids)

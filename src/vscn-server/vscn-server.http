@@ -1,7 +1,7 @@
 
 ### Scan Dependencies
 
-POST http://127.0.0.1:8080/vscn/scan
+POST http://127.0.0.1:11001/vscn/scan
 Content-Type: application/json
 
 {
@@ -535,4 +535,4 @@ Content-Type: application/json
 
 ### Get Cve
 
-GET http://localhost:8080/vscn/cve?id=CVE-2020-35490&id=CVE-2021-22096
+GET http://localhost:11001/vscn/cve?id=CVE-2020-35490&id=CVE-2021-22096
