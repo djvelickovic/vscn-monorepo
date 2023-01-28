@@ -43,14 +43,15 @@ def print_cve_details(affected_dependencies, cves):
 
             cve = cves.get(id)
             severity = cve['severity']
-            desc = cve['desc']
-            ref = cve['ref']
-            published = cve['published']
+            desc = cve['description']
+            ref = cve['refs']
+            published = cve['published_at']
 
-            cprint(f'[*] {original_product} ({version}) [*] {id}\n', 'yellow')
-            cprint(f'Published: {published}', 'grey')
-            cprint(f'CVE Name: {cve_product}', 'grey')
-            cprint(f'Severity: {severity}', 'grey')
+            cprint(f'[*] {original_product} ({version})\n', 'yellow')
+            cprint(f'CVE: {id}\n', 'yellow')
+            cprint(f'Published: {published}', 'light_grey')
+            cprint(f'CVE Name: {cve_product}', 'light_grey')
+            cprint(f'Severity: {severity}', 'light_grey')
             cprint('')
             cprint(f'{desc}\n')
-            cprint('References:\n{}\n\n'.format('\n'.join(ref)), 'grey')
+            cprint('References:\n{}\n\n'.format('\n'.join(ref)), 'light_grey')

@@ -10,12 +10,6 @@ setup(
         'requests',
         'click'
     ],
-    scripts=[
-        'bin/maven/maven_list.sh',
-        'bin/maven/maven_pre_run.sh',
-        'bin/pip/pip_list.sh',
-        'bin/pip/pip_pre_run.sh',
-    ],
     entry_points='''
         [console_scripts]
         vscnc=vscn_cli.app:cli

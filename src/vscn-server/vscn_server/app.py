@@ -6,24 +6,14 @@ from dotenv import load_dotenv
 import os
 from vscn_server.repository import Repository
 
-import json
-
 load_dotenv('.env')
 debug = os.environ.get('DEBUG', 'false').lower() == 'true'
 postgresql_url = os.getenv("POSTGRESQL_DB", "postgresql://postgresql:postgresql@localhost:5432/vscn")
 
 app = Flask(__name__)
 
-products_set = set()
-
-if debug:
-    print('Loaded products match from locale')
-    with open('products-set.json', 'r') as f:
-        products_set = set(json.load(f))
-else:
-    print('Loaded products match from database')
-    with Repository(postgresql_url) as repo:
-        products_set = set(repo.get_products())
+with Repository(postgresql_url) as repo:
+    products_set = set(repo.get_products())
 
 cve_service = CveService(postgresql_url)
 scan_service = ScanService(products_set, postgresql_url)

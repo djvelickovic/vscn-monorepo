@@ -8,11 +8,15 @@ def scan(venv_location):
 
 
 def _pre_run(venv_location):
-    run(['pip_pre_run.sh', venv_location])
+    run([
+        [f"{venv_location}/bin/python",  "-m", "pip", "install", "--upgrade", "pip"]
+    ])
 
 
 def _list_dependencies(venv_location) -> list:
-    std_out = run(['pip_list.sh', venv_location]).decode('ascii')
+    std_out = run([
+        [f"{venv_location}/bin/python",  "-m", "pip", "list", "--format", "json"]
+    ])
     return _extract_dependencies(std_out)
 
 
