@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: vscn-postgresql
+  labels:
+    app: vscn-postgresql
+spec:
+  selector:
+    matchLabels:
+      app: vscn-postgresql
+  serviceName: vscn-postgresql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vscn-postgresql
+    spec:
+      containers:
+      - name: vscn-postgresql
+        image: postgres:15
+        resources:
+          limits:
+            cpu: "1000m"
+            memory: "1024M"
+          requests:
+            cpu: "500m"
+            memory: "1024M"
+        env:
+          - name: POSTGRES_USER
+            value: postgresql
+          - name: POSTGRES_PASSWORD
+            value: postgresql
+          - name: POSTGRES_DB
+            value: vscn
+          - name: PGDATA
+            value: /var/lib/postgresql/data
+        ports:
+        - containerPort: 5432
+          name: access-port
+        volumeMounts:
+        - name:  vscn-pg-data1
+          mountPath: /var/lib/postgresql/data 
+  volumeClaimTemplates:
+  - metadata:
+      namespace: vscn
+      name: vscn-pg-data1
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 5Gi

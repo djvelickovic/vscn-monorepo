@@ -1,4 +1,4 @@
-create or replace table matchers (
+create table matchers (
       cve_id varchar(256),
       year numeric(38,0),
       hash varchar(256),
@@ -8,13 +8,13 @@ create or replace table matchers (
       created_at timestamptz default now()
 );
 
-create or replace index idx__matchers__cve_id on matchers (cve_id);
-create or replace index idx__matchers__year on matchers (year);
-create or replace index idx__matchers__hash on matchers (hash);
-create or replace index idx__matchers__products on matchers using gin((products) jsonb_path_ops);
-create or replace index idx__matchers__vendors on matchers using gin((vendors) jsonb_path_ops);
+create index idx__matchers__cve_id on matchers (cve_id);
+create index idx__matchers__year on matchers (year);
+create index idx__matchers__hash on matchers (hash);
+create index idx__matchers__products on matchers using gin((products) jsonb_path_ops);
+create index idx__matchers__vendors on matchers using gin((vendors) jsonb_path_ops);
 
-create or replace table cves (
+create table cves (
       cve_id varchar(256),
       hash varchar(256),
       year numeric(38,0),
@@ -26,11 +26,12 @@ create or replace table cves (
       created_at timestamptz default now()
 );
 
-create or replace index idx__cves__cve_id on cves (cve_id);
+create index idx__cves__cve_id on cves (cve_id);
 
 
-create or replace table snapshots (
+create table snapshots (
     year numeric(38,0) primary key,
     hash varchar(256),
     updated_at timestamptz
 );
+

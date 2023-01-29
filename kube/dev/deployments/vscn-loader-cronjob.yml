@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  namespace: vscn
+  name: vscn-loader
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: vscn-loader
+              image: vscn-loader:1.0.0
+              resources:
+                limits:
+                  cpu: "1000m"
+                  memory: "1024M"
+                requests:
+                  cpu: "1000m"
+                  memory: "1024M"
+              env:
+                - name: YEARS
+                  value: "2023,2022,2021,2020,2019"
+                - name: POSTGRESQL_DB
+                  value: "postgresql://postgresql:postgresql@vscn-postgresql.vscn:5432/vscn"
+          restartPolicy: Never

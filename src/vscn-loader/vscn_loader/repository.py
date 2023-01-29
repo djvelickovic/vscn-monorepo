@@ -16,43 +16,52 @@ class Repository(object):
 
     def insert_matchers(self, matchers: List):
         with self.conn.cursor() as cur:
-            args_str = ','.join(cur.mogrify(
-                '(%s, %s, %s, %s, %s, %s)',
-                (
-                    matcher['id'], matcher['year'],
-                    matcher['sha256'],
-                    json.dumps(matcher.get('products', [])),
-                    json.dumps(matcher.get('vendors', [])),
-                    json.dumps(matcher.get('config', {}))
-                )
-            ) for matcher in matchers)
+            batch_size = 1000
+            for i in range(0, len(matchers) // batch_size + 1):
+                batch = matchers[i * batch_size: (i + 1) * batch_size]
 
-            cur.execute(f"""
-                INSERT INTO matchers (cve_id, year, hash, products, vendors, config)
-                VALUES {args_str}
-                """)
+                args_str = ','.join(cur.mogrify(
+                    '(%s, %s, %s, %s, %s, %s)',
+                    (
+                        matcher['id'], matcher['year'],
+                        matcher['sha256'],
+                        json.dumps(matcher.get('products', [])),
+                        json.dumps(matcher.get('vendors', [])),
+                        json.dumps(matcher.get('config', {}))
+                    )
+                ) for matcher in batch)
 
-        self.conn.commit()
+                cur.execute(f"""
+                    INSERT INTO matchers (cve_id, year, hash, products, vendors, config)
+                    VALUES {args_str}
+                    """)
+                self.conn.commit()
+                print(f'Inserted matchers batch ({len(batch)})')
 
     def insert_cves(self, cves: List) -> int:
         with self.conn.cursor() as cur:
-            args_str = ','.join(
-                cur.mogrify(
-                    '(%s, %s, %s, %s, %s, %s, %s, %s)',
-                    (cve['id'],
-                     json.dumps(cve.get('ref', [])),
-                     cve['desc'],
-                     cve['severity'],
-                     cve['published'],
-                     cve['lastModified'],
-                     cve['year'],
-                     cve['sha256'])) for cve in cves)
+            batch_size = 1000
+            for i in range(0, len(cves) // batch_size + 1):
+                batch = cves[i * batch_size: (i + 1) * batch_size]
+                args_str = ','.join(
+                    cur.mogrify(
+                        '(%s, %s, %s, %s, %s, %s, %s, %s)',
+                        (cve['id'],
+                         json.dumps(cve.get('ref', [])),
+                         cve['desc'],
+                         cve['severity'],
+                         cve['published'],
+                         cve['lastModified'],
+                         cve['year'],
+                         cve['sha256'])) for cve in batch)
 
-            cur.execute(f"""
-                INSERT INTO cves (cve_id, refs, description, severity, published_at, last_modified, year, hash)
-                VALUES {args_str}
-                """)
-            self.conn.commit()
+                cur.execute(f"""
+                    INSERT INTO cves (cve_id, refs, description, severity, published_at, last_modified, year, hash)
+                    VALUES {args_str}
+                    """)
+                self.conn.commit()
+                print(f'Inserted cves batch ({len(batch)})')
+
             return cur.rowcount
 
     def clean_up_cves(self, year: int, sha256: str) -> int:

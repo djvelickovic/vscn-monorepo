@@ -5,10 +5,10 @@ WORKDIR /vscn-server
 build:
     COPY vscn_server/ vscn_server/
     COPY requirements.txt requirements.txt
-    COPY products-set.json products-set.json
     RUN pip install -r requirements.txt
     ENV PYTHONPATH="/vscn-server"
     CMD ["gunicorn", "-w", "4", "vscn_server.app:app", "-b", "0.0.0.0:80"]
-    SAVE IMAGE vscn-server:latest
+    
+    SAVE IMAGE vscn-server:1.0.0
 
 

@@ -13,6 +13,7 @@ build:
     RUN pip install -r requirements.txt
     SAVE ARTIFACT /vscn-loader /vscn-loader
     ENTRYPOINT ["python", "vscn_loader/main.py"]
-    SAVE IMAGE vscn-loader:latest
+    
+    SAVE IMAGE vscn-loader:1.0.0
 
 

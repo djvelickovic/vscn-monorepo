@@ -13,7 +13,7 @@ def normalize_years(years: str):
 
 def run():
     postgresql_db = os.getenv('POSTGRESQL_DB', default="postgresql://postgresql:postgresql@localhost:5432/vscn")
-    years = normalize_years(os.getenv("YEARS", default="2023"))
+    years = normalize_years(os.getenv("YEARS", default="2022"))
 
     print(f"Inserting for years: {years}")
 

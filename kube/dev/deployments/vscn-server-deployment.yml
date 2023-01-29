@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: vscn-server-deployment
+  namespace: vscn
+  labels:
+    app: vscn-server
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vscn-server
+  template:
+    metadata:
+      labels:
+        app: vscn-server
+    spec:
+      containers:
+        - name: vscn-server
+          image: vscn-server:1.0.0
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "256M"
+            requests:
+              cpu: "250m"
+              memory: "256M"
+          env:
+            - name: POSTGRESQL_DB
+              value: "postgresql://postgresql:postgresql@vscn-postgresql.vscn:5432/vscn"
+
+          ports:
+            - containerPort: 80
+    
