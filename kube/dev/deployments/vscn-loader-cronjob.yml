@@ -23,5 +23,5 @@ spec:
                 - name: YEARS
                   value: "2023,2022,2021,2020,2019"
                 - name: POSTGRESQL_DB
-                  value: "postgresql://postgresql:postgresql@vscn-postgresql.vscn:5432/vscn"
+                  value: "postgresql://postgresql:postgresql@vscn-database.vscn:5432/vscn"
           restartPolicy: Never

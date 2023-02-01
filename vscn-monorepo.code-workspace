@@ -15,6 +15,7 @@
 			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/service-v1.json": "*-service.yml",
 			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/statefulset-apps-v1.json": "*-statefulset.yml",
 			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/cronjob-batch-v1.json": "*-cronjob.yml",
+			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/ingress-networking-v1.json": "*-ingress.yml",
 		}
 	}
 }

@@ -29,7 +29,7 @@ spec:
               memory: "256M"
           env:
             - name: POSTGRESQL_DB
-              value: "postgresql://postgresql:postgresql@vscn-postgresql.vscn:5432/vscn"
+              value: "postgresql://postgresql:postgresql@vscn-database.vscn:5432/vscn"
 
           ports:
             - containerPort: 80
