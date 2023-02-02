@@ -10,12 +10,7 @@
 			"*.sql" : "postgres"
 		},
 		"yaml.schemas": {
-			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/deployment-apps-v1.json": "*-deployment.yml",
-			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/namespace-v1.json": "*-namespace.yml",
-			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/service-v1.json": "*-service.yml",
-			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/statefulset-apps-v1.json": "*-statefulset.yml",
-			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/cronjob-batch-v1.json": "*-cronjob.yml",
-			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/ingress-networking-v1.json": "*-ingress.yml",
+			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/all.json": "kube/*.yml"
 		}
 	}
 }

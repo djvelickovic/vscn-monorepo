@@ -1,3 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vscn-database
+spec:
+  selector:
+    app: vscn-postgresql
+  ports:
+    - port: 5432
+      targetPort: 5432
+
+---
+
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
