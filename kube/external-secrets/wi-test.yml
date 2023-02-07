@@ -1,0 +1,15 @@
+# execute: curl -H "Metadata-Flavor: Google" http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/email
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: workload-identity-test
+  namespace: vscn
+spec:
+  containers:
+  - image: google/cloud-sdk:slim
+    name: workload-identity-test
+    command: ["sleep","infinity"]
+  serviceAccountName: secret-accessor-ksa
+  nodeSelector:
+    iam.gke.io/gke-metadata-server-enabled: "true"

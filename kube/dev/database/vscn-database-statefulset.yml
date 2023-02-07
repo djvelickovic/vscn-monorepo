@@ -1,62 +1,56 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: vscn-database
-spec:
-  selector:
-    app: vscn-postgresql
-  ports:
-    - port: 5432
-      targetPort: 5432
-
----
-
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: vscn-postgresql
+  namespace: vscn
+  name: vscn-db-postgresql
   labels:
-    app: vscn-postgresql
+    app: vscn-db-postgresql
 spec:
   selector:
     matchLabels:
-      app: vscn-postgresql
-  serviceName: vscn-postgresql
+      app: vscn-db-postgresql
+  serviceName: vscn-database
   replicas: 1
   template:
     metadata:
       labels:
-        app: vscn-postgresql
+        app: vscn-db-postgresql
     spec:
       containers:
-      - name: vscn-postgresql
+      - name: vscn-db-postgresql
         image: postgres:15
         resources:
           limits:
-            cpu: "1000m"
-            memory: "1024M"
-          requests:
             cpu: "500m"
-            memory: "1024M"
+            memory: "512M"
+          requests:
+            cpu: "250m"
+            memory: "512M"
         env:
           - name: POSTGRES_USER
-            value: postgresql
+            valueFrom:
+              secretKeyRef:
+                name: vscn-database-secrets-k
+                key: POSTGRES_USER
           - name: POSTGRES_PASSWORD
-            value: postgresql
+            valueFrom:
+              secretKeyRef:
+                name: vscn-database-secrets-k
+                key: POSTGRES_PASSWORD
           - name: POSTGRES_DB
             value: vscn
           - name: PGDATA
-            value: /var/lib/postgresql/data
+            value: /var/lib/postgresql/data/vscn-db-files
         ports:
         - containerPort: 5432
           name: access-port
         volumeMounts:
-        - name:  vscn-pg-data1
+        - name:  vscn-pg-data
           mountPath: /var/lib/postgresql/data 
   volumeClaimTemplates:
   - metadata:
       namespace: vscn
-      name: vscn-pg-data1
+      name: vscn-pg-data
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
