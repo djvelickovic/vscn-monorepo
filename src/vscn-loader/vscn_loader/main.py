@@ -1,5 +1,6 @@
 import os
 from os.path import exists
+from time import sleep
 from vscn_loader.const import TMP_DIR
 from vscn_loader.nvd import download_nvd, download_nvd_metadata
 from vscn_loader.snapshot import should_insert, update_snapshots
@@ -12,7 +13,15 @@ def normalize_years(years: str):
 
 
 def run():
-    postgresql_db = os.getenv('POSTGRESQL_DB', default="postgresql://postgresql:postgresql@localhost:5432/vscn")
+
+    postgresql_host = os.getenv("POSTGRES_HOST", "localhost")
+    postgresql_port = os.getenv("POSTGRES_PORT", "5432")
+    postgresql_database = os.getenv("POSTGRES_DATABASE", "vscn")
+
+    postgresql_username = os.getenv("POSTGRES_USER", "postgres")
+    postgresql_password = os.getenv("POSTGRES_PASSWORD", "postgres")
+
+    postgresql_db = f"postgresql://{postgresql_username}:{postgresql_password}@{postgresql_host}:{postgresql_port}/{postgresql_database}"
     years = normalize_years(os.getenv("YEARS", default="2022"))
 
     print(f"Inserting for years: {years}")
@@ -40,4 +49,5 @@ def run():
 
 
 if __name__ == '__main__':
+    sleep(5)
     run()

@@ -1,21 +1,11 @@
 VERSION 0.6
+FROM python:3.10
+WORKDIR /vscn-server
 
-deployment:
-    FROM --platform=linux/amd64 python:3.10
-    WORKDIR /vscn-server
+build:
     COPY vscn_server/ vscn_server/
     COPY requirements.txt requirements.txt
     RUN pip install -r requirements.txt
     ENV PYTHONPATH="/vscn-server"
     CMD ["gunicorn", "-w", "4", "vscn_server.app:app", "-b", "0.0.0.0:80"]
-    SAVE IMAGE --push eu.gcr.io/leafy-beach-375514/vscn-server:1.0.0-amd64
-
-local:
-    FROM python:3.10
-    WORKDIR /vscn-server
-    COPY vscn_server/ vscn_server/
-    COPY requirements.txt requirements.txt
-    RUN pip install -r requirements.txt
-    ENV PYTHONPATH="/vscn-server"
-    CMD ["gunicorn", "-w", "4", "vscn_server.app:app", "-b", "0.0.0.0:80"]
-    SAVE IMAGE vscn-server:1.0.0
+    SAVE IMAGE --push gcr.io/leafy-beach-375514/vscn-server:1.0.0

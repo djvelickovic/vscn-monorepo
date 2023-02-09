@@ -8,7 +8,14 @@ from vscn_server.repository import Repository
 
 load_dotenv('.env')
 debug = os.environ.get('DEBUG', 'false').lower() == 'true'
-postgresql_url = os.getenv("POSTGRESQL_DB", "postgresql://postgresql:postgresql@localhost:5432/vscn")
+postgresql_host = os.getenv("POSTGRES_HOST", "localhost")
+postgresql_port = os.getenv("POSTGRES_PORT", "5432")
+postgresql_database = os.getenv("POSTGRES_DATABASE", "vscn")
+
+postgresql_username = os.getenv("POSTGRES_USER", "postgres")
+postgresql_password = os.getenv("POSTGRES_PASSWORD", "postgres")
+
+postgresql_url = f"postgresql://{postgresql_username}:{postgresql_password}@{postgresql_host}:{postgresql_port}/{postgresql_database}"
 
 app = Flask(__name__)
 

@@ -19,17 +19,22 @@ spec:
       serviceAccountName: database-accessor-ksa
       containers:
         - name: vscn-server
-          image: eu.gcr.io/leafy-beach-375514/vscn-server:1.0.0-amd64
-          # resources:
-          #   limits:
-          #     cpu: "500m"
-          #     memory: "256M"
-          #   requests:
-          #     cpu: "250m"
-          #     memory: "256M"
+          image: gcr.io/leafy-beach-375514/vscn-server:1.0.0_linux_amd64
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: "100m"
+              memory: "256M"
+            requests:
+              cpu: "100m"
+              memory: "256M"
           env:
-            - name: POSTGRESQL_DB
-              value: "postgresql://postgres:kowsyv-nivgy7-qoJhac@localhost:5432/vscn"
+            - name: POSTGRES_HOST
+              value: "localhost"
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_DATABASE
+              value: "vscn"
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -43,23 +48,16 @@ spec:
           ports:
             - containerPort: 80
         - name: cloud-sql-proxy
-          # This uses the latest version of the Cloud SQL proxy
-          # It is recommended to use a specific version for production environments.
-          # See: https://github.com/GoogleCloudPlatform/cloudsql-proxy 
           image: gcr.io/cloudsql-docker/gce-proxy:latest
+          resources:
+            limits:
+              cpu: "100m"
+              memory: "128M"
+            requests:
+              cpu: "100m"
+              memory: "128M"
           command:
             - "/cloud_sql_proxy"
-
-            # If connecting from a VPC-native GKE cluster, you can use the
-            # following flag to have the proxy connect over private IP
-            # - "-ip_address_types=PRIVATE"
-
-            # tcp should be set to the port the proxy should listen on
-            # and should match the DB_PORT value set above.
-            # Defaults: MySQL: 3306, Postgres: 5432, SQLServer: 1433
-            # format is project_id:region:instance_name
             - "-instances=leafy-beach-375514:europe-west3:vscn-database=tcp:5432"
           securityContext:
-            # The default Cloud SQL proxy image runs as the
-            # "nonroot" user and group (uid: 65532) by default.
             runAsNonRoot: true
