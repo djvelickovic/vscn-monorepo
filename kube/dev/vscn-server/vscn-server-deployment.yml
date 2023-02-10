@@ -7,7 +7,7 @@ metadata:
   labels:
     app: vscn-server
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: vscn-server
@@ -21,6 +21,20 @@ spec:
         - name: vscn-server
           image: gcr.io/leafy-beach-375514/vscn-server:1.0.0_linux_amd64
           imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 80
+            initialDelaySeconds: 20
+            periodSeconds: 5
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 80
+            initialDelaySeconds: 20
+            periodSeconds: 5
+            timeoutSeconds: 5
           resources:
             limits:
               cpu: "100m"

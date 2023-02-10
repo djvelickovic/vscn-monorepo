@@ -27,6 +27,16 @@ scan_service = ScanService(products_set, postgresql_url)
 transform_service = TransformService()
 
 
+@app.get('/healthz')
+def health():
+    return {}
+
+
+@app.get('/vscn')
+def vscn():
+    return {}
+
+
 @app.post('/vscn/scan')
 def scan():
     request_body = request.get_json()

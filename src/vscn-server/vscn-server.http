@@ -1,7 +1,10 @@
 
 ### Scan Dependencies
 
-POST http://127.0.0.1:80/vscn/scan
+# POST http://127.0.0.1:80/vscn/scan
+# POST http://127.0.0.1:11001/vscn/scan
+
+POST http://34.160.89.124/vscn/scan
 Content-Type: application/json
 
 {
