@@ -4,6 +4,12 @@ import re
 
 class TransformService(object):
 
+    static_dependency_map = {
+        "bcpkix-jdk15on": ["legion-of-the-bouncy-castle-java-crytography-api", "the_bouncy_castle_crypto_package_for_java"],
+        "hibernate-core": ["hibernate_orm"],
+        "postgresql": ["postgresql_jdbc_driver"]
+    }
+
     def transform(self, dependencies: list) -> list:
         result = []
         for dependency in dependencies:
@@ -34,15 +40,17 @@ class TransformService(object):
 
     def __expand_product(self, product) -> list:
 
-        rules = [
+        if statically_defined_products := self.static_dependency_map.get(product):
+            return statically_defined_products
+
+        rules_results = [
             self.__remove_core_from_the_end_and_append_framework(product),
-            self.__append_jdbc_driver_if_contains_sql(product),
             self.__remove_tokens(product)
         ]
 
         result = [product]
-        for rule in rules:
-            result.extend(rule)
+        for rule_results in rules_results:
+            result.extend(rule_results)
 
         return result
 
@@ -80,11 +88,6 @@ class TransformService(object):
             result.add('-'.join(tokens[0:len(tokens) - i]))
 
         return list(result)
-
-    def __append_jdbc_driver_if_contains_sql(self, product: str) -> list:
-        if 'sql' in product or product in {'postgresql'}:
-            return [f'{product}_jdbc_driver']
-        return []
 
     def __should_skip_dependency(self, dependency) -> bool:
         return dependency['version'].endswith('SNAPSHOT')
