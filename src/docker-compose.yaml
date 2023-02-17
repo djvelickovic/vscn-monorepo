@@ -5,13 +5,13 @@ services:
     image: vscn-server:latest
     restart: always
     env_file:
-      - vscn-server/.env
+      - vscn-server/docker-compose.env
     ports:
       - "11001:80"
   vscn-loader:
     image: vscn-loader:latest
     env_file:
-      - vscn-loader/.env
+      - vscn-loader/docker-compose.env
     environment:
       - YEARS=2023,2022,2021,2020,2019
   db:

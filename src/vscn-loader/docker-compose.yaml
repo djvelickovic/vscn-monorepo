@@ -3,6 +3,6 @@ services:
   vscn-loader:
     image: vscn-loader:latest
     env_file:
-      - .env
+      - docker-compose.env
     environment:
       - YEARS=2023,2022,2021

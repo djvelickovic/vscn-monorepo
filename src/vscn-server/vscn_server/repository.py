@@ -1,4 +1,4 @@
-from typing import List, Tuple, Dict
+from typing import List, Tuple, Dict, Set
 import psycopg
 
 
@@ -71,6 +71,33 @@ class Repository(object):
                 SELECT DISTINCT jsonb_array_elements(products)
                 FROM matchers
                 """
+            )
+            result = cur.fetchall()
+            return list(map(lambda row: row[0], result))
+
+    def add_unknown_products(self, unmatched_dependencies: Set) -> int:
+        with self.conn.cursor() as cur:
+            args_str = ','.join(
+                cur.mogrify(
+                    '(%s, %s)',
+                    (name, version)) for name, version in unmatched_dependencies)
+            cur.execute(
+                f"""
+                INSERT INTO unknown_products (product_name, version)
+                VALUES {args_str}
+                """
+            )
+            self.conn.commit()
+            return cur.rowcount
+
+    def get_product_mappings(self, product_name: str) -> List[str]:
+        with self.conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT cve_product_name FROM product_mappings
+                WHERE product_name = %s
+                """,
+                (product_name,)
             )
             result = cur.fetchall()
             return list(map(lambda row: row[0], result))

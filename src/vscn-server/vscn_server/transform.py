@@ -1,14 +1,12 @@
 
 import re
+from vscn_server.repository import Repository
+from typing import List
 
 
 class TransformService(object):
-
-    static_dependency_map = {
-        "bcpkix-jdk15on": ["legion-of-the-bouncy-castle-java-crytography-api", "the_bouncy_castle_crypto_package_for_java"],
-        "hibernate-core": ["hibernate_orm"],
-        "postgresql": ["postgresql_jdbc_driver"]
-    }
+    def __init__(self, connection_string) -> None:
+        self.connection_string = connection_string
 
     def transform(self, dependencies: list) -> list:
         result = []
@@ -38,9 +36,13 @@ class TransformService(object):
 
         return list(map(build_product_object, products))
 
+    def _get_mapping(self, product_name: str) -> List[str]:
+        with Repository(self.connection_string) as repo:
+            return repo.get_product_mappings(product_name)
+
     def __expand_product(self, product) -> list:
 
-        if statically_defined_products := self.static_dependency_map.get(product):
+        if statically_defined_products := self._get_mapping(product):
             return statically_defined_products
 
         rules_results = [

@@ -35,3 +35,29 @@ create table snapshots (
     updated_at timestamptz
 );
 
+create table unknown_products (
+      id serial primary key,
+      product_name varchar(256),
+      version varchar(256),
+      is_relevant boolean default true,
+      created_at timestamptz default now()
+);
+
+create index idx__unknown_products__product_name on unknown_products (product_name);
+create index idx__unknown_products__created_at on unknown_products (created_at);
+
+create table product_mappings (
+    product_name varchar(256),
+    cve_product_name varchar(256)
+);
+
+create index idx__product_mappings__product_name on product_mappings (product_name);
+create index idx__product_mappings__cve_product_name on product_mappings (cve_product_name);
+
+
+insert into product_mappings (product_name, cve_product_name)
+values 
+('bcpkix-jdk15on', 'legion-of-the-bouncy-castle-java-crytography-api'),
+('bcpkix-jdk15on', 'the_bouncy_castle_crypto_package_for_java'),
+('hibernate-core', 'hibernate_orm'),
+('postgresql', 'postgresql_jdbc_driver');

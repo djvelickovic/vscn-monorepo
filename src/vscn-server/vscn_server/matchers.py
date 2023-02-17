@@ -5,18 +5,29 @@ from vscn_server.repository import Repository
 
 
 class ScanService(object):
-    def __init__(self, products_set, connection_string: str):
+    def __init__(self, connection_string: str):
         self.connection_string = connection_string
-        self.products_set = products_set
+        with Repository(connection_string) as repo:
+            self.products_set = set(repo.get_products())
 
     def scan(self, dependencies: Dict) -> List:
         results = []
 
+        unmatched_dependencies = set((d['original_product'], d['version']) for d in dependencies.values())
+
+        print(str(unmatched_dependencies))
+
         for dependency in dependencies.values():
             product = dependency['product']
+            original_product_name = dependency['original_product']
+            version = dependency['version']
 
             if product not in self.products_set:
                 continue
+
+            print(f"{original_product_name} -> {version}")
+
+            unmatched_dependencies.discard((original_product_name, version))
 
             cves = self.__scan_for_cves(product)
             matched_cves = filter(get_traverse_cve(dependencies), cves)
@@ -30,6 +41,9 @@ class ScanService(object):
                     'dependency': dependency,
                     'vulnerabilities': list(unique_and_sorted_cves)
                 })
+
+        with Repository(self.connection_string) as conn:
+            conn.add_unknown_products(unmatched_dependencies)
 
         return results
 
