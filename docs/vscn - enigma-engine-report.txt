@@ -1,0 +1,1906 @@
+
+running command: [['mvn', '-f', './pom.xml', 'dependency:list'], ['grep', ':.*:.*:.*'], ['cut', '-d', ']', '-f2-'], ['sed', 's/:[a-z]*$//g'], ['sort', '-u']]
+    antlr:antlr:jar:2.7.7:compile -- module antlr (auto)
+    ch.qos.logback:logback-classic:jar:1.2.3:compile -- module logback.classic (auto)
+    ch.qos.logback:logback-core:jar:1.2.3:compile -- module logback.core (auto)
+    com.fasterxml.jackson.core:jackson-annotations:jar:2.11.2:compile -- module com.fasterxml.jackson.annotation
+    com.fasterxml.jackson.core:jackson-core:jar:2.11.2:compile -- module com.fasterxml.jackson.core
+    com.fasterxml.jackson.core:jackson-databind:jar:2.11.2:compile -- module com.fasterxml.jackson.databind
+    com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.11.2:compile -- module com.fasterxml.jackson.datatype.jdk8
+    com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.11.2:compile -- module com.fasterxml.jackson.datatype.jsr310
+    com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.11.2:compile -- module com.fasterxml.jackson.module.paramnames
+    com.fasterxml:classmate:jar:1.5.1:compile -- module com.fasterxml.classmate
+    com.jayway.jsonpath:json-path:jar:2.4.0:test -- module json.path (auto)
+    com.sun.activation:jakarta.activation:jar:1.2.2:compile -- module jakarta.activation
+    com.sun.istack:istack-commons-runtime:jar:3.0.11:compile -- module com.sun.istack.runtime
+    com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test -- module android.json (auto)
+    com.zaxxer:HikariCP:jar:3.4.5:compile -- module com.zaxxer.hikari
+    commons-codec:commons-codec:jar:1.14:compile -- module org.apache.commons.codec [auto]
+    io.netty:netty-buffer:jar:4.1.52.Final:compile -- module io.netty.buffer [auto]
+    io.netty:netty-codec-http2:jar:4.1.52.Final:compile -- module io.netty.codec.http2 [auto]
+    io.netty:netty-codec-http:jar:4.1.52.Final:compile -- module io.netty.codec.http [auto]
+    io.netty:netty-codec-socks:jar:4.1.52.Final:compile -- module io.netty.codec.socks [auto]
+    io.netty:netty-codec:jar:4.1.52.Final:compile -- module io.netty.codec [auto]
+    io.netty:netty-common:jar:4.1.52.Final:compile -- module io.netty.common [auto]
+    io.netty:netty-handler-proxy:jar:4.1.52.Final:compile -- module io.netty.handler.proxy [auto]
+    io.netty:netty-handler:jar:4.1.52.Final:compile -- module io.netty.handler [auto]
+    io.netty:netty-resolver:jar:4.1.52.Final:compile -- module io.netty.resolver [auto]
+    io.netty:netty-transport-native-epoll:jar:linux-x86_64:4.1.52.Final:compile -- module io.netty.transport.epoll [auto]
+    io.netty:netty-transport-native-unix-common:jar:4.1.52.Final:compile -- module io.netty.transport.unix.common [auto]
+    io.netty:netty-transport:jar:4.1.52.Final:compile -- module io.netty.transport [auto]
+    io.projectreactor.netty:reactor-netty:jar:0.9.12.RELEASE:compile -- module reactor.netty [auto]
+    io.projectreactor:reactor-core:jar:3.3.10.RELEASE:compile -- module reactor.core [auto]
+    jakarta.activation:jakarta.activation-api:jar:1.2.2:compile -- module jakarta.activation
+    jakarta.annotation:jakarta.annotation-api:jar:1.3.5:compile -- module java.annotation [auto]
+    jakarta.persistence:jakarta.persistence-api:jar:2.2.3:compile -- module java.persistence [auto]
+    jakarta.transaction:jakarta.transaction-api:jar:1.3.3:compile -- module java.transaction [auto]
+    jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3:compile -- module java.xml.bind
+    javax.activation:javax.activation-api:jar:1.2.0:compile -- module java.activation [auto]
+    javax.xml.bind:jaxb-api:jar:2.3.1:compile -- module java.xml.bind
+    junit:junit:jar:4.13:test -- module junit [auto]
+    net.bytebuddy:byte-buddy-agent:jar:1.10.14:test -- module net.bytebuddy.agent
+    net.bytebuddy:byte-buddy:jar:1.10.14:compile -- module net.bytebuddy
+    net.minidev:accessors-smart:jar:1.2:test -- module accessors.smart (auto)
+    net.minidev:json-smart:jar:2.3:test -- module json.smart (auto)
+    org.apache.httpcomponents:httpclient:jar:4.5.12:compile -- module org.apache.httpcomponents.httpclient [auto]
+    org.apache.httpcomponents:httpcore:jar:4.4.13:compile -- module org.apache.httpcomponents.httpcore [auto]
+    org.apache.logging.log4j:log4j-api:jar:2.13.3:compile -- module org.apache.logging.log4j
+    org.apache.logging.log4j:log4j-to-slf4j:jar:2.13.3:compile -- module org.apache.logging.slf4j [auto]
+    org.apache.tomcat.embed:tomcat-embed-core:jar:9.0.38:compile -- module org.apache.tomcat.embed.core
+    org.apache.tomcat.embed:tomcat-embed-websocket:jar:9.0.38:compile -- module org.apache.tomcat.embed.websocket
+    org.apiguardian:apiguardian-api:jar:1.1.0:test -- module org.apiguardian.api
+    org.aspectj:aspectjweaver:jar:1.9.6:compile -- module org.aspectj.weaver [auto]
+    org.assertj:assertj-core:jar:3.16.1:test -- module org.assertj.core
+    org.bouncycastle:bcpkix-jdk15on:jar:1.65:compile -- module org.bouncycastle.pkix
+    org.bouncycastle:bcprov-jdk15on:jar:1.65:compile -- module org.bouncycastle.provider
+    org.checkerframework:checker-qual:jar:3.5.0:runtime -- module org.checkerframework.checker.qual [auto]
+    org.dom4j:dom4j:jar:2.1.3:compile -- module dom4j (auto)
+    org.glassfish.jaxb:jaxb-runtime:jar:2.3.3:compile -- module org.glassfish.jaxb.runtime
+    org.glassfish.jaxb:txw2:jar:2.3.3:compile -- module com.sun.xml.txw2
+    org.glassfish:jakarta.el:jar:3.0.3:compile -- module jakarta.el (auto)
+    org.hamcrest:hamcrest:jar:2.2:test -- module org.hamcrest [auto]
+    org.hibernate.common:hibernate-commons-annotations:jar:5.1.0.Final:compile -- module org.hibernate.commons.annotations [auto]
+    org.hibernate:hibernate-core:jar:5.4.21.Final:compile -- module org.hibernate.orm.core [auto]
+    org.javassist:javassist:jar:3.24.0-GA:compile -- module javassist (auto)
+    org.jboss.logging:jboss-logging:jar:3.4.1.Final:compile -- module org.jboss.logging [auto]
+    org.jboss:jandex:jar:2.1.3.Final:compile -- module org.jboss.jandex [auto]
+    org.junit.jupiter:junit-jupiter-api:jar:5.6.2:test -- module org.junit.jupiter.api
+    org.junit.jupiter:junit-jupiter-engine:jar:5.6.2:test -- module org.junit.jupiter.engine
+    org.junit.jupiter:junit-jupiter-params:jar:5.6.2:test -- module org.junit.jupiter.params
+    org.junit.jupiter:junit-jupiter:jar:5.6.2:test -- module org.junit.jupiter
+    org.junit.platform:junit-platform-commons:jar:1.6.2:test -- module org.junit.platform.commons
+    org.junit.platform:junit-platform-engine:jar:1.6.2:test -- module org.junit.platform.engine
+    org.junit.vintage:junit-vintage-engine:jar:5.6.2:test -- module org.junit.vintage.engine
+    org.keycloak:keycloak-adapter-core:jar:11.0.2:compile -- module keycloak.adapter.core (auto)
+    org.keycloak:keycloak-adapter-spi:jar:11.0.2:compile -- module keycloak.adapter.spi (auto)
+    org.keycloak:keycloak-authz-client:jar:11.0.2:compile -- module keycloak.authz.client (auto)
+    org.keycloak:keycloak-common:jar:11.0.2:compile -- module keycloak.common (auto)
+    org.keycloak:keycloak-core:jar:11.0.2:compile -- module keycloak.core (auto)
+    org.keycloak:keycloak-spring-boot-2-adapter:jar:11.0.2
+    org.keycloak:keycloak-spring-boot-adapter-core:jar:11.0.2:compile -- module keycloak.spring.boot.adapter.core (auto)
+    org.keycloak:keycloak-spring-boot-starter:jar:11.0.2:compile -- module keycloak.spring.boot.starter (auto)
+    org.keycloak:keycloak-spring-security-adapter:jar:11.0.2:compile -- module keycloak.spring.security.adapter (auto)
+    org.keycloak:spring-boot-container-bundle:jar:11.0.2:compile -- module spring.boot.container.bundle (auto)
+    org.liquibase:liquibase-core:jar:3.8.9
+    org.mockito:mockito-core:jar:3.3.3:test -- module org.mockito [auto]
+    org.mockito:mockito-junit-jupiter:jar:3.3.3:test -- module mockito.junit.jupiter (auto)
+    org.objenesis:objenesis:jar:2.6:test -- module objenesis (auto)
+    org.opentest4j:opentest4j:jar:1.2.0:test -- module org.opentest4j
+    org.ow2.asm:asm:jar:5.0.4:test -- module asm (auto)
+    org.postgresql:postgresql:jar:42.2.16:runtime -- module org.postgresql.jdbc [auto]
+    org.projectlombok:lombok:jar:1.18.12:provided -- module lombok
+    org.reactivestreams:reactive-streams:jar:1.0.3:compile -- module org.reactivestreams [auto]
+    org.skyscreamer:jsonassert:jar:1.5.0:test -- module jsonassert (auto)
+    org.slf4j:jul-to-slf4j:jar:1.7.30:compile -- module jul.to.slf4j (auto)
+    org.slf4j:slf4j-api:jar:1.7.30:compile -- module org.slf4j [auto]
+    org.springframework.boot:spring-boot-autoconfigure:jar:2.3.4.RELEASE:compile -- module spring.boot.autoconfigure [auto]
+    org.springframework.boot:spring-boot-configuration-processor:jar:2.3.4.RELEASE:compile -- module spring.boot.configuration.processor [auto]
+    org.springframework.boot:spring-boot-starter-aop:jar:2.3.4.RELEASE:compile -- module spring.boot.starter.aop [auto]
+    org.springframework.boot:spring-boot-starter-data-jpa:jar:2.3.4.RELEASE:compile -- module spring.boot.starter.data.jpa [auto]
+    org.springframework.boot:spring-boot-starter-jdbc:jar:2.3.4.RELEASE:compile -- module spring.boot.starter.jdbc [auto]
+    org.springframework.boot:spring-boot-starter-json:jar:2.3.4.RELEASE:compile -- module spring.boot.starter.json [auto]
+    org.springframework.boot:spring-boot-starter-logging:jar:2.3.4.RELEASE:compile -- module spring.boot.starter.logging [auto]
+    org.springframework.boot:spring-boot-starter-reactor-netty:jar:2.3.4.RELEASE:compile -- module spring.boot.starter.reactor.netty [auto]
+    org.springframework.boot:spring-boot-starter-security:jar:2.3.4.RELEASE:compile -- module spring.boot.starter.security [auto]
+    org.springframework.boot:spring-boot-starter-test:jar:2.3.4.RELEASE:test -- module spring.boot.starter.test [auto]
+    org.springframework.boot:spring-boot-starter-tomcat:jar:2.3.4.RELEASE:compile -- module spring.boot.starter.tomcat [auto]
+    org.springframework.boot:spring-boot-starter-web:jar:2.3.4.RELEASE:compile -- module spring.boot.starter.web [auto]
+    org.springframework.boot:spring-boot-starter-webflux:jar:2.3.4.RELEASE:compile -- module spring.boot.starter.webflux [auto]
+    org.springframework.boot:spring-boot-starter:jar:2.3.4.RELEASE:compile -- module spring.boot.starter [auto]
+    org.springframework.boot:spring-boot-test-autoconfigure:jar:2.3.4.RELEASE:test -- module spring.boot.test.autoconfigure [auto]
+    org.springframework.boot:spring-boot-test:jar:2.3.4.RELEASE:test -- module spring.boot.test [auto]
+    org.springframework.boot:spring-boot:jar:2.3.4.RELEASE:compile -- module spring.boot [auto]
+    org.springframework.data:spring-data-commons:jar:2.3.4.RELEASE:compile -- module spring.data.commons [auto]
+    org.springframework.data:spring-data-jpa:jar:2.3.4.RELEASE:compile -- module spring.data.jpa [auto]
+    org.springframework.security:spring-security-config:jar:5.3.4.RELEASE:compile -- module spring.security.config [auto]
+    org.springframework.security:spring-security-core:jar:5.3.4.RELEASE:compile -- module spring.security.core [auto]
+    org.springframework.security:spring-security-web:jar:5.3.4.RELEASE:compile -- module spring.security.web [auto]
+    org.springframework:spring-aop:jar:5.2.9.RELEASE:compile -- module spring.aop [auto]
+    org.springframework:spring-aspects:jar:5.2.9.RELEASE:compile -- module spring.aspects [auto]
+    org.springframework:spring-beans:jar:5.2.9.RELEASE:compile -- module spring.beans [auto]
+    org.springframework:spring-context:jar:5.2.9.RELEASE:compile -- module spring.context [auto]
+    org.springframework:spring-core:jar:5.2.9.RELEASE:compile -- module spring.core [auto]
+    org.springframework:spring-expression:jar:5.2.9.RELEASE:compile -- module spring.expression [auto]
+    org.springframework:spring-jcl:jar:5.2.9.RELEASE:compile -- module spring.jcl [auto]
+    org.springframework:spring-jdbc:jar:5.2.9.RELEASE:compile -- module spring.jdbc [auto]
+    org.springframework:spring-orm:jar:5.2.9.RELEASE:compile -- module spring.orm [auto]
+    org.springframework:spring-test:jar:5.2.9.RELEASE:test -- module spring.test [auto]
+    org.springframework:spring-tx:jar:5.2.9.RELEASE:compile -- module spring.tx [auto]
+    org.springframework:spring-web:jar:5.2.9.RELEASE:compile -- module spring.web [auto]
+    org.springframework:spring-webflux:jar:5.2.9.RELEASE:compile -- module spring.webflux [auto]
+    org.springframework:spring-webmvc:jar:5.2.9.RELEASE:compile -- module spring.webmvc [auto]
+    org.synchronoss.cloud:nio-multipart-parser:jar:1.1.0:compile -- module nio.multipart.parser (auto)
+    org.synchronoss.cloud:nio-stream-storage:jar:1.1.3:compile -- module nio.stream.storage (auto)
+    org.xmlunit:xmlunit-core:jar:2.7.0:test -- module org.xmlunit [auto]
+    org.yaml:snakeyaml:jar:1.26:compile -- module org.yaml.snakeyaml [auto]
+ Can't extract module name from keycloak-spring-boot-2-adapter-11.0.2.jar: keycloak.spring.boot.2.adapter: Invalid module name: '2' is not a Java identifier
+ Finished at: 2023-02-16T17:17:24+01:00
+
+2023-02-16T17 (24+01)
+HikariCP (3.4.5)
+accessors-smart (1.2)
+android-json (0.0.20131108.vaadin1)
+antlr (2.7.7)
+apiguardian-api (1.1.0)
+asm (5.0.4)
+aspectjweaver (1.9.6)
+assertj-core (3.16.1)
+bcpkix-jdk15on (1.65)
+bcprov-jdk15on (1.65)
+byte-buddy (1.10.14)
+byte-buddy-agent (1.10.14)
+checker-qual (3.5.0)
+classmate (1.5.1)
+commons-codec (1.14)
+dom4j (2.1.3)
+hamcrest (2.2)
+hibernate-commons-annotations (5.1.0.Final)
+hibernate-core (5.4.21.Final)
+httpclient (4.5.12)
+httpcore (4.4.13)
+istack-commons-runtime (3.0.11)
+jackson-annotations (2.11.2)
+jackson-core (2.11.2)
+jackson-databind (2.11.2)
+jackson-datatype-jdk8 (2.11.2)
+jackson-datatype-jsr310 (2.11.2)
+jackson-module-parameter-names (2.11.2)
+jakarta.activation (1.2.2)
+jakarta.activation-api (1.2.2)
+jakarta.annotation-api (1.3.5)
+jakarta.el (3.0.3)
+jakarta.persistence-api (2.2.3)
+jakarta.transaction-api (1.3.3)
+jakarta.xml.bind-api (2.3.3)
+jandex (2.1.3.Final)
+javassist (3.24.0-GA)
+javax.activation-api (1.2.0)
+jaxb-api (2.3.1)
+jaxb-runtime (2.3.3)
+jboss-logging (3.4.1.Final)
+json-path (2.4.0)
+json-smart (2.3)
+jsonassert (1.5.0)
+jul-to-slf4j (1.7.30)
+junit (4.13)
+junit-jupiter (5.6.2)
+junit-jupiter-api (5.6.2)
+junit-jupiter-engine (5.6.2)
+junit-jupiter-params (5.6.2)
+junit-platform-commons (1.6.2)
+junit-platform-engine (1.6.2)
+junit-vintage-engine (5.6.2)
+keycloak-adapter-core (11.0.2)
+keycloak-adapter-spi (11.0.2)
+keycloak-authz-client (11.0.2)
+keycloak-common (11.0.2)
+keycloak-core (11.0.2)
+keycloak-spring-boot-2-adapter (11.0.2)
+keycloak-spring-boot-adapter-core (11.0.2)
+keycloak-spring-boot-starter (11.0.2)
+keycloak-spring-security-adapter (11.0.2)
+keycloak.spring.boot.2.adapter ('2' is not a Java identifier)
+liquibase-core (3.8.9)
+log4j-api (2.13.3)
+log4j-to-slf4j (2.13.3)
+logback-classic (1.2.3)
+logback-core (1.2.3)
+lombok (1.18.12)
+mockito-core (3.3.3)
+mockito-junit-jupiter (3.3.3)
+netty-buffer (4.1.52.Final)
+netty-codec (4.1.52.Final)
+netty-codec-http (4.1.52.Final)
+netty-codec-http2 (4.1.52.Final)
+netty-codec-socks (4.1.52.Final)
+netty-common (4.1.52.Final)
+netty-handler (4.1.52.Final)
+netty-handler-proxy (4.1.52.Final)
+netty-resolver (4.1.52.Final)
+netty-transport (4.1.52.Final)
+netty-transport-native-epoll (4.1.52.Final)
+netty-transport-native-unix-common (4.1.52.Final)
+nio-multipart-parser (1.1.0)
+nio-stream-storage (1.1.3)
+objenesis (2.6)
+opentest4j (1.2.0)
+postgresql (42.2.16)
+reactive-streams (1.0.3)
+reactor-core (3.3.10.RELEASE)
+reactor-netty (0.9.12.RELEASE)
+slf4j-api (1.7.30)
+snakeyaml (1.26)
+spring-aop (5.2.9.RELEASE)
+spring-aspects (5.2.9.RELEASE)
+spring-beans (5.2.9.RELEASE)
+spring-boot (2.3.4.RELEASE)
+spring-boot-autoconfigure (2.3.4.RELEASE)
+spring-boot-configuration-processor (2.3.4.RELEASE)
+spring-boot-container-bundle (11.0.2)
+spring-boot-starter (2.3.4.RELEASE)
+spring-boot-starter-aop (2.3.4.RELEASE)
+spring-boot-starter-data-jpa (2.3.4.RELEASE)
+spring-boot-starter-jdbc (2.3.4.RELEASE)
+spring-boot-starter-json (2.3.4.RELEASE)
+spring-boot-starter-logging (2.3.4.RELEASE)
+spring-boot-starter-reactor-netty (2.3.4.RELEASE)
+spring-boot-starter-security (2.3.4.RELEASE)
+spring-boot-starter-test (2.3.4.RELEASE)
+spring-boot-starter-tomcat (2.3.4.RELEASE)
+spring-boot-starter-web (2.3.4.RELEASE)
+spring-boot-starter-webflux (2.3.4.RELEASE)
+spring-boot-test (2.3.4.RELEASE)
+spring-boot-test-autoconfigure (2.3.4.RELEASE)
+spring-context (5.2.9.RELEASE)
+spring-core (5.2.9.RELEASE)
+spring-data-commons (2.3.4.RELEASE)
+spring-data-jpa (2.3.4.RELEASE)
+spring-expression (5.2.9.RELEASE)
+spring-jcl (5.2.9.RELEASE)
+spring-jdbc (5.2.9.RELEASE)
+spring-orm (5.2.9.RELEASE)
+spring-security-config (5.3.4.RELEASE)
+spring-security-core (5.3.4.RELEASE)
+spring-security-web (5.3.4.RELEASE)
+spring-test (5.2.9.RELEASE)
+spring-tx (5.2.9.RELEASE)
+spring-web (5.2.9.RELEASE)
+spring-webflux (5.2.9.RELEASE)
+spring-webmvc (5.2.9.RELEASE)
+tomcat-embed-core (9.0.38)
+tomcat-embed-websocket (9.0.38)
+txw2 (2.3.3)
+xmlunit-core (2.7.0)
+---------------- [ CVE Details] ----------------
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2022-1466
+
+Published: Tue, 26 Apr 2022 19:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+Due to improper authorization, Red Hat Single Sign-On is vulnerable to users performing actions that they should not be allowed to perform. It was possible to add users to the master realm even though no respective permission was granted.
+
+References:
+https://www.syss.de/fileadmin/dokumente/Publikationen/Advisories/SYSS-2021-076.txt
+https://www.syss.de/pentest-blog/fehlerhafte-autorisierung-bei-red-hat-single-sign-on-750ga-syss-2021-076
+https://bugzilla.redhat.com/show_bug.cgi?id=2050228
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2022-1245
+
+Published: Fri, 08 Jul 2022 00:15:00 GMT
+CVE Name: keycloak
+Severity: HIGH
+
+A privilege escalation flaw was found in the token exchange feature of keycloak. Missing authorization allows a client application holding a valid access token to exchange tokens for any target client by passing the client_id of the target. This could allow a client to gain unauthorized access to additional services.
+
+References:
+https://github.com/keycloak/keycloak/security/advisories/GHSA-75p6-52g3-rqc8
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2021-3856
+
+Published: Fri, 26 Aug 2022 16:15:00 GMT
+CVE Name: keycloak
+Severity: None
+
+ClassLoaderTheme and ClasspathThemeResourceProviderFactory allows reading any file available as a resource to the classloader. By sending requests for theme resources with a relative path from an external HTTP client, the client will receive the content of random files if available.
+
+References:
+https://github.com/keycloak/keycloak/commit/73f0474008e1bebd0733e62a22aceda9e5de6743
+https://bugzilla.redhat.com/show_bug.cgi?id=2010164
+https://access.redhat.com/security/cve/CVE-2021-3856
+https://issues.redhat.com/browse/KEYCLOAK-19422
+https://github.com/keycloak/keycloak/pull/8588
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2021-3827
+
+Published: Tue, 23 Aug 2022 16:15:00 GMT
+CVE Name: keycloak
+Severity: None
+
+A flaw was found in keycloak, where the default ECP binding flow allows other authentication flows to be bypassed. By exploiting this behavior, an attacker can bypass the MFA authentication by sending a SOAP request with an AuthnRequest and Authorization header with the user's credentials. The highest threat from this vulnerability is to confidentiality and integrity.
+
+References:
+https://github.com/keycloak/keycloak/commit/44000caaf5051d7f218d1ad79573bd3d175cad0d
+https://bugzilla.redhat.com/show_bug.cgi?id=2007512
+https://access.redhat.com/security/cve/CVE-2021-3827
+https://github.com/keycloak/keycloak/security/advisories/GHSA-4pc7-vqv5-5r3v
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2021-3637
+
+Published: Fri, 09 Jul 2021 11:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A flaw was found in keycloak-model-infinispan in keycloak versions before 14.0.0 where authenticationSessions map in RootAuthenticationSessionEntity grows boundlessly which could lead to a DoS attack.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1979638
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2021-3632
+
+Published: Fri, 26 Aug 2022 16:15:00 GMT
+CVE Name: keycloak
+Severity: None
+
+A flaw was found in Keycloak. This vulnerability allows anyone to register a new security device or key when there is not a device already registered for any user by using the WebAuthn password-less login flow.
+
+References:
+https://github.com/keycloak/keycloak/pull/8203
+https://github.com/keycloak/keycloak/commit/65480cb5a11630909c086f79d396004499fbd1e4
+https://bugzilla.redhat.com/show_bug.cgi?id=1978196
+https://access.redhat.com/security/cve/CVE-2021-3632
+https://issues.redhat.com/browse/KEYCLOAK-18500
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2021-3513
+
+Published: Mon, 22 Aug 2022 15:15:00 GMT
+CVE Name: keycloak
+Severity: None
+
+A flaw was found in keycloak where a brute force attack is possible even when the permanent lockout feature is enabled. This is due to a wrong error message displayed when wrong credentials are entered. The highest threat from this vulnerability is to confidentiality.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1953439
+https://access.redhat.com/security/cve/CVE-2021-3513
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2021-20323
+
+Published: Fri, 25 Mar 2022 19:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A POST based reflected Cross Site Scripting vulnerability on has been identified in Keycloak.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=2013577
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2021-20222
+
+Published: Tue, 23 Mar 2021 17:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A flaw was found in keycloak. The new account console in keycloak can allow malicious code to be executed using the referrer URL. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1924606
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2021-20202
+
+Published: Wed, 12 May 2021 15:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A flaw was found in keycloak. Directories can be created prior to the Java process creating them in the temporary directory, but with wider user permissions, allowing the attacker to have access to the contents that keycloak stores in this directory. The highest threat from this vulnerability is to data confidentiality and integrity.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1922128
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2021-20195
+
+Published: Fri, 28 May 2021 11:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A flaw was found in keycloak in versions before 13.0.0. A Self Stored XSS attack vector escalating to a complete account takeover is possible due to user-supplied data fields not being properly encoded and Javascript code being used to process the data. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1919143
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2020-27838
+
+Published: Mon, 08 Mar 2021 22:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A flaw was found in keycloak in versions prior to 13.0.0. The client registration endpoint allows fetching information about PUBLIC clients (like client secret) without authentication which could be an issue if the same PUBLIC client changed to CONFIDENTIAL later. The highest threat from this vulnerability is to data confidentiality.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1906797
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2020-27826
+
+Published: Fri, 28 May 2021 11:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A flaw was found in Keycloak before version 12.0.0 where it is possible to update the user's metadata attributes using Account REST API. This flaw allows an attacker to change its own NameID attribute to impersonate the admin user for any particular application.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1905089
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2020-1725
+
+Published: Thu, 28 Jan 2021 20:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A flaw was found in keycloak before version 13.0.0. In some scenarios a user still has access to a resource after changing the role mappings in Keycloak and after expiration of the previous access token.
+
+References:
+https://issues.redhat.com/browse/KEYCLOAK-16550
+https://bugzilla.redhat.com/show_bug.cgi?id=1765129
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2020-14389
+
+Published: Tue, 17 Nov 2020 02:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+It was found that Keycloak before version 12.0.0 would permit a user with only view-profile role to manage the resources in the new account console, allowing access and modification of data the user was not intended to have.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1875843,
+https://access.redhat.com/security/cve/cve-2020-14389
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2020-14366
+
+Published: Mon, 09 Nov 2020 17:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A vulnerability was found in keycloak, where path traversal using URL-encoded path segments in the request is possible because the resources endpoint applies a transformation of the url path to the file path. Only few specific folder hierarchies can be exposed by this flaw
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-14366
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2020-14302
+
+Published: Tue, 15 Dec 2020 20:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A flaw was found in Keycloak before 13.0.0 where an external identity provider, after successful authentication, redirects to a Keycloak endpoint that accepts multiple invocations with the use of the same "state" parameter. This flaw allows a malicious user to perform replay attacks.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1849584
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2020-10776
+
+Published: Tue, 17 Nov 2020 02:15:00 GMT
+CVE Name: keycloak
+Severity: LOW
+
+A flaw was found in Keycloak before version 12.0.0, where it is possible to add unsafe schemes for the redirect_uri parameter. This flaw allows an attacker to perform a Cross-site scripting attack.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1847428
+
+
+[*] keycloak-spring-boot-adapter-core (11.0.2)
+
+CVE: CVE-2020-10770
+
+Published: Tue, 15 Dec 2020 20:15:00 GMT
+CVE Name: keycloak
+Severity: MEDIUM
+
+A flaw was found in Keycloak before 13.0.0, where it is possible to force the server to call out an unverified URL using the OIDC parameter request_uri. This flaw allows an attacker to use this parameter to execute a Server-side request forgery (SSRF) attack.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1846270
+http://packetstormsecurity.com/files/164499/Keycloak-12.0.1-Server-Side-Request-Forgery.html
+
+
+[*] tomcat-embed-core (9.0.38)
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2022-42252
+
+Published: Tue, 01 Nov 2022 09:15:00 GMT
+CVE Name: tomcat
+Severity: None
+
+If Apache Tomcat 8.5.0 to 8.5.82, 9.0.0-M1 to 9.0.67, 10.0.0-M1 to 10.0.26 or 10.1.0-M1 to 10.1.0 was configured to ignore invalid HTTP headers via setting rejectIllegalHeader to false (the default for 8.5.x only), Tomcat did not reject a request containing an invalid Content-Length header making a request smuggling attack possible if Tomcat was located behind a reverse proxy that also failed to reject the request with the invalid header.
+
+References:
+https://lists.apache.org/thread/zzcxzvqfdqn515zfs3dxb7n8gty589sq
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2022-34305
+
+Published: Thu, 23 Jun 2022 11:15:00 GMT
+CVE Name: tomcat
+Severity: MEDIUM
+
+In Apache Tomcat 10.1.0-M1 to 10.1.0-M16, 10.0.0-M1 to 10.0.22, 9.0.30 to 9.0.64 and 8.5.50 to 8.5.81 the Form authentication example in the examples web application displayed user provided data without filtering, exposing a XSS vulnerability.
+
+References:
+https://lists.apache.org/thread/k04zk0nq6w57m72w5gb0r6z9ryhmvr4k
+http://www.openwall.com/lists/oss-security/2022/06/23/1
+https://security.netapp.com/advisory/ntap-20220729-0006/
+https://security.gentoo.org/glsa/202208-34
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2022-29885
+
+Published: Thu, 12 May 2022 08:15:00 GMT
+CVE Name: tomcat
+Severity: MEDIUM
+
+The documentation of Apache Tomcat 10.1.0-M1 to 10.1.0-M14, 10.0.0-M1 to 10.0.20, 9.0.13 to 9.0.62 and 8.5.38 to 8.5.78 for the EncryptInterceptor incorrectly stated it enabled Tomcat clustering to run over an untrusted network. This was not correct. While the EncryptInterceptor does provide confidentiality and integrity protection, it does not protect against all risks associated with running over any untrusted network, particularly DoS risks.
+
+References:
+https://lists.apache.org/thread/2b4qmhbcyqvc7dyfpjyx54c03x65vhcv
+https://security.netapp.com/advisory/ntap-20220629-0002/
+https://www.oracle.com/security-alerts/cpujul2022.html
+https://lists.debian.org/debian-lts-announce/2022/10/msg00029.html
+https://www.debian.org/security/2022/dsa-5265
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2022-23181
+
+Published: Thu, 27 Jan 2022 13:15:00 GMT
+CVE Name: tomcat
+Severity: LOW
+
+The fix for bug CVE-2020-9484 introduced a time of check, time of use vulnerability into Apache Tomcat 10.1.0-M1 to 10.1.0-M8, 10.0.0-M5 to 10.0.14, 9.0.35 to 9.0.56 and 8.5.55 to 8.5.73 that allowed a local attacker to perform actions with the privileges of the user that the Tomcat process is using. This issue is only exploitable when Tomcat is configured to persist sessions using the FileStore.
+
+References:
+https://lists.apache.org/thread/l8x62p3k19yfcb208jo4zrb83k5mfwg9
+https://security.netapp.com/advisory/ntap-20220217-0010/
+https://www.oracle.com/security-alerts/cpuapr2022.html
+https://www.oracle.com/security-alerts/cpujul2022.html
+https://lists.debian.org/debian-lts-announce/2022/10/msg00029.html
+https://www.debian.org/security/2022/dsa-5265
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2021-43980
+
+Published: Wed, 28 Sep 2022 14:15:00 GMT
+CVE Name: tomcat
+Severity: None
+
+The simplified implementation of blocking reads and writes introduced in Tomcat 10 and back-ported to Tomcat 9.0.47 onwards exposed a long standing (but extremely hard to trigger) concurrency bug in Apache Tomcat 10.1.0 to 10.1.0-M12, 10.0.0-M1 to 10.0.18, 9.0.0-M1 to 9.0.60 and 8.5.0 to 8.5.77 that could cause client connections to share an Http11Processor instance resulting in responses, or part responses, to be received by the wrong client.
+
+References:
+https://lists.apache.org/thread/3jjqbsp6j88b198x5rmg99b1qr8ht3g3
+http://www.openwall.com/lists/oss-security/2022/09/28/1
+https://lists.debian.org/debian-lts-announce/2022/10/msg00029.html
+https://www.debian.org/security/2022/dsa-5265
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2021-41079
+
+Published: Thu, 16 Sep 2021 15:15:00 GMT
+CVE Name: tomcat
+Severity: MEDIUM
+
+Apache Tomcat 8.5.0 to 8.5.63, 9.0.0-M1 to 9.0.43 and 10.0.0-M1 to 10.0.2 did not properly validate incoming TLS packets. When Tomcat was configured to use NIO+OpenSSL or NIO2+OpenSSL for TLS, a specially crafted packet could be used to trigger an infinite loop resulting in a denial of service.
+
+References:
+https://lists.apache.org/thread.html/rccdef0349fdf4fb73a4e4403095446d7fe6264e0a58e2df5c6799434%40%3Cannounce.tomcat.apache.org%3E
+https://lists.debian.org/debian-lts-announce/2021/09/msg00012.html
+https://security.netapp.com/advisory/ntap-20211008-0005/
+https://lists.apache.org/thread.html/r6b6b674e3f168dd010e67dbe6848b866e2acf26371452fdae313b98a@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rb4de81ac647043541a32881099aa6eb5a23f1b7fd116f713f8ab9dbe@%3Cdev.tomcat.apache.org%3E
+https://www.debian.org/security/2021/dsa-4986
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2021-33037
+
+Published: Mon, 12 Jul 2021 15:15:00 GMT
+CVE Name: tomcat
+Severity: MEDIUM
+
+Apache Tomcat 10.0.0-M1 to 10.0.6, 9.0.0.M1 to 9.0.46 and 8.5.0 to 8.5.66 did not correctly parse the HTTP transfer-encoding request header in some circumstances leading to the possibility to request smuggling when used with a reverse proxy. Specifically: - Tomcat incorrectly ignored the transfer encoding header if the client declared it would only accept an HTTP/1.0 response; - Tomcat honoured the identify encoding; and - Tomcat did not ensure that, if present, the chunked encoding was the final encoding.
+
+References:
+https://lists.apache.org/thread.html/r612a79269b0d5e5780c62dfd34286a8037232fec0bc6f1a7e60c9381%40%3Cannounce.tomcat.apache.org%3E
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://lists.apache.org/thread.html/r40f921575aee8d7d34e53182f862c45cbb8f3d898c9d4e865c2ec262@%3Ccommits.tomee.apache.org%3E
+https://lists.apache.org/thread.html/re01e7e93154e8bdf78a11a23f9686427bd3d51fc6e12c508645567b7@%3Ccommits.tomee.apache.org%3E
+https://lists.debian.org/debian-lts-announce/2021/08/msg00009.html
+https://www.debian.org/security/2021/dsa-4952
+https://security.netapp.com/advisory/ntap-20210827-0007/
+https://lists.apache.org/thread.html/rd0dfea39829bc0606c936a16f6fca338127c86c0a1083970b45ac8d2@%3Ccommits.tomee.apache.org%3E
+https://lists.apache.org/thread.html/r290aee55b72811fd19e75ac80f6143716c079170c5671b96932ed44b@%3Ccommits.tomee.apache.org%3E
+https://lists.apache.org/thread.html/rf1b54fd3f52f998ca4829159a88cc4c23d6cef5c6447d00948e75c97@%3Ccommits.tomee.apache.org%3E
+https://lists.apache.org/thread.html/rc6ef52453bb996a98cb45442871a1db56b7c349939e45d829bf9ae37@%3Ccommits.tomee.apache.org%3E
+https://www.oracle.com/security-alerts/cpuoct2021.html
+https://kc.mcafee.com/corporate/index?page=content&id=SB10366
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://www.oracle.com/security-alerts/cpuapr2022.html
+https://security.gentoo.org/glsa/202208-34
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2021-30640
+
+Published: Mon, 12 Jul 2021 15:15:00 GMT
+CVE Name: tomcat
+Severity: MEDIUM
+
+A vulnerability in the JNDI Realm of Apache Tomcat allows an attacker to authenticate using variations of a valid user name and/or to bypass some of the protection provided by the LockOut Realm. This issue affects Apache Tomcat 10.0.0-M1 to 10.0.5; 9.0.0.M1 to 9.0.45; 8.5.0 to 8.5.65.
+
+References:
+https://lists.apache.org/thread.html/r59f9ef03929d32120f91f4ea7e6e79edd5688d75d0a9b65fd26d1fe8%40%3Cannounce.tomcat.apache.org%3E
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://lists.debian.org/debian-lts-announce/2021/08/msg00009.html
+https://www.debian.org/security/2021/dsa-4952
+https://security.netapp.com/advisory/ntap-20210827-0007/
+https://www.debian.org/security/2021/dsa-4986
+https://www.oracle.com/security-alerts/cpuoct2021.html
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://security.gentoo.org/glsa/202208-34
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2021-25329
+
+Published: Mon, 01 Mar 2021 12:15:00 GMT
+CVE Name: tomcat
+Severity: MEDIUM
+
+The fix for CVE-2020-9484 was incomplete. When using Apache Tomcat 10.0.0-M1 to 10.0.0, 9.0.0.M1 to 9.0.41, 8.5.0 to 8.5.61 or 7.0.0. to 7.0.107 with a configuration edge case that was highly unlikely to be used, the Tomcat instance was still vulnerable to CVE-2020-9494. Note that both the previously published prerequisites for CVE-2020-9484 and the previously published mitigations for CVE-2020-9484 also apply to this issue.
+
+References:
+https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf%40%3Cannounce.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cannounce.apache.org%3E
+https://lists.apache.org/thread.html/rf6d5d57b114678d8898005faef31e9fd6d7c981fcc4ccfc3bc272fc9@%3Cdev.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cdev.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cannounce.tomcat.apache.org%3E
+http://www.openwall.com/lists/oss-security/2021/03/01/2
+https://lists.debian.org/debian-lts-announce/2021/03/msg00018.html
+https://security.netapp.com/advisory/ntap-20210409-0002/
+https://www.debian.org/security/2021/dsa-4891
+https://lists.apache.org/thread.html/r8a2ac0e476dbfc1e6440b09dcc782d444ad635d6da26f0284725a5dc@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rb51ccd58b2152fc75125b2406fc93e04ca9d34e737263faa6ff0f41f@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r732b2ca289dc02df2de820e8775559abd6c207f159e39f559547a085@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r11ce01e8a4c7269b88f88212f21830edf73558997ac7744f37769b77@%3Cusers.tomcat.apache.org%3E
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://www.oracle.com/security-alerts/cpuoct2021.html
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://security.gentoo.org/glsa/202208-34
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2021-25122
+
+Published: Mon, 01 Mar 2021 12:15:00 GMT
+CVE Name: tomcat
+Severity: MEDIUM
+
+When responding to new h2c connection requests, Apache Tomcat versions 10.0.0-M1 to 10.0.0, 9.0.0.M1 to 9.0.41 and 8.5.0 to 8.5.61 could duplicate request headers and a limited amount of request body from one request to another meaning user A and user B could both see the results of user A's request.
+
+References:
+https://lists.apache.org/thread.html/r7b95bc248603360501f18c8eb03bb6001ec0ee3296205b34b07105b7%40%3Cannounce.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rf6d5d57b114678d8898005faef31e9fd6d7c981fcc4ccfc3bc272fc9@%3Cdev.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r7b95bc248603360501f18c8eb03bb6001ec0ee3296205b34b07105b7@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r7b95bc248603360501f18c8eb03bb6001ec0ee3296205b34b07105b7@%3Cannounce.apache.org%3E
+https://lists.apache.org/thread.html/r7b95bc248603360501f18c8eb03bb6001ec0ee3296205b34b07105b7@%3Cdev.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r7b95bc248603360501f18c8eb03bb6001ec0ee3296205b34b07105b7@%3Cannounce.tomcat.apache.org%3E
+http://www.openwall.com/lists/oss-security/2021/03/01/1
+https://lists.apache.org/thread.html/rcd90bf36b1877e1310b87ecd14ed7bbb15da52b297efd9f0e7253a3b@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rd0463f9a5cbc02a485404c4b990f0da452e5ac5c237808edba11c947@%3Cusers.tomcat.apache.org%3E
+https://lists.debian.org/debian-lts-announce/2021/03/msg00018.html
+https://security.netapp.com/advisory/ntap-20210409-0002/
+https://www.debian.org/security/2021/dsa-4891
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://www.oracle.com/security-alerts/cpuoct2021.html
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://security.gentoo.org/glsa/202208-34
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2021-24122
+
+Published: Thu, 14 Jan 2021 15:15:00 GMT
+CVE Name: tomcat
+Severity: MEDIUM
+
+When serving resources from a network location using the NTFS file system, Apache Tomcat versions 10.0.0-M1 to 10.0.0-M9, 9.0.0.M1 to 9.0.39, 8.5.0 to 8.5.59 and 7.0.0 to 7.0.106 were susceptible to JSP source code disclosure in some configurations. The root cause was the unexpected behaviour of the JRE API File.getCanonicalPath() which in turn was caused by the inconsistent behaviour of the Windows API (FindFirstFileW) in some circumstances.
+
+References:
+https://lists.apache.org/thread.html/r1595889b083e05986f42b944dc43060d6b083022260b6ea64d2cec52%40%3Cannounce.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r776c64337495bf28b7d5597268114a888e3fad6045c40a0da0c66d4d@%3Cdev.tomee.apache.org%3E
+https://lists.apache.org/thread.html/rb32a73b7cb919d4f44a2596b6b951274c0004fc8b0e393d6829a45f9@%3Cusers.tomcat.apache.org%3E
+http://www.openwall.com/lists/oss-security/2021/01/14/1
+https://lists.apache.org/thread.html/r7e0bb9ea415724550e2b325e143b23e269579e54d66fcd7754bd0c20@%3Cdev.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r1595889b083e05986f42b944dc43060d6b083022260b6ea64d2cec52@%3Cannounce.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r1595889b083e05986f42b944dc43060d6b083022260b6ea64d2cec52@%3Cannounce.apache.org%3E
+https://lists.apache.org/thread.html/r7382e1e35b9bc7c8f320b90ad77e74c13172d08034e20c18000fe710@%3Cdev.tomee.apache.org%3E
+https://lists.apache.org/thread.html/rca833c6d42b7b9ce1563488c0929f29fcc95947d86e5e740258c8937@%3Cdev.tomcat.apache.org%3E
+https://security.netapp.com/advisory/ntap-20210212-0008/
+https://lists.debian.org/debian-lts-announce/2021/03/msg00018.html
+https://www.oracle.com//security-alerts/cpujul2021.html
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2020-9484
+
+Published: Wed, 20 May 2020 19:15:00 GMT
+CVE Name: tomcat
+Severity: MEDIUM
+
+When using Apache Tomcat versions 10.0.0-M1 to 10.0.0-M4, 9.0.0.M1 to 9.0.34, 8.5.0 to 8.5.54 and 7.0.0 to 7.0.103 if a) an attacker is able to control the contents and name of a file on the server; and b) the server is configured to use the PersistenceManager with a FileStore; and c) the PersistenceManager is configured with sessionAttributeValueClassNameFilter="null" (the default unless a SecurityManager is used) or a sufficiently lax filter to allow the attacker provided object to be deserialized; and d) the attacker knows the relative file path from the storage location used by FileStore to the file the attacker has control over; then, using a specifically crafted request, the attacker will be able to trigger remote code execution via deserialization of the file under their control. Note that all of conditions a) to d) must be true for the attack to succeed.
+
+References:
+https://lists.apache.org/thread.html/r77eae567ed829da9012cadb29af17f2df8fa23bf66faf88229857bb1%40%3Cannounce.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rf70f53af27e04869bdac18b1fc14a3ee529e59eb12292c8791a77926@%3Cusers.tomcat.apache.org%3E
+https://lists.debian.org/debian-lts-announce/2020/05/msg00020.html
+https://lists.apache.org/thread.html/r26950738f4b4ca2d256597cf391d52d3450fa665c297ea5ca38f5469@%3Cusers.tomcat.apache.org%3E
+http://lists.opensuse.org/opensuse-security-announce/2020-05/msg00057.html
+https://lists.apache.org/thread.html/r7bc247fffcb1d58415215c861d2354bd653c86266230d78a93c71ae2@%3Cdev.tomcat.apache.org%3E
+https://security.netapp.com/advisory/ntap-20200528-0005/
+https://lists.debian.org/debian-lts-announce/2020/05/msg00026.html
+http://seclists.org/fulldisclosure/2020/Jun/6
+http://packetstormsecurity.com/files/157924/Apache-Tomcat-CVE-2020-9484-Proof-Of-Concept.html
+https://security.gentoo.org/glsa/202006-21
+https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WJ7XHKWJWDNWXUJH6UB7CLIW4TWOZ26N/
+https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/GIQHXENTLYUNOES4LXVNJ2NCUQQRF5VJ/
+https://lists.apache.org/thread.html/rb1c0fb105ce2b93b7ec6fc1b77dd208022621a91c12d1f580813cfed@%3Cdev.tomcat.apache.org%3E
+https://lists.debian.org/debian-lts-announce/2020/07/msg00010.html
+https://www.oracle.com/security-alerts/cpujul2020.html
+https://www.debian.org/security/2020/dsa-4727
+https://usn.ubuntu.com/4448-1/
+https://lists.apache.org/thread.html/rc8473b08abdf3c16494ed817bec1717a0ee0c8080315bc27db5f21c3@%3Ccommits.tomee.apache.org%3E
+https://lists.apache.org/thread.html/raa4123e472175bb052fbba165d37187cea923f755e8f3f30d124cb3f@%3Ccommits.tomee.apache.org%3E
+https://lists.apache.org/thread.html/r123b3ebe389f46f9d337923f393cdae4d3e9b78d982d706712f0898c@%3Ccommits.tomee.apache.org%3E
+https://lists.apache.org/thread.html/rf59c72572b9fee674a5d5cc6afeca4ffc3918a02c354a81cc50b7119@%3Ccommits.tomee.apache.org%3E
+https://kc.mcafee.com/corporate/index?page=content&id=SB10332
+https://www.oracle.com/security-alerts/cpuoct2020.html
+https://usn.ubuntu.com/4596-1/
+https://www.oracle.com/security-alerts/cpujan2021.html
+https://lists.apache.org/thread.html/rf6d5d57b114678d8898005faef31e9fd6d7c981fcc4ccfc3bc272fc9@%3Cdev.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cdev.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cannounce.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cannounce.apache.org%3E
+https://lists.apache.org/thread.html/rfe62fbf9d4c314f166fe8c668e50e5d9dd882a99447f26f0367474bf@%3Cusers.tomcat.apache.org%3E
+http://www.openwall.com/lists/oss-security/2021/03/01/2
+https://lists.apache.org/thread.html/r8dd19c514face6dd85fd4eab0271854883f40c7307926c1f7cd5400c@%3Ccommits.tomee.apache.org%3E
+https://www.oracle.com/security-alerts/cpuApr2021.html
+https://lists.apache.org/thread.html/r8a2ac0e476dbfc1e6440b09dcc782d444ad635d6da26f0284725a5dc@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rb51ccd58b2152fc75125b2406fc93e04ca9d34e737263faa6ff0f41f@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r11ce01e8a4c7269b88f88212f21830edf73558997ac7744f37769b77@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rc1778b38e74b5b6142414d57623bd55b023a72361f422836782fca3c@%3Cdev.tomcat.apache.org%3E
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://www.oracle.com/security-alerts/cpuoct2021.html
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] tomcat-embed-core (9.0.38)
+
+CVE: CVE-2020-17527
+
+Published: Thu, 03 Dec 2020 19:15:00 GMT
+CVE Name: tomcat
+Severity: MEDIUM
+
+While investigating bug 64830 it was discovered that Apache Tomcat 10.0.0-M1 to 10.0.0-M9, 9.0.0-M1 to 9.0.39 and 8.5.0 to 8.5.59 could re-use an HTTP request header value from the previous stream received on an HTTP/2 connection for the request associated with the subsequent stream. While this would most likely lead to an error and the closure of the HTTP/2 connection, it is possible that information could leak between requests.
+
+References:
+https://lists.apache.org/thread.html/rce5ac9a40173651d540babce59f6f3825f12c6d4e886ba00823b11e5%40%3Cannounce.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rce5ac9a40173651d540babce59f6f3825f12c6d4e886ba00823b11e5@%3Cannounce.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rce5ac9a40173651d540babce59f6f3825f12c6d4e886ba00823b11e5@%3Cannounce.apache.org%3E
+https://lists.apache.org/thread.html/raa0e9ad388c1e6fd1e301b5e080f9439f64cb4178119a86a4801cc53@%3Cdev.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/rd5babd13d7a350b369b2f647b4dd32ce678af42f9aba5389df1ae6ca@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r8a227ac6a755a6406c1cc47dd48800e973d4cf13fe7fe68ac59c679c@%3Cdev.tomcat.apache.org%3E
+http://www.openwall.com/lists/oss-security/2020/12/03/3
+https://lists.apache.org/thread.html/rabbe6b3ae6a9795641d7a05c00d2378d5bbbe4240b7e20f09b092cce@%3Cissues.guacamole.apache.org%3E
+https://lists.apache.org/thread.html/ra35c8d617b17d59f400112cebadec43ad379f98198b4a9726190d7ee@%3Cissues.guacamole.apache.org%3E
+https://lists.apache.org/thread.html/r9fd47f1b03e9b41d16a5cf72659b533887267d3398d963c2fff3abfa@%3Ccommits.tomee.apache.org%3E
+https://lists.apache.org/thread.html/r26a2a66339087fc37db3caf201e446d3e83b5cce314371e235ff1784@%3Ccommits.tomee.apache.org%3E
+https://security.netapp.com/advisory/ntap-20201210-0003/
+https://lists.debian.org/debian-lts-announce/2020/12/msg00022.html
+https://security.gentoo.org/glsa/202012-23
+https://lists.apache.org/thread.html/rca833c6d42b7b9ce1563488c0929f29fcc95947d86e5e740258c8937@%3Cdev.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/ra9fcdb904dd2e2256ef90b3e4ced279cd464cb0ab63a6c64df5c010d@%3Cannounce.apache.org%3E
+https://lists.apache.org/thread.html/rbba08c4dcef3603e36276d49adda8eedbe458c5104314b4038f697e1@%3Cusers.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/ra9fcdb904dd2e2256ef90b3e4ced279cd464cb0ab63a6c64df5c010d@%3Cannounce.tomcat.apache.org%3E
+https://lists.apache.org/thread.html/r5a285242737ddef4d338236328aaaf3237183e1465a5efafd16b99ed@%3Cdev.tomcat.apache.org%3E
+https://www.debian.org/security/2021/dsa-4835
+https://lists.apache.org/thread.html/r2d6e05c5ff96f8068a59dfdb3800e9ee8d4e36ce1971783c6e5f9b20@%3Ccommits.tomee.apache.org%3E
+https://www.oracle.com/security-alerts/cpuApr2021.html
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://www.oracle.com/security-alerts/cpuapr2022.html
+
+
+[*] netty-transport-native-unix-common (4.1.52)
+
+[*] netty-transport-native-unix-common (4.1.52)
+
+CVE: CVE-2022-41915
+
+Published: Tue, 13 Dec 2022 07:15:00 GMT
+CVE Name: netty
+Severity: None
+
+Netty project is an event-driven asynchronous network application framework. Starting in version 4.1.83.Final and prior to 4.1.86.Final, when calling `DefaultHttpHeadesr.set` with an _iterator_ of values, header value validation was not performed, allowing malicious header values in the iterator to perform HTTP Response Splitting. This issue has been patched in version 4.1.86.Final. Integrators can work around the issue by changing the `DefaultHttpHeaders.set(CharSequence, Iterator<?>)` call, into a `remove()` call, and call `add()` in a loop over the iterator of values.
+
+References:
+https://github.com/netty/netty/security/advisories/GHSA-hh82-3pmq-7frp
+https://github.com/netty/netty/commit/fe18adff1c2b333acb135ab779a3b9ba3295a1c4
+https://github.com/netty/netty/pull/12760
+https://github.com/netty/netty/issues/13084
+https://lists.debian.org/debian-lts-announce/2023/01/msg00008.html
+https://www.debian.org/security/2023/dsa-5316
+https://security.netapp.com/advisory/ntap-20230113-0004/
+
+
+[*] netty-transport-native-unix-common (4.1.52)
+
+CVE: CVE-2022-41881
+
+Published: Mon, 12 Dec 2022 18:15:00 GMT
+CVE Name: netty
+Severity: None
+
+Netty project is an event-driven asynchronous network application framework. In versions prior to 4.1.86.Final, a StackOverflowError can be raised when parsing a malformed crafted message due to an infinite recursion. This issue is patched in version 4.1.86.Final. There is no workaround, except using a custom HaProxyMessageDecoder.
+
+References:
+https://github.com/netty/netty/security/advisories/GHSA-fx2c-96vj-985v
+https://lists.debian.org/debian-lts-announce/2023/01/msg00008.html
+https://www.debian.org/security/2023/dsa-5316
+https://security.netapp.com/advisory/ntap-20230113-0004/
+
+
+[*] netty-transport-native-unix-common (4.1.52)
+
+CVE: CVE-2022-24823
+
+Published: Fri, 06 May 2022 12:15:00 GMT
+CVE Name: netty
+Severity: LOW
+
+Netty is an open-source, asynchronous event-driven network application framework. The package `io.netty:netty-codec-http` prior to version 4.1.77.Final contains an insufficient fix for CVE-2021-21290. When Netty's multipart decoders are used local information disclosure can occur via the local system temporary directory if temporary storing uploads on the disk is enabled. This only impacts applications running on Java version 6 and lower. Additionally, this vulnerability impacts code running on Unix-like systems, and very old versions of Mac OSX and Windows as they all share the system temporary directory between all users. Version 4.1.77.Final contains a patch for this vulnerability. As a workaround, specify one's own `java.io.tmpdir` when starting the JVM or use DefaultHttpDataFactory.setBaseDir(...) to set the directory to something that is only readable by the current user.
+
+References:
+https://github.com/netty/netty/commit/185f8b2756a36aaa4f973f1a2a025e7d981823f1
+https://github.com/netty/netty/security/advisories/GHSA-5mcr-gq6c-3hq2
+https://github.com/netty/netty/security/advisories/GHSA-269q-hmxg-m83q
+https://security.netapp.com/advisory/ntap-20220616-0004/
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] netty-transport-native-unix-common (4.1.52)
+
+CVE: CVE-2021-43797
+
+Published: Thu, 09 Dec 2021 19:15:00 GMT
+CVE Name: netty
+Severity: MEDIUM
+
+Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients. Netty prior to version 4.1.71.Final skips control chars when they are present at the beginning / end of the header name. It should instead fail fast as these are not allowed by the spec and could lead to HTTP request smuggling. Failing to do the validation might cause netty to "sanitize" header names before it forward these to another remote system when used as proxy. This remote system can't see the invalid usage anymore, and therefore does not do the validation itself. Users should upgrade to version 4.1.71.Final.
+
+References:
+https://github.com/netty/netty/security/advisories/GHSA-wx5j-54mm-rqqq
+https://github.com/netty/netty/commit/07aa6b5938a8b6ed7a6586e066400e2643897323
+https://security.netapp.com/advisory/ntap-20220107-0003/
+https://www.oracle.com/security-alerts/cpuapr2022.html
+https://www.oracle.com/security-alerts/cpujul2022.html
+https://lists.debian.org/debian-lts-announce/2023/01/msg00008.html
+https://www.debian.org/security/2023/dsa-5316
+
+
+[*] netty-transport-native-unix-common (4.1.52)
+
+CVE: CVE-2021-37137
+
+Published: Tue, 19 Oct 2021 15:15:00 GMT
+CVE Name: netty
+Severity: MEDIUM
+
+The Snappy frame decoder function doesn't restrict the chunk length which may lead to excessive memory usage. Beside this it also may buffer reserved skippable chunks until the whole chunk was received which may lead to excessive memory usage as well. This vulnerability can be triggered by supplying malicious input that decompresses to a very big size (via a network stream or a file) or by sending a huge skippable chunk.
+
+References:
+https://github.com/netty/netty/security/advisories/GHSA-9vjp-v76f-g363
+https://lists.apache.org/thread.html/rfb2bf8597e53364ccab212fbcbb2a4e9f0a9e1429b1dc08023c6868e@%3Cdev.tinkerpop.apache.org%3E
+https://lists.apache.org/thread.html/r75490c61c2cb7b6ae2c81238fd52ae13636c60435abcd732d41531a0@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/r5e05eba32476c580412f9fbdfc9b8782d5b40558018ac4ac07192a04@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/r5406eaf3b07577d233b9f07cfc8f26e28369e6bab5edfcab41f28abb@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/r06a145c9bd41a7344da242cef07977b24abe3349161ede948e30913d@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/rd262f59b1586a108e320e5c966feeafbb1b8cdc96965debc7cc10b16@%3Ccommits.druid.apache.org%3E
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://security.netapp.com/advisory/ntap-20220210-0012/
+https://www.oracle.com/security-alerts/cpuapr2022.html
+https://www.oracle.com/security-alerts/cpujul2022.html
+https://lists.debian.org/debian-lts-announce/2023/01/msg00008.html
+https://www.debian.org/security/2023/dsa-5316
+
+
+[*] netty-transport-native-unix-common (4.1.52)
+
+CVE: CVE-2021-37136
+
+Published: Tue, 19 Oct 2021 15:15:00 GMT
+CVE Name: netty
+Severity: MEDIUM
+
+The Bzip2 decompression decoder function doesn't allow setting size restrictions on the decompressed output data (which affects the allocation size used during decompression). All users of Bzip2Decoder are affected. The malicious input can trigger an OOME and so a DoS attack
+
+References:
+https://github.com/netty/netty/security/advisories/GHSA-grg4-wf29-r9vv
+https://lists.apache.org/thread.html/rfb2bf8597e53364ccab212fbcbb2a4e9f0a9e1429b1dc08023c6868e@%3Cdev.tinkerpop.apache.org%3E
+https://lists.apache.org/thread.html/r75490c61c2cb7b6ae2c81238fd52ae13636c60435abcd732d41531a0@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/r5e05eba32476c580412f9fbdfc9b8782d5b40558018ac4ac07192a04@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/r5406eaf3b07577d233b9f07cfc8f26e28369e6bab5edfcab41f28abb@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/r06a145c9bd41a7344da242cef07977b24abe3349161ede948e30913d@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/rd262f59b1586a108e320e5c966feeafbb1b8cdc96965debc7cc10b16@%3Ccommits.druid.apache.org%3E
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://security.netapp.com/advisory/ntap-20220210-0012/
+https://www.oracle.com/security-alerts/cpuapr2022.html
+https://www.oracle.com/security-alerts/cpujul2022.html
+https://lists.debian.org/debian-lts-announce/2023/01/msg00008.html
+https://www.debian.org/security/2023/dsa-5316
+
+
+[*] netty-transport-native-unix-common (4.1.52)
+
+CVE: CVE-2021-21409
+
+Published: Tue, 30 Mar 2021 15:15:00 GMT
+CVE Name: netty
+Severity: MEDIUM
+
+Netty is an open-source, asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients. In Netty (io.netty:netty-codec-http2) before version 4.1.61.Final there is a vulnerability that enables request smuggling. The content-length header is not correctly validated if the request only uses a single Http2HeaderFrame with the endStream set to to true. This could lead to request smuggling if the request is proxied to a remote peer and translated to HTTP/1.1. This is a followup of GHSA-wm47-8v5p-wjpj/CVE-2021-21295 which did miss to fix this one case. This was fixed as part of 4.1.61.Final.
+
+References:
+https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21295
+https://github.com/netty/netty/security/advisories/GHSA-f256-j965-7f32
+https://github.com/netty/netty/security/advisories/GHSA-wm47-8v5p-wjpj
+https://github.com/netty/netty/commit/b0fa4d5aab4215f3c22ce6123dd8dd5f38dc0432
+https://www.debian.org/security/2021/dsa-4885
+https://lists.apache.org/thread.html/ra66e93703e3f4bd31bdfd0b6fb0c32ae96b528259bb1aa2b6d38e401@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r2732aa3884cacfecac4c54cfaa77c279ba815cad44b464a567216f83@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r70c3a7bfa904f06a1902f4df20ee26e4f09a46b8fd3eb304dc57a2de@%3Cdev.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r0ca82fec33334e571fe5b388272260778883e307e15415d7b1443de2@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r823d4b27fcba8dad5fe945bdefce3ca5a0031187966eb6ef3cc22ba9@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r101f82d8f3b5af0bf79aecbd5b2dd3b404f6bb51d1a54c2c3d29bed9@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rf521ff2be2e2dd38984174d3451e6ee935c845948845c8fccd86371d@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r5cbea8614812289a9b98d0cfc54b47f54cef424ac98d5e315b791795@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r69efd8ef003f612c43e4154e788ca3b1f837feaacd16d97854402355@%3Ccommits.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rdd206d9dd7eb894cc089b37fe6edde2932de88d63a6d8368b44f5101@%3Ccommits.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r4a98827bb4a7edbd69ef862f2351391845697c40711820d10df52ca5@%3Ccommits.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rac8cf45a1bab9ead5c9a860cbadd6faaeb7792203617b6ec3874736d@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/re4b0141939370304d676fe23774d0c6fbc584b648919825402d0cb39@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r4b8be87acf5b9c098a2ee350b5ca5716fe7afeaf0a21a4ee45a90687@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rdd5715f3ee5e3216d5e0083a07994f67da6dbb9731ce9e7a6389b18e@%3Ccommits.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r1b3cb056364794f919aaf26ceaf7423de64e7fdd05a914066e7d5219@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rf38e4dcdefc7c59f7ba0799a399d6d6e37b555d406a1dfc2fcbf0b35@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/r61564d86a75403b854cdafee67fc69c8b88c5f6802c2c838f4282cc8@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/r7879ddcb990c835c6b246654770d836f9d031dee982be836744e50ed@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/ra64d56a8a331ffd7bdcd24a9aaaeeedeacd5d639f5a683389123f898@%3Cdev.flink.apache.org%3E
+https://lists.apache.org/thread.html/r5baac01f9e06c40ff7aab209d5751b3b58802c63734e33324b70a06a@%3Cissues.flink.apache.org%3E
+https://lists.apache.org/thread.html/rd8f72411fb75b98d366400ae789966373b5c3eb3f511e717caf3e49e@%3Cissues.flink.apache.org%3E
+https://lists.apache.org/thread.html/re7c69756a102bebce8b8681882844a53e2f23975a189363e68ad0324@%3Cissues.flink.apache.org%3E
+https://lists.apache.org/thread.html/rbde2f13daf4911504f0eaea43eee4f42555241b5f6d9d71564b6c5fa@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r855b4b6814ac829ce2d48dd9d8138d07f33387e710de798ee92c011e@%3Cissues.flink.apache.org%3E
+https://lists.apache.org/thread.html/rafc77f9f03031297394f3d372ccea751b23576f8a2ae9b6b053894c5@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/re39391adcb863f0e9f3f15e7986255948f263f02e4700b82453e7102@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/re9e6ed60941da831675de2f8f733c026757fb4fa28a7b6c9f3dfb575@%3Cdev.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/re1911e05c08f3ec2bab85744d788773519a0afb27272a31ac2a0b4e8@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/redef0fb5474fd686781007de9ddb852b24f1b04131a248d9a4789183@%3Cnotifications.zookeeper.apache.org%3E
+https://security.netapp.com/advisory/ntap-20210604-0003/
+https://lists.apache.org/thread.html/r0b09f3e31e004fe583f677f7afa46bd30110904576c13c5ac818ac2c@%3Cissues.flink.apache.org%3E
+https://lists.apache.org/thread.html/r602e98daacc98934f097f07f2eed6eb07c18bfc1949c8489dc7bfcf5@%3Cissues.flink.apache.org%3E
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://lists.apache.org/thread.html/rba2a9ef1d0af882ab58fadb336a58818495245dda43d32a7d7837187@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rf148b2bf6c2754153a8629bc7495e216bd0bd4c915695486542a10b4@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/raa413040db6d2197593cc03edecfd168732e697119e6447b0a25d525@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rd4a6b7dec38ea6cd28b6f94bd4b312629a52b80be3786d5fb0e474bc@%3Cissues.kudu.apache.org%3E
+https://lists.apache.org/thread.html/rca0978b634a0c3ebee4126ec29c7f570b165fae3f8f3658754c1cbd3@%3Cissues.kudu.apache.org%3E
+https://lists.apache.org/thread.html/rf934292a4a1c189827f625d567838d2c1001e4739b158638d844105b@%3Cissues.kudu.apache.org%3E
+https://lists.apache.org/thread.html/r4ea2f1a9d79d4fc1896e085f31fb60a21b1770d0a26a5250f849372d@%3Cissues.kudu.apache.org%3E
+https://lists.apache.org/thread.html/ra655e5cec74d1ddf62adacb71d398abd96f3ea2c588f6bbf048348eb@%3Cissues.kudu.apache.org%3E
+https://lists.apache.org/thread.html/r6dac9bd799ceac499c7a7e152a9b0dc7f2fe7f89ec5605d129bb047b@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r31044fb995e894749cb821c6fe56f487c16a97028e6e360e59f09d58@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r5f2f120b2b8d099226473db1832ffb4d7c1d6dc2d228a164bf293a8e@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rcae42fba06979934208bbd515584b241d3ad01d1bb8b063512644362@%3Cdev.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r7b54563abebe3dbbe421e1ba075c2030d8d460372f8c79b7789684b6@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r9ec78dc409f3f1edff88f21cab53737f36aad46f582a9825389092e0@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r967002f0939e69bdec58f070735a19dd57c1f2b8f817949ca17cddae@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r9fe840c36b74f92b8d4a089ada1f9fd1d6293742efa18b10e06b66d2@%3Ccommits.zookeeper.apache.org%3E
+https://www.oracle.com/security-alerts/cpuoct2021.html
+https://lists.apache.org/thread.html/r584cf871f188c406d8bd447ff4e2fd9817fca862436c064d0951a071@%3Ccommits.pulsar.apache.org%3E
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://www.oracle.com/security-alerts/cpuapr2022.html
+
+
+[*] netty-transport-native-unix-common (4.1.52)
+
+CVE: CVE-2021-21295
+
+Published: Tue, 09 Mar 2021 19:15:00 GMT
+CVE Name: netty
+Severity: LOW
+
+Netty is an open-source, asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients. In Netty (io.netty:netty-codec-http2) before version 4.1.60.Final there is a vulnerability that enables request smuggling. If a Content-Length header is present in the original HTTP/2 request, the field is not validated by `Http2MultiplexHandler` as it is propagated up. This is fine as long as the request is not proxied through as HTTP/1.1. If the request comes in as an HTTP/2 stream, gets converted into the HTTP/1.1 domain objects (`HttpRequest`, `HttpContent`, etc.) via `Http2StreamFrameToHttpObjectCodec `and then sent up to the child channel's pipeline and proxied through a remote peer as HTTP/1.1 this may result in request smuggling. In a proxy case, users may assume the content-length is validated somehow, which is not the case. If the request is forwarded to a backend channel that is a HTTP/1.1 connection, the Content-Length now has meaning and needs to be checked. An attacker can smuggle requests inside the body as it gets downgraded from HTTP/2 to HTTP/1.1. For an example attack refer to the linked GitHub Advisory. Users are only affected if all of this is true: `HTTP2MultiplexCodec` or `Http2FrameCodec` is used, `Http2StreamFrameToHttpObjectCodec` is used to convert to HTTP/1.1 objects, and these HTTP/1.1 objects are forwarded to another remote peer. This has been patched in 4.1.60.Final As a workaround, the user can do the validation by themselves by implementing a custom `ChannelInboundHandler` that is put in the `ChannelPipeline` behind `Http2StreamFrameToHttpObjectCodec`.
+
+References:
+https://github.com/netty/netty/security/advisories/GHSA-wm47-8v5p-wjpj
+https://github.com/Netflix/zuul/pull/980
+https://github.com/netty/netty/commit/89c241e3b1795ff257af4ad6eadc616cb2fb3dc4
+https://lists.apache.org/thread.html/r02e467123d45006a1dda20a38349e9c74c3a4b53e2e07be0939ecb3f@%3Cdev.ranger.apache.org%3E
+https://lists.apache.org/thread.html/r7bb3cdc192e9a6f863d3ea05422f09fa1ae2b88d4663e63696ee7ef5@%3Cdev.ranger.apache.org%3E
+https://lists.apache.org/thread.html/r57245853c7245baab09eae08728c52b58fd77666538092389cc3e882@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/rb523bb6c60196c5f58514b86a8585c2069a4852039b45de3818b29d2@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/r490ca5611c150d193b320a2608209180713b7c68e501b67b0cffb925@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/r6d32fc3cd547f7c9a288a57c7f525f5d00a00d5d163613e0d10a23ef@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/rcd163e421273e8dca1c71ea298dce3dd11b41d51c3a812e0394e6a5d@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/r9924ef9357537722b28d04c98a189750b80694a19754e5057c34ca48@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/rb51d6202ff1a773f96eaa694b7da4ad3f44922c40b3d4e1a19c2f325@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/r790c2926efcd062067eb18fde2486527596d7275381cfaff2f7b3890@%3Cissues.bookkeeper.apache.org%3E
+https://lists.apache.org/thread.html/rc0087125cb15b4b78e44000f841cd37fefedfda942fd7ddf3ad1b528@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rb592033a2462548d061a83ac9449c5ff66098751748fcd1e2d008233@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r59bac5c09f7a4179b9e2460e8f41c278aaf3b9a21cc23678eb893e41@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r1908a34b9cc7120e5c19968a116ddbcffea5e9deb76c2be4fa461904@%3Cdev.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rb06c1e766aa45ee422e8261a8249b561784186483e8f742ea627bda4@%3Cdev.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r5e66e286afb5506cdfe9bbf68a323e8d09614f6d1ddc806ed0224700@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r3ff9e735ca33612d900607dc139ebd38a64cadc6bce292e53eb86d7f@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r1bca0b81193b74a451fc6d687ab58ef3a1f5ec40f6c61561d8dd9509@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r312ce5bd3c6bf08c138349b507b6f1c25fe9cf40b6f2b0014c9d12b1@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r9051e4f484a970b5566dc1870ecd9c1eb435214e2652cf3ea4d0c0cc@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/rcfc535afd413d9934d6ee509dce234dac41fa3747a7555befb17447e@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r3c293431c781696681abbfe1c573c2d9dcdae6fd3ff330ea22f0433f@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/rbadcbcb50195f00bbd196403865ced521ca70787999583c07be38d0e@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rdb4db3f5a9c478ca52a7b164680b88877a5a9c174e7047676c006b2c@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/r67e6a636cbc1958383a1cd72b7fd0cd7493360b1dd0e6c12f5761798@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r6a29316d758db628a1df49ca219d64caf493999b52cc77847bfba675@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r8db1d7b3b9acc9e8d2776395e280eb9615dd7790e1da8c57039963de@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r5470456cf1409a99893ae9dd57439799f6dc1a60fda90e11570f66fe@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r837bbcbf12e335e83ab448b1bd2c1ad7e86efdc14034b23811422e6a@%3Ccommits.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r22adb45fe902aeafcd0a1c4db13984224a667676c323c66db3af38a1@%3Ccommits.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rbed09768f496244a2e138dbbe6d2847ddf796c9c8ef9e50f2e3e30d9@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r6a122c25e352eb134d01e7f4fc4d345a491c5ee9453fef6fc754d15b@%3Ccommits.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r5232e33a1f3b310a3e083423f736f3925ebdb150844d60ac582809f8@%3Cnotifications.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r70cebada51bc6d49138272437d8a28fe971d0197334ef906b575044c@%3Ccommits.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/re6207ebe2ca4d44f2a6deee695ad6f27fd29d78980f1d46ed1574f91@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r2e93ce23e04c3f0a61e987d1111d0695cb668ac4ec4edbf237bd3e80@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/rdc096e13ac4501ea2e2b03a197682a313b85d3d3ec89d5ae5551b384@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r5fc5786cdd640b1b0a3c643237ce0011f0a08a296b11c0e2c669022c@%3Cdev.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r96ce18044880c33634c4b3fcecc57b8b90673c9364d63eba00385523@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/rc165e36ca7cb5417aec3f21bbc4ec00fb38ecebdd96a82cfab9bd56f@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/rc73b8dd01b1be276d06bdf07883ecd93fe1a01f139a99ef30ba4308c@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/rd25c88aad0e76240dd09f0eb34bdab924933946429e068a167adcb73@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/r2936730ef0a06e724b96539bc7eacfcd3628987c16b1b99c790e7b87@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r27b7e5a588ec826b15f38c40be500c50073400019ce7b8adfd07fece@%3Cissues.hbase.apache.org%3E
+https://lists.apache.org/thread.html/rb95d42ce220ed4a4683aa17833b5006d657bc4254bc5cb03cd5e6bfb@%3Cissues.hbase.apache.org%3E
+https://lists.apache.org/thread.html/r393a339ab0b63ef9e6502253eeab26e7643b3e69738d5948b2b1d064@%3Cissues.hbase.apache.org%3E
+https://lists.apache.org/thread.html/rcf3752209a8b04996373bf57fdc808b3bfaa2be8702698a0323641f8@%3Ccommits.hbase.apache.org%3E
+https://lists.apache.org/thread.html/r040a5e4d9cca2f98354b58a70b27099672276f66995c4e2e39545d0b@%3Cissues.hbase.apache.org%3E
+https://lists.apache.org/thread.html/ra83096bcbfe6e1f4d54449f8a013117a0536404e9d307ab4a0d34f81@%3Cissues.hbase.apache.org%3E
+https://lists.apache.org/thread.html/r86cd38a825ab2344f3e6cad570528852f29a4ffdf56ab67d75c36edf@%3Cissues.hbase.apache.org%3E
+https://lists.apache.org/thread.html/r6aee7e3566cb3e51eeed2fd8786704d91f80a7581e00a787ba9f37f6@%3Cissues.hbase.apache.org%3E
+https://lists.apache.org/thread.html/r22b2f34447d71c9a0ad9079b7860323d5584fb9b40eb42668c21eaf1@%3Cissues.hbase.apache.org%3E
+https://lists.apache.org/thread.html/r905b92099998291956eebf4f1c5d95f5a0cbcece2946cc46d32274fd@%3Cdev.hbase.apache.org%3E
+https://lists.apache.org/thread.html/r15f66ada9a5faf4bac69d9e7c4521cedfefa62df9509881603791969@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r268850f26639ebe249356ed6d8edb54ee8943be6f200f770784fb190@%3Cissues.hbase.apache.org%3E
+https://www.debian.org/security/2021/dsa-4885
+https://lists.apache.org/thread.html/r5baac01f9e06c40ff7aab209d5751b3b58802c63734e33324b70a06a@%3Cissues.flink.apache.org%3E
+https://lists.apache.org/thread.html/ra64d56a8a331ffd7bdcd24a9aaaeeedeacd5d639f5a683389123f898@%3Cdev.flink.apache.org%3E
+https://lists.apache.org/thread.html/re7c69756a102bebce8b8681882844a53e2f23975a189363e68ad0324@%3Cissues.flink.apache.org%3E
+https://lists.apache.org/thread.html/rd8f72411fb75b98d366400ae789966373b5c3eb3f511e717caf3e49e@%3Cissues.flink.apache.org%3E
+https://lists.apache.org/thread.html/rcfc154eb2de23d2dc08a56100341161e1a40a8ea86c693735437e8f2@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/ra96c74c37ed7252f78392e1ad16442bd16ae72a4d6c8db50dd55c88b@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/r855b4b6814ac829ce2d48dd9d8138d07f33387e710de798ee92c011e@%3Cissues.flink.apache.org%3E
+https://security.netapp.com/advisory/ntap-20210604-0003/
+https://lists.apache.org/thread.html/r04a3e0d9f53421fb946c60cc54762b7151dc692eb4e39970a7579052@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/r0b09f3e31e004fe583f677f7afa46bd30110904576c13c5ac818ac2c@%3Cissues.flink.apache.org%3E
+https://lists.apache.org/thread.html/racc191a1f70a4f13155e8002c61bddef2870b26441971c697436ad5d@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/r602e98daacc98934f097f07f2eed6eb07c18bfc1949c8489dc7bfcf5@%3Cissues.flink.apache.org%3E
+https://lists.apache.org/thread.html/rf87b870a22aa5c77c27900967b518a71a7d954c2952860fce3794b60@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/r16c4b55ac82be72f28adad4f8061477e5f978199d5725691dcc82c24@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/rae198f44c3f7ac5264045e6ba976be1703cff38dcf1609916e50210d@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/r3c4596b9b37f5ae91628ccf169d33cd5a0da4b16b6c39d5bad8e03f3@%3Cdev.jackrabbit.apache.org%3E
+https://lists.apache.org/thread.html/reafc834062486adfc7be5bb8f7b7793be0d33f483678a094c3f9d468@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/re4f70b62843e92163fab03b65e2aa8078693293a0c36f1cc260079ed@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/r8bcaf7821247b1836b10f6a1a3a3212b06272fd4cde4a859de1b78cf@%3Ccommits.servicecomb.apache.org%3E
+https://lists.apache.org/thread.html/rd4a6b7dec38ea6cd28b6f94bd4b312629a52b80be3786d5fb0e474bc@%3Cissues.kudu.apache.org%3E
+https://lists.apache.org/thread.html/rca0978b634a0c3ebee4126ec29c7f570b165fae3f8f3658754c1cbd3@%3Cissues.kudu.apache.org%3E
+https://lists.apache.org/thread.html/r4ea2f1a9d79d4fc1896e085f31fb60a21b1770d0a26a5250f849372d@%3Cissues.kudu.apache.org%3E
+https://lists.apache.org/thread.html/ra655e5cec74d1ddf62adacb71d398abd96f3ea2c588f6bbf048348eb@%3Cissues.kudu.apache.org%3E
+https://lists.apache.org/thread.html/rf934292a4a1c189827f625d567838d2c1001e4739b158638d844105b@%3Cissues.kudu.apache.org%3E
+https://lists.apache.org/thread.html/r32b0b640ad2be3b858f0af51c68a7d5c5a66a462c8bbb93699825cd3@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rddbb4f8d5db23265bb63d14ef4b3723b438abc1589f877db11d35450@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rf36f1114e84a3379b20587063686148e2d5a39abc0b8a66ff2a9087a@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r67c4f90658fde875521c949448c54c98517beecdc7f618f902c620ec@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rfff6ff8ffb31e8a32619c79774def44b6ffbb037c128c5ad3eab7171@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r33eb06b05afbc7df28d31055cae0cb3fd36cab808c884bf6d680bea5@%3Cdev.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r584cf871f188c406d8bd447ff4e2fd9817fca862436c064d0951a071@%3Ccommits.pulsar.apache.org%3E
+https://www.oracle.com/security-alerts/cpuapr2022.html
+
+
+[*] netty-transport-native-unix-common (4.1.52)
+
+CVE: CVE-2021-21290
+
+Published: Mon, 08 Feb 2021 20:15:00 GMT
+CVE Name: netty
+Severity: LOW
+
+Netty is an open-source, asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients. In Netty before version 4.1.59.Final there is a vulnerability on Unix-like systems involving an insecure temp file. When netty's multipart decoders are used local information disclosure can occur via the local system temporary directory if temporary storing uploads on the disk is enabled. On unix-like systems, the temporary directory is shared between all user. As such, writing to this directory using APIs that do not explicitly set the file/directory permissions can lead to information disclosure. Of note, this does not impact modern MacOS Operating Systems. The method "File.createTempFile" on unix-like systems creates a random file, but, by default will create this file with the permissions "-rw-r--r--". Thus, if sensitive information is written to this file, other local users can read this information. This is the case in netty's "AbstractDiskHttpData" is vulnerable. This has been fixed in version 4.1.59.Final. As a workaround, one may specify your own "java.io.tmpdir" when you start the JVM or use "DefaultHttpDataFactory.setBaseDir(...)" to set the directory to something that is only readable by the current user.
+
+References:
+https://github.com/netty/netty/security/advisories/GHSA-5mcr-gq6c-3hq2
+https://github.com/netty/netty/commit/c735357bf29d07856ad171c6611a2e1a0e0000ec
+https://lists.debian.org/debian-lts-announce/2021/02/msg00016.html
+https://lists.apache.org/thread.html/rc488f80094872ad925f0c73d283d4c00d32def81977438e27a3dc2bb@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r2748097ea4b774292539cf3de6e3b267fc7a88d6c8ec40f4e2e87bd4@%3Cdev.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r10308b625e49d4e9491d7e079606ca0df2f0a4d828f1ad1da64ba47b@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/ra503756ced78fdc2136bd33e87cb7553028645b261b1f5c6186a121e@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r2fda4dab73097051977f2ab818f75e04fbcb15bb1003c8530eac1059@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r0857b613604c696bf9743f0af047360baaded48b1c75cf6945a083c5@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r71dbb66747ff537640bb91eb0b2b24edef21ac07728097016f58b01f@%3Ccommits.kafka.apache.org%3E
+https://lists.apache.org/thread.html/rdba4f78ac55f803893a1a2265181595e79e3aa027e2e651dfba98c18@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/ra0fc2b4553dd7aaf75febb61052b7f1243ac3a180a71c01f29093013@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r326ec431f06eab7cb7113a7a338e59731b8d556d05258457f12bac1b@%3Cdev.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r5e4a540089760c8ecc2c411309d74264f1dad634ad93ad583ca16214@%3Ccommits.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r0053443ce19ff125981559f8c51cf66e3ab4350f47812b8cf0733a05@%3Cdev.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r743149dcc8db1de473e6bff0b3ddf10140a7357bc2add75f7d1fbb12@%3Cdev.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r5bf303d7c04da78f276765da08559fdc62420f1df539b277ca31f63b@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r4efed2c501681cb2e8d629da16e48d9eac429624fd4c9a8c6b8e7020@%3Cdev.tinkerpop.apache.org%3E
+https://lists.apache.org/thread.html/r02e467123d45006a1dda20a38349e9c74c3a4b53e2e07be0939ecb3f@%3Cdev.ranger.apache.org%3E
+https://lists.apache.org/thread.html/r7bb3cdc192e9a6f863d3ea05422f09fa1ae2b88d4663e63696ee7ef5@%3Cdev.ranger.apache.org%3E
+https://lists.apache.org/thread.html/rcd163e421273e8dca1c71ea298dce3dd11b41d51c3a812e0394e6a5d@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/r9924ef9357537722b28d04c98a189750b80694a19754e5057c34ca48@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/rb51d6202ff1a773f96eaa694b7da4ad3f44922c40b3d4e1a19c2f325@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/r790c2926efcd062067eb18fde2486527596d7275381cfaff2f7b3890@%3Cissues.bookkeeper.apache.org%3E
+https://lists.apache.org/thread.html/r5e66e286afb5506cdfe9bbf68a323e8d09614f6d1ddc806ed0224700@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/rc0087125cb15b4b78e44000f841cd37fefedfda942fd7ddf3ad1b528@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rb592033a2462548d061a83ac9449c5ff66098751748fcd1e2d008233@%3Cissues.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/r59bac5c09f7a4179b9e2460e8f41c278aaf3b9a21cc23678eb893e41@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r1908a34b9cc7120e5c19968a116ddbcffea5e9deb76c2be4fa461904@%3Cdev.zookeeper.apache.org%3E
+https://lists.apache.org/thread.html/rb06c1e766aa45ee422e8261a8249b561784186483e8f742ea627bda4@%3Cdev.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r2936730ef0a06e724b96539bc7eacfcd3628987c16b1b99c790e7b87@%3Cissues.zookeeper.apache.org%3E
+https://www.debian.org/security/2021/dsa-4885
+https://www.oracle.com/security-alerts/cpuApr2021.html
+https://lists.apache.org/thread.html/r5c701840aa2845191721e39821445e1e8c59711e71942b7796a6ec29@%3Cusers.activemq.apache.org%3E
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://www.oracle.com/security-alerts/cpuoct2021.html
+https://lists.apache.org/thread.html/r584cf871f188c406d8bd447ff4e2fd9817fca862436c064d0951a071@%3Ccommits.pulsar.apache.org%3E
+https://security.netapp.com/advisory/ntap-20220210-0011/
+https://www.oracle.com/security-alerts/cpuapr2022.html
+
+
+[*] spring-core (5.2.9)
+
+[*] spring-core (5.2.9)
+
+CVE: CVE-2022-22971
+
+Published: Thu, 12 May 2022 20:15:00 GMT
+CVE Name: spring_framework
+Severity: MEDIUM
+
+In spring framework versions prior to 5.3.20+ , 5.2.22+ and old unsupported versions, application with a STOMP over WebSocket endpoint is vulnerable to a denial of service attack by an authenticated user.
+
+References:
+https://tanzu.vmware.com/security/cve-2022-22971
+https://security.netapp.com/advisory/ntap-20220616-0003/
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] spring-core (5.2.9)
+
+CVE: CVE-2022-22970
+
+Published: Thu, 12 May 2022 20:15:00 GMT
+CVE Name: spring_framework
+Severity: LOW
+
+In spring framework versions prior to 5.3.20+ , 5.2.22+ and old unsupported versions, applications that handle file uploads are vulnerable to DoS attack if they rely on data binding to set a MultipartFile or javax.servlet.Part to a field in a model object.
+
+References:
+https://tanzu.vmware.com/security/cve-2022-22970
+https://security.netapp.com/advisory/ntap-20220616-0006/
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] spring-core (5.2.9)
+
+CVE: CVE-2022-22968
+
+Published: Thu, 14 Apr 2022 21:15:00 GMT
+CVE Name: spring_framework
+Severity: MEDIUM
+
+In Spring Framework versions 5.3.0 - 5.3.18, 5.2.0 - 5.2.20, and older unsupported versions, the patterns for disallowedFields on a DataBinder are case sensitive which means a field is not effectively protected unless it is listed with both upper and lower case for the first character of the field, including upper and lower case for the first character of all nested fields within the property path.
+
+References:
+https://tanzu.vmware.com/security/cve-2022-22968
+https://security.netapp.com/advisory/ntap-20220602-0004/
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] spring-core (5.2.9)
+
+CVE: CVE-2022-22965
+
+Published: Fri, 01 Apr 2022 23:15:00 GMT
+CVE Name: spring_framework
+Severity: HIGH
+
+A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it.
+
+References:
+https://tanzu.vmware.com/security/cve-2022-22965
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-java-spring-rce-Zx9GUc67
+https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0005
+http://packetstormsecurity.com/files/166713/Spring4Shell-Code-Execution.html
+https://cert-portal.siemens.com/productcert/pdf/ssa-254054.pdf
+https://www.oracle.com/security-alerts/cpuapr2022.html
+http://packetstormsecurity.com/files/167011/Spring4Shell-Spring-Framework-Class-Property-Remote-Code-Execution.html
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] spring-core (5.2.9)
+
+CVE: CVE-2022-22950
+
+Published: Fri, 01 Apr 2022 23:15:00 GMT
+CVE Name: spring_framework
+Severity: MEDIUM
+
+n Spring Framework versions 5.3.0 - 5.3.16 and older unsupported versions, it is possible for a user to provide a specially crafted SpEL expression that may cause a denial of service condition.
+
+References:
+https://tanzu.vmware.com/security/cve-2022-22950
+
+
+[*] spring-core (5.2.9)
+
+CVE: CVE-2021-22118
+
+Published: Thu, 27 May 2021 15:15:00 GMT
+CVE Name: spring_framework
+Severity: MEDIUM
+
+In Spring Framework, versions 5.2.x prior to 5.2.15 and versions 5.3.x prior to 5.3.7, a WebFlux application is vulnerable to a privilege escalation: by (re)creating the temporary storage directory, a locally authenticated malicious user can read or modify files that have been uploaded to the WebFlux application, or overwrite arbitrary files with multipart request data.
+
+References:
+https://tanzu.vmware.com/security/cve-2021-22118
+https://security.netapp.com/advisory/ntap-20210713-0005/
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://www.oracle.com/security-alerts/cpuoct2021.html
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://www.oracle.com/security-alerts/cpuapr2022.html
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] spring-core (5.2.9)
+
+CVE: CVE-2021-22096
+
+Published: Thu, 28 Oct 2021 16:15:00 GMT
+CVE Name: spring_framework
+Severity: MEDIUM
+
+In Spring Framework versions 5.3.0 - 5.3.10, 5.2.0 - 5.2.17, and older unsupported versions, it is possible for a user to provide malicious input to cause the insertion of additional log entries.
+
+References:
+https://tanzu.vmware.com/security/cve-2021-22096
+https://security.netapp.com/advisory/ntap-20211125-0005/
+https://www.oracle.com/security-alerts/cpuapr2022.html
+
+
+[*] spring-core (5.2.9)
+
+CVE: CVE-2021-22060
+
+Published: Mon, 10 Jan 2022 14:10:00 GMT
+CVE Name: spring_framework
+Severity: MEDIUM
+
+In Spring Framework versions 5.3.0 - 5.3.13, 5.2.0 - 5.2.18, and older unsupported versions, it is possible for a user to provide malicious input to cause the insertion of additional log entries. This is a follow-up to CVE-2021-22096 that protects against additional types of input and in more places of the Spring Framework codebase.
+
+References:
+https://tanzu.vmware.com/security/cve-2021-22060
+https://www.oracle.com/security-alerts/cpuapr2022.html
+
+
+[*] snakeyaml (1.26)
+
+[*] snakeyaml (1.26)
+
+CVE: CVE-2022-41854
+
+Published: Fri, 11 Nov 2022 13:15:00 GMT
+CVE Name: snakeyaml
+Severity: None
+
+Those using Snakeyaml to parse untrusted YAML files may be vulnerable to Denial of Service attacks (DOS). If the parser is running on user supplied input, an attacker may supply content that causes the parser to crash by stack overflow. This effect may support a denial of service attack.
+
+References:
+https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50355
+https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7MKE4XWRXTH32757H7QJU4ACS67DYDCR/
+https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KSPAJ5Y45A4ZDION2KN5RDWLHK4XKY2J/
+
+
+[*] snakeyaml (1.26)
+
+CVE: CVE-2022-38752
+
+Published: Mon, 05 Sep 2022 10:15:00 GMT
+CVE Name: snakeyaml
+Severity: None
+
+Using snakeYAML to parse untrusted YAML files may be vulnerable to Denial of Service attacks (DOS). If the parser is running on user supplied input, an attacker may supply content that causes the parser to crash by stack-overflow.
+
+References:
+https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47081
+https://bitbucket.org/snakeyaml/snakeyaml/issues/531/stackoverflow-oss-fuzz-47081
+
+
+[*] snakeyaml (1.26)
+
+CVE: CVE-2022-38751
+
+Published: Mon, 05 Sep 2022 10:15:00 GMT
+CVE Name: snakeyaml
+Severity: None
+
+Using snakeYAML to parse untrusted YAML files may be vulnerable to Denial of Service attacks (DOS). If the parser is running on user supplied input, an attacker may supply content that causes the parser to crash by stackoverflow.
+
+References:
+https://bitbucket.org/snakeyaml/snakeyaml/issues/530/stackoverflow-oss-fuzz-47039
+https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47039
+https://lists.debian.org/debian-lts-announce/2022/10/msg00001.html
+
+
+[*] snakeyaml (1.26)
+
+CVE: CVE-2022-38750
+
+Published: Mon, 05 Sep 2022 10:15:00 GMT
+CVE Name: snakeyaml
+Severity: None
+
+Using snakeYAML to parse untrusted YAML files may be vulnerable to Denial of Service attacks (DOS). If the parser is running on user supplied input, an attacker may supply content that causes the parser to crash by stackoverflow.
+
+References:
+https://bitbucket.org/snakeyaml/snakeyaml/issues/526/stackoverflow-oss-fuzz-47027
+https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47027
+https://lists.debian.org/debian-lts-announce/2022/10/msg00001.html
+
+
+[*] snakeyaml (1.26)
+
+CVE: CVE-2022-38749
+
+Published: Mon, 05 Sep 2022 10:15:00 GMT
+CVE Name: snakeyaml
+Severity: None
+
+Using snakeYAML to parse untrusted YAML files may be vulnerable to Denial of Service attacks (DOS). If the parser is running on user supplied input, an attacker may supply content that causes the parser to crash by stackoverflow.
+
+References:
+https://bitbucket.org/snakeyaml/snakeyaml/issues/525/got-stackoverflowerror-for-many-open
+https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=47024
+https://lists.debian.org/debian-lts-announce/2022/10/msg00001.html
+
+
+[*] snakeyaml (1.26)
+
+CVE: CVE-2022-25857
+
+Published: Tue, 30 Aug 2022 05:15:00 GMT
+CVE Name: snakeyaml
+Severity: None
+
+The package org.yaml:snakeyaml from 0 and before 1.31 are vulnerable to Denial of Service (DoS) due missing to nested depth limitation for collections.
+
+References:
+https://bitbucket.org/snakeyaml/snakeyaml/commits/fc300780da21f4bb92c148bc90257201220cf174
+https://github.com/snakeyaml/snakeyaml/commit/fc300780da21f4bb92c148bc90257201220cf174
+https://security.snyk.io/vuln/SNYK-JAVA-ORGYAML-2806360
+https://bitbucket.org/snakeyaml/snakeyaml/issues/525
+https://lists.debian.org/debian-lts-announce/2022/10/msg00001.html
+
+
+[*] spring-security-core (5.3.4)
+
+[*] spring-security-core (5.3.4)
+
+CVE: CVE-2022-22978
+
+Published: Thu, 19 May 2022 15:15:00 GMT
+CVE Name: spring_security
+Severity: HIGH
+
+In Spring Security versions 5.5.6 and 5.6.3 and older unsupported versions, RegexRequestMatcher can easily be misconfigured to be bypassed on some servlet containers. Applications using RegexRequestMatcher with `.` in the regular expression are possibly vulnerable to an authorization bypass
+
+References:
+https://tanzu.vmware.com/security/cve-2022-22978
+https://security.netapp.com/advisory/ntap-20220707-0003/
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] spring-security-core (5.3.4)
+
+CVE: CVE-2022-22976
+
+Published: Thu, 19 May 2022 15:15:00 GMT
+CVE Name: spring_security
+Severity: MEDIUM
+
+Spring Security versions 5.5.x prior to 5.5.7, 5.6.x prior to 5.6.4, and earlier unsupported versions contain an integer overflow vulnerability. When using the BCrypt class with the maximum work factor (31), the encoder does not perform any salt rounds, due to an integer overflow error. The default settings are not affected by this CVE.
+
+References:
+https://tanzu.vmware.com/security/cve-2022-22976
+https://security.netapp.com/advisory/ntap-20220707-0003/
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] spring-security-core (5.3.4)
+
+CVE: CVE-2021-22119
+
+Published: Tue, 29 Jun 2021 17:15:00 GMT
+CVE Name: spring_security
+Severity: MEDIUM
+
+Spring Security versions 5.5.x prior to 5.5.1, 5.4.x prior to 5.4.7, 5.3.x prior to 5.3.10 and 5.2.x prior to 5.2.11 are susceptible to a Denial-of-Service (DoS) attack via the initiation of the Authorization Request in an OAuth 2.0 Client Web and WebFlux application. A malicious user or attacker can send multiple requests initiating the Authorization Request for the Authorization Code Grant, which has the potential of exhausting system resources using a single session or multiple sessions.
+
+References:
+https://tanzu.vmware.com/security/cve-2021-22119
+https://lists.apache.org/thread.html/r390783b3b1c59b978131ac08390bf77fbb3863270cbde59d5b0f5fde@%3Cpluto-dev.portals.apache.org%3E
+https://lists.apache.org/thread.html/r3868207b967f926819fe3aa8d33f1666429be589bb4a62104a49f4e3@%3Cpluto-dev.portals.apache.org%3E
+https://lists.apache.org/thread.html/ra53677224fe4f04c2599abc88032076faa18dc84b329cdeba85d4cfc@%3Cpluto-scm.portals.apache.org%3E
+https://lists.apache.org/thread.html/r89aa1b48a827f5641310305214547f1d6b2101971a49b624737c497f@%3Cpluto-dev.portals.apache.org%3E
+https://lists.apache.org/thread.html/r163b3e4e39803882f5be05ee8606b2b9812920e196daa2a82997ce14@%3Cpluto-dev.portals.apache.org%3E
+https://lists.apache.org/thread.html/r08a449010786e0bcffa4b5781b04fcb55d6eafa62cb79b8347680aad@%3Cissues.nifi.apache.org%3E
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] spring-security-core (5.3.4)
+
+CVE: CVE-2021-22112
+
+Published: Tue, 23 Feb 2021 19:15:00 GMT
+CVE Name: spring_security
+Severity: HIGH
+
+Spring Security 5.4.x prior to 5.4.4, 5.3.x prior to 5.3.8.RELEASE, 5.2.x prior to 5.2.9.RELEASE, and older unsupported versions can fail to save the SecurityContext if it is changed more than once in a single request.A malicious user cannot cause the bug to happen (it must be programmed in). However, if the application's intent is to only allow the user to run with elevated privileges in a small portion of the application, the bug can be leveraged to extend those privileges to the rest of the application.
+
+References:
+http://www.openwall.com/lists/oss-security/2021/02/19/7
+https://tanzu.vmware.com/security/cve-2021-22112
+https://lists.apache.org/thread.html/redbd004a503b3520ae5746c2ab5e93fd7da807a8c128e60d2002cd9b@%3Cissues.nifi.apache.org%3E
+https://www.oracle.com/security-alerts/cpuApr2021.html
+https://lists.apache.org/thread.html/ra6389b1b82108a3b6bbcd22979f7665fd437c2a3408c9509a15a9ca1@%3Cpluto-dev.portals.apache.org%3E
+https://lists.apache.org/thread.html/r37423ec7eea340e92a409452c35b649dce02fdc467f0b3f52086c177@%3Cpluto-dev.portals.apache.org%3E
+https://lists.apache.org/thread.html/r2cb05e499807900ba23e539643eead9c5f0652fd271f223f89da1804@%3Cpluto-scm.portals.apache.org%3E
+https://lists.apache.org/thread.html/r3868207b967f926819fe3aa8d33f1666429be589bb4a62104a49f4e3@%3Cpluto-dev.portals.apache.org%3E
+https://lists.apache.org/thread.html/ra53677224fe4f04c2599abc88032076faa18dc84b329cdeba85d4cfc@%3Cpluto-scm.portals.apache.org%3E
+https://lists.apache.org/thread.html/r89aa1b48a827f5641310305214547f1d6b2101971a49b624737c497f@%3Cpluto-dev.portals.apache.org%3E
+https://lists.apache.org/thread.html/r163b3e4e39803882f5be05ee8606b2b9812920e196daa2a82997ce14@%3Cpluto-dev.portals.apache.org%3E
+https://lists.apache.org/thread.html/r390783b3b1c59b978131ac08390bf77fbb3863270cbde59d5b0f5fde@%3Cpluto-dev.portals.apache.org%3E
+https://lists.apache.org/thread.html/r413e380088c427f56102968df89ef2f336473e1b56b7d4b3a571a378@%3Cpluto-dev.portals.apache.org%3E
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://www.oracle.com/security-alerts/cpuoct2021.html
+
+
+[*] jackson-databind (2.11.2)
+
+[*] jackson-databind (2.11.2)
+
+CVE: CVE-2022-42004
+
+Published: Sun, 02 Oct 2022 05:15:00 GMT
+CVE Name: jackson-databind
+Severity: None
+
+In FasterXML jackson-databind before 2.13.4, resource exhaustion can occur because of a lack of a check in BeanDeserializer._deserializeFromArray to prevent use of deeply nested arrays. An application is vulnerable only with certain customized choices for deserialization.
+
+References:
+https://github.com/FasterXML/jackson-databind/issues/3582
+https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=50490
+https://github.com/FasterXML/jackson-databind/commit/063183589218fec19a9293ed2f17ec53ea80ba88
+https://security.gentoo.org/glsa/202210-21
+https://www.debian.org/security/2022/dsa-5283
+https://security.netapp.com/advisory/ntap-20221118-0008/
+https://lists.debian.org/debian-lts-announce/2022/11/msg00035.html
+
+
+[*] jackson-databind (2.11.2)
+
+CVE: CVE-2022-42003
+
+Published: Sun, 02 Oct 2022 05:15:00 GMT
+CVE Name: jackson-databind
+Severity: None
+
+In FasterXML jackson-databind before 2.14.0-rc1, resource exhaustion can occur because of a lack of a check in primitive value deserializers to avoid deep wrapper array nesting, when the UNWRAP_SINGLE_VALUE_ARRAYS feature is enabled. Additional fix version in 2.13.4.1 and 2.12.17.1
+
+References:
+https://github.com/FasterXML/jackson-databind/commit/d78d00ee7b5245b93103fef3187f70543d67ca33
+https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=51020
+https://github.com/FasterXML/jackson-databind/issues/3590
+https://security.gentoo.org/glsa/202210-21
+https://www.debian.org/security/2022/dsa-5283
+https://security.netapp.com/advisory/ntap-20221124-0004/
+https://lists.debian.org/debian-lts-announce/2022/11/msg00035.html
+
+
+[*] jackson-databind (2.11.2)
+
+CVE: CVE-2020-36518
+
+Published: Fri, 11 Mar 2022 07:15:00 GMT
+CVE Name: jackson-databind
+Severity: MEDIUM
+
+jackson-databind before 2.13.0 allows a Java StackOverflow exception and denial of service via a large depth of nested objects.
+
+References:
+https://github.com/FasterXML/jackson-databind/issues/2816
+https://www.oracle.com/security-alerts/cpuapr2022.html
+https://lists.debian.org/debian-lts-announce/2022/05/msg00001.html
+https://security.netapp.com/advisory/ntap-20220506-0004/
+https://www.oracle.com/security-alerts/cpujul2022.html
+https://www.debian.org/security/2022/dsa-5283
+https://lists.debian.org/debian-lts-announce/2022/11/msg00035.html
+
+
+[*] postgresql (42.2.16)
+
+[*] postgresql (42.2.16)
+
+CVE: CVE-2022-41946
+
+Published: Wed, 23 Nov 2022 20:15:00 GMT
+CVE Name: postgresql_jdbc_driver
+Severity: None
+
+pgjdbc is an open source postgresql JDBC Driver. In affected versions a prepared statement using either `PreparedStatement.setText(int, InputStream)` or `PreparedStatemet.setBytea(int, InputStream)` will create a temporary file if the InputStream is larger than 2k. This will create a temporary file which is readable by other users on Unix like systems, but not MacOS. On Unix like systems, the system's temporary directory is shared between all users on that system. Because of this, when files and directories are written into this directory they are, by default, readable by other users on that same system. This vulnerability does not allow other users to overwrite the contents of these directories or files. This is purely an information disclosure vulnerability. Because certain JDK file system APIs were only added in JDK 1.7, this this fix is dependent upon the version of the JDK you are using. Java 1.7 and higher users: this vulnerability is fixed in 4.5.0. Java 1.6 and lower users: no patch is available. If you are unable to patch, or are stuck running on Java 1.6, specifying the java.io.tmpdir system environment variable to a directory that is exclusively owned by the executing user will mitigate this vulnerability.
+
+References:
+https://github.com/pgjdbc/pgjdbc/commit/9008dc9aade6dbfe4efafcd6872ebc55f4699cf5
+https://github.com/pgjdbc/pgjdbc/security/advisories/GHSA-562r-vg33-8x8h
+https://lists.debian.org/debian-lts-announce/2022/12/msg00003.html
+https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/25TY2L3RMVNOC7VAHJEAO7PTT6M6JJAD/
+
+
+[*] postgresql (42.2.16)
+
+CVE: CVE-2022-31197
+
+Published: Wed, 03 Aug 2022 19:15:00 GMT
+CVE Name: postgresql_jdbc_driver
+Severity: None
+
+PostgreSQL JDBC Driver (PgJDBC for short) allows Java programs to connect to a PostgreSQL database using standard, database independent Java code. The PGJDBC implementation of the `java.sql.ResultRow.refreshRow()` method is not performing escaping of column names so a malicious column name that contains a statement terminator, e.g. `;`, could lead to SQL injection. This could lead to executing additional SQL commands as the application's JDBC user. User applications that do not invoke the `ResultSet.refreshRow()` method are not impacted. User application that do invoke that method are impacted if the underlying database that they are querying via their JDBC application may be under the control of an attacker. The attack requires the attacker to trick the user into executing SQL against a table name who's column names would contain the malicious SQL and subsequently invoke the `refreshRow()` method on the ResultSet. Note that the application's JDBC user and the schema owner need not be the same. A JDBC application that executes as a privileged user querying database schemas owned by potentially malicious less-privileged users would be vulnerable. In that situation it may be possible for the malicious user to craft a schema that causes the application to execute commands as the privileged user. Patched versions will be released as `42.2.26` and `42.4.1`. Users are advised to upgrade. There are no known workarounds for this issue.
+
+References:
+https://github.com/pgjdbc/pgjdbc/commit/739e599d52ad80f8dcd6efedc6157859b1a9d637
+https://github.com/pgjdbc/pgjdbc/security/advisories/GHSA-r38f-c4h4-hqq2
+https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I6WHUADTZBBQLVHO4YG4XCWDGWBT4LRP/
+https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UTFE6SV33P5YYU2GNTQZQKQRVR3GYE4S/
+https://lists.debian.org/debian-lts-announce/2022/10/msg00009.html
+
+
+[*] postgresql (42.2.16)
+
+CVE: CVE-2022-21724
+
+Published: Wed, 02 Feb 2022 12:15:00 GMT
+CVE Name: postgresql_jdbc_driver
+Severity: HIGH
+
+pgjdbc is the offical PostgreSQL JDBC Driver. A security hole was found in the jdbc driver for postgresql database while doing security research. The system using the postgresql library will be attacked when attacker control the jdbc url or properties. pgjdbc instantiates plugin instances based on class names provided via `authenticationPluginClassName`, `sslhostnameverifier`, `socketFactory`, `sslfactory`, `sslpasswordcallback` connection properties. However, the driver did not verify if the class implements the expected interface before instantiating the class. This can lead to code execution loaded via arbitrary classes. Users using plugins are advised to upgrade. There are no known workarounds for this issue.
+
+References:
+https://github.com/pgjdbc/pgjdbc/security/advisories/GHSA-v7wg-cpwc-24m4
+https://github.com/pgjdbc/pgjdbc/commit/f4d0ed69c0b3aae8531d83d6af4c57f22312c813
+https://security.netapp.com/advisory/ntap-20220311-0005/
+https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BVEO7BEFXPBVHSPYL3YKQWZI6DYXQLFS/
+https://lists.debian.org/debian-lts-announce/2022/05/msg00027.html
+https://www.debian.org/security/2022/dsa-5196
+
+
+[*] logback-core (1.2.3)
+
+[*] logback-core (1.2.3)
+
+CVE: CVE-2021-42550
+
+Published: Thu, 16 Dec 2021 19:15:00 GMT
+CVE Name: logback
+Severity: HIGH
+
+In logback version 1.2.7 and prior versions, an attacker with the required privileges to edit configurations files could craft a malicious configuration allowing to execute arbitrary code loaded from LDAP servers.
+
+References:
+https://github.com/cn-panda/logbackRceDemo
+https://jira.qos.ch/browse/LOGBACK-1591
+http://logback.qos.ch/news.html
+https://security.netapp.com/advisory/ntap-20211229-0001/
+http://seclists.org/fulldisclosure/2022/Jul/11
+http://packetstormsecurity.com/files/167794/Open-Xchange-App-Suite-7.10.x-Cross-Site-Scripting-Command-Injection.html
+https://cert-portal.siemens.com/productcert/pdf/ssa-371761.pdf
+
+
+[*] httpclient (4.5.12)
+
+[*] httpclient (4.5.12)
+
+CVE: CVE-2020-13956
+
+Published: Wed, 02 Dec 2020 17:15:00 GMT
+CVE Name: httpclient
+Severity: MEDIUM
+
+Apache HttpClient versions prior to version 4.5.13 and 5.0.3 can misinterpret malformed authority component in request URIs passed to the library as java.net.URI object and pick the wrong target host for request execution.
+
+References:
+https://lists.apache.org/thread.html/r6dab7da30f8bf075f79ee189e33b45a197502e2676481bb8787fc0d7%40%3Cdev.hc.apache.org%3E
+https://lists.apache.org/thread.html/rcced7ed3237c29cd19c1e9bf465d0038b8b2e967b99fc283db7ca553@%3Cdev.ranger.apache.org%3E
+https://lists.apache.org/thread.html/rf7ca60f78f05b772cc07d27e31bcd112f9910a05caf9095e38ee150f@%3Cdev.ranger.apache.org%3E
+https://lists.apache.org/thread.html/r12cb62751b35bdcda0ae2a08b67877d665a1f4d41eee0fa7367169e0@%3Cdev.ranger.apache.org%3E
+https://lists.apache.org/thread.html/r63296c45d5d84447babaf39bd1487329d8a80d8d563e67a4b6f3d8a7@%3Cdev.ranger.apache.org%3E
+https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/r34178ab6ef106bc940665fd3f4ba5026fac3603b3fa2aefafa0b619d@%3Cdev.ranger.apache.org%3E
+https://lists.apache.org/thread.html/rb725052404fabffbe093c83b2c46f3f87e12c3193a82379afbc529f8@%3Csolr-user.lucene.apache.org%3E
+https://lists.apache.org/thread.html/rb33212dab7beccaf1ffef9b88610047c644f644c7a0ebdc44d77e381@%3Ccommits.turbine.apache.org%3E
+https://lists.apache.org/thread.html/r2dc7930b43eadc78220d269b79e13ecd387e4bee52db67b2f47d4303@%3Cgitbox.hive.apache.org%3E
+https://lists.apache.org/thread.html/rfc00884c7b7ca878297bffe45fcb742c362b00b26ba37070706d44c3@%3Cissues.hive.apache.org%3E
+https://lists.apache.org/thread.html/r5fec9c1d67f928179adf484b01e7becd7c0a6fdfe3a08f92ea743b90@%3Cissues.hive.apache.org%3E
+https://lists.apache.org/thread.html/r043a75acdeb52b15dd5e9524cdadef4202e6a5228644206acf9363f9@%3Cdev.hive.apache.org%3E
+https://lists.apache.org/thread.html/rd5ab56beb2ac6879f6ab427bc4e5f7691aed8362d17b713f61779858@%3Cissues.hive.apache.org%3E
+https://lists.apache.org/thread.html/rcd9ad5dda60c82ab0d0c9bd3e9cb1dc740804451fc20c7f451ef5cc4@%3Cgitbox.hive.apache.org%3E
+https://lists.apache.org/thread.html/rae14ae25ff4a60251e3ba2629c082c5ba3851dfd4d21218b99b56652@%3Cissues.solr.apache.org%3E
+https://lists.apache.org/thread.html/re504acd4d63b8df2a7353658f45c9a3137e5f80e41cf7de50058b2c1@%3Cissues.solr.apache.org%3E
+https://lists.apache.org/thread.html/r5de3d3808e7b5028df966e45115e006456c4e8931dc1e29036f17927@%3Cissues.solr.apache.org%3E
+https://lists.apache.org/thread.html/r03bbc318c81be21f5c8a9b85e34f2ecc741aa804a8e43b0ef2c37749@%3Cissues.maven.apache.org%3E
+https://lists.apache.org/thread.html/r8aa1e5c343b89aec5b69961471950e862f15246cb6392910161c389b@%3Cissues.maven.apache.org%3E
+https://lists.apache.org/thread.html/ra539f20ef0fb0c27ee39945b5f56bf162e5c13d1c60f7344dab8de3b@%3Cissues.maven.apache.org%3E
+https://lists.apache.org/thread.html/r06cf3ca5c8ceb94b39cd24a73d4e96153b485a7dac88444dd876accb@%3Cissues.drill.apache.org%3E
+https://lists.apache.org/thread.html/rb4ba262d6f08ab9cf8b1ebbcd9b00b0368ffe90dad7ad7918b4b56fc@%3Cdev.drill.apache.org%3E
+https://lists.apache.org/thread.html/rea3dbf633dde5008d38bf6600a3738b9216e733e03f9ff7becf79625@%3Cissues.drill.apache.org%3E
+https://lists.apache.org/thread.html/r55b2a1d1e9b1ec9db792b93da8f0f99a4fd5a5310b02673359d9b4d1@%3Cdev.drill.apache.org%3E
+https://lists.apache.org/thread.html/rc3739e0ad4bcf1888c6925233bfc37dd71156bbc8416604833095c42@%3Cdev.drill.apache.org%3E
+https://lists.apache.org/thread.html/r9e52a6c72c8365000ecd035e48cc9fee5a677a150350d4420c46443d@%3Cdev.drill.apache.org%3E
+https://lists.apache.org/thread.html/r6eb2dae157dbc9af1f30d1f64e9c60d4ebef618f3dce4a0e32d6ea4d@%3Ccommits.drill.apache.org%3E
+https://lists.apache.org/thread.html/rad6222134183046f3928f733bf680919e0c390739bfbfe6c90049673@%3Cissues.drill.apache.org%3E
+https://lists.apache.org/thread.html/r549ac8c159bf0c568c19670bedeb8d7c0074beded951d34b1c1d0d05@%3Cdev.drill.apache.org%3E
+https://lists.apache.org/thread.html/reef569c2419705754a3acf42b5f19b2a158153cef0e448158bc54917@%3Cdev.drill.apache.org%3E
+https://lists.apache.org/thread.html/r70c429923100c5a4fae8e5bc71c8a2d39af3de4888f50a0ac3755e6f@%3Ccommits.creadur.apache.org%3E
+https://lists.apache.org/thread.html/rfb35f6db9ba1f1e061b63769a4eff5abadcc254ebfefc280e5a0dcf1@%3Ccommits.creadur.apache.org%3E
+https://lists.apache.org/thread.html/r2a03dc210231d7e852ef73015f71792ac0fcaca6cccc024c522ef17d@%3Ccommits.creadur.apache.org%3E
+https://lists.apache.org/thread.html/r3f740e4c38bba1face49078aa5cbeeb558c27be601cc9712ad2dcd1e@%3Ccommits.creadur.apache.org%3E
+https://lists.apache.org/thread.html/r34efec51cb817397ccf9f86e25a75676d435ba5f83ee7b2eabdad707@%3Ccommits.creadur.apache.org%3E
+https://www.oracle.com/security-alerts/cpuApr2021.html
+https://lists.apache.org/thread.html/rc990e2462ec32b09523deafb2c73606208599e196fa2d7f50bdbc587@%3Cissues.maven.apache.org%3E
+https://lists.apache.org/thread.html/r132e4c6a560cfc519caa1aaee63bdd4036327610eadbd89f76dd5457@%3Cdev.creadur.apache.org%3E
+https://lists.apache.org/thread.html/r6a3cda38d050ebe13c1bc9a28d0a8ec38945095d07eca49046bcb89f@%3Cissues.solr.apache.org%3E
+https://lists.apache.org/thread.html/rc505fee574fe8d18f9b0c655a4d120b0ae21bb6a73b96003e1d9be35@%3Cissues.solr.apache.org%3E
+https://lists.apache.org/thread.html/r5b55f65c123a7481104d663a915ec45a0d103e6aaa03f42ed1c07a89@%3Cdev.jackrabbit.apache.org%3E
+https://lists.apache.org/thread.html/rc0863892ccfd9fd0d0ae10091f24ee769fb39b8957fe4ebabfc11f17@%3Cdev.jackrabbit.apache.org%3E
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://lists.apache.org/thread.html/rfbedcb586a1e7dfce87ee03c720e583fc2ceeafa05f35c542cecc624@%3Cissues.solr.apache.org%3E
+https://lists.apache.org/thread.html/r87ddc09295c27f25471269ad0a79433a91224045988b88f0413a97ec@%3Cissues.bookkeeper.apache.org%3E
+https://lists.apache.org/thread.html/rf03228972e56cb4a03e6d9558188c2938078cf3ceb23a3fead87c9ca@%3Cissues.bookkeeper.apache.org%3E
+https://lists.apache.org/thread.html/r2835543ef0f91adcc47da72389b816e36936f584c7be584d2314fac3@%3Cissues.lucene.apache.org%3E
+https://lists.apache.org/thread.html/rf43d17ed0d1fb4fb79036b582810ef60b18b1ef3add0d5dea825af1e@%3Cissues.lucene.apache.org%3E
+https://lists.apache.org/thread.html/rc5c6ccb86d2afe46bbd4b71573f0448dc1f87bbcd5a0d8c7f8f904b2@%3Cissues.lucene.apache.org%3E
+https://lists.apache.org/thread.html/r6d672b46622842e565e00f6ef6bef83eb55d8792aac2bee75bff9a2a@%3Cissues.lucene.apache.org%3E
+https://lists.apache.org/thread.html/rf4db88c22e1be9eb60c7dc623d0528642c045fb196a24774ac2fa3a3@%3Cissues.lucene.apache.org%3E
+https://lists.apache.org/thread.html/r3cecd59fba74404cbf4eb430135e1080897fb376f111406a78bed13a@%3Cissues.lucene.apache.org%3E
+https://lists.apache.org/thread.html/ree942561f4620313c75982a4e5f3b74fe6f7062b073210779648eec2@%3Cissues.lucene.apache.org%3E
+https://lists.apache.org/thread.html/r0bebe6f9808ac7bdf572873b4fa96a29c6398c90dab29f131f3ebffe@%3Cissues.solr.apache.org%3E
+https://lists.apache.org/thread.html/ra8bc6b61c5df301a6fe5a716315528ecd17ccb8a7f907e24a47a1a5e@%3Cissues.lucene.apache.org%3E
+https://lists.apache.org/thread.html/r4850b3fbaea02fde2886e461005e4af8d37c80a48b3ce2a6edca0e30@%3Cissues.solr.apache.org%3E
+https://lists.apache.org/thread.html/r0a75b8f0f72f3e18442dc56d33f3827b905f2fe5b7ba48997436f5d1@%3Cissues.solr.apache.org%3E
+https://www.oracle.com/security-alerts/cpuoct2021.html
+https://lists.apache.org/thread.html/r69a94e2f302d1b778bdfefe90fcb4b8c50b226438c3c8c1d0de85a19@%3Cdev.ranger.apache.org%3E
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://security.netapp.com/advisory/ntap-20220210-0002/
+https://www.oracle.com/security-alerts/cpuapr2022.html
+
+
+[*] bcpkix-jdk15on (1.65)
+
+[*] bcpkix-jdk15on (1.65)
+
+CVE: CVE-2020-28052
+
+Published: Fri, 18 Dec 2020 01:15:00 GMT
+CVE Name: legion-of-the-bouncy-castle-java-crytography-api
+Severity: MEDIUM
+
+An issue was discovered in Legion of the Bouncy Castle BC Java 1.65 and 1.66. The OpenBSDBCrypt.checkPassword utility method compared incorrect data when checking the password, allowing incorrect passwords to indicate they were matching with previously hashed ones that were different.
+
+References:
+https://github.com/bcgit/bc-java/wiki/CVE-2020-28052
+https://www.bouncycastle.org/releasenotes.html
+https://www.synopsys.com/blogs/software-security/cve-2020-28052-bouncy-castle/
+https://lists.apache.org/thread.html/r954d80fd18e9dafef6e813963eb7e08c228151c2b6268ecd63b35d1f@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/rddd2237b8636a48d573869006ee809262525efb2b6ffa6eff50d2a2d@%3Cjira.kafka.apache.org%3E
+https://lists.apache.org/thread.html/r25d53acd06f29244b8a103781b0339c5e7efee9099a4d52f0c230e4a@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/r175f5a25d100dbe2b1bd3459b3ce882a84c3ff91b120ed4ff2d57b53@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/rdfd2901b8b697a3f6e2c9c6ecc688fd90d7f881937affb5144d61d6e@%3Ccommits.druid.apache.org%3E
+https://lists.apache.org/thread.html/r37d332c0bf772f4982d1fdeeb2f88dd71dab6451213e69e43734eadc@%3Ccommits.pulsar.apache.org%3E
+https://lists.apache.org/thread.html/r8c36ba34e80e05eecb1f80071cc834d705616f315b634ec0c7d8f42e@%3Cissues.solr.apache.org%3E
+https://www.oracle.com/security-alerts/cpuApr2021.html
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://lists.apache.org/thread.html/r77af3ac7c3bfbd5454546e13faf7aec21d627bdcf36c9ca240436b94@%3Cissues.karaf.apache.org%3E
+https://lists.apache.org/thread.html/rfc0db1f3c375087e69a239f9284ded72d04fbb55849eadde58fa9dc2@%3Cissues.karaf.apache.org%3E
+https://lists.apache.org/thread.html/rdcbad6d8ce72c79827ed8c635f9a62dd919bb21c94a0b64cab2efc31@%3Cissues.karaf.apache.org%3E
+https://lists.apache.org/thread.html/r167dbc42ef7c59802c2ca1ac14735ef9cf687c25208229993d6206fe@%3Cissues.karaf.apache.org%3E
+https://lists.apache.org/thread.html/rcd37d9214b08067a2e8f2b5b4fd123a1f8cb6008698d11ef44028c21@%3Cissues.karaf.apache.org%3E
+https://lists.apache.org/thread.html/r2ddabd06d94b60cfb0141e4abb23201c628ab925e30742f61a04d013@%3Cissues.karaf.apache.org%3E
+https://lists.apache.org/thread.html/r4e1619cfefcd031fac62064a3858f5c9229eef907bd5d8ef14c594fc@%3Cissues.karaf.apache.org%3E
+https://lists.apache.org/thread.html/r30a139c165b3da6e0d5536434ab1550534011b1fdfcd2f5d95892c5b@%3Cissues.karaf.apache.org%3E
+https://lists.apache.org/thread.html/rf9abfc0223747a56694825c050cc6b66627a293a32ea926b3de22402@%3Cissues.karaf.apache.org%3E
+https://lists.apache.org/thread.html/rc9e441c1576bdc4375d32526d5cf457226928e9c87b9f54ded26271c@%3Cissues.karaf.apache.org%3E
+https://www.oracle.com/security-alerts/cpuoct2021.html
+https://www.oracle.com/security-alerts/cpujan2022.html
+https://www.oracle.com/security-alerts/cpuapr2022.html
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] bcpkix-jdk15on (1.65)
+
+[*] bcpkix-jdk15on (1.65)
+
+CVE: CVE-2020-15522
+
+Published: Thu, 20 May 2021 12:15:00 GMT
+CVE Name: the_bouncy_castle_crypto_package_for_java
+Severity: MEDIUM
+
+Bouncy Castle BC Java before 1.66, BC C# .NET before 1.8.7, BC-FJA before 1.0.1.2, 1.0.2.1, and BC-FNA before 1.0.1.1 have a timing issue within the EC math library that can expose information about the private key when an attacker is able to observe timing information for the generation of multiple deterministic ECDSA signatures.
+
+References:
+https://github.com/bcgit/bc-csharp/wiki/CVE-2020-15522
+https://www.bouncycastle.org/releasenotes.html
+https://github.com/bcgit/bc-java/wiki/CVE-2020-15522
+https://security.netapp.com/advisory/ntap-20210622-0007/
+
+
+[*] hibernate-core (5.4.21)
+
+[*] hibernate-core (5.4.21)
+
+CVE: CVE-2020-25638
+
+Published: Wed, 02 Dec 2020 15:15:00 GMT
+CVE Name: hibernate_orm
+Severity: MEDIUM
+
+A flaw was found in hibernate-core in versions prior to and including 5.4.23.Final. A SQL injection in the implementation of the JPA Criteria API can permit unsanitized literals when a literal is used in the SQL comments of the query. This flaw could allow an attacker to access unauthorized information or possibly conduct further attacks. The highest threat from this vulnerability is to data confidentiality and integrity.
+
+References:
+https://bugzilla.redhat.com/show_bug.cgi?id=1881353
+https://lists.debian.org/debian-lts-announce/2021/01/msg00000.html
+https://www.debian.org/security/2021/dsa-4908
+https://www.oracle.com//security-alerts/cpujul2021.html
+https://lists.apache.org/thread.html/r833c1276e41334fa675848a08daf0c61f39009f9f9a400d9f7006d44@%3Cdev.turbine.apache.org%3E
+https://lists.apache.org/thread.html/rf2378209c676a28b71f9b604a3b3517c448540b85367160e558ef9df@%3Ccommits.turbine.apache.org%3E
+https://www.oracle.com/security-alerts/cpuapr2022.html
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+[*] liquibase-core (3.8.9)
+
+[*] liquibase-core (3.8.9)
+
+CVE: CVE-2022-0839
+
+Published: Fri, 04 Mar 2022 15:15:00 GMT
+CVE Name: liquibase
+Severity: HIGH
+
+Improper Restriction of XML External Entity Reference in GitHub repository liquibase/liquibase prior to 4.8.0.
+
+References:
+https://github.com/liquibase/liquibase/commit/33d9d925082097fb1a3d2fc8e44423d964cd9381
+https://huntr.dev/bounties/f1ae5779-b406-4594-a8a3-d089c68d6e70
+https://www.oracle.com/security-alerts/cpujul2022.html
+
+
+---------------- [ Scanning Result ] ----------------
+keycloak-spring-boot-adapter-core (11.0.2) has 19 vulnerabilities
+tomcat-embed-core (9.0.38) has 13 vulnerabilities
+netty-transport-native-unix-common (4.1.52) has 9 vulnerabilities
+spring-core (5.2.9) has 8 vulnerabilities
+snakeyaml (1.26) has 6 vulnerabilities
+spring-security-core (5.3.4) has 4 vulnerabilities
+jackson-databind (2.11.2) has 3 vulnerabilities
+postgresql (42.2.16) has 3 vulnerabilities
+logback-core (1.2.3) has 1 vulnerabilities
+httpclient (4.5.12) has 1 vulnerabilities
+bcpkix-jdk15on (1.65) has 1 vulnerabilities
+bcpkix-jdk15on (1.65) has 1 vulnerabilities
+hibernate-core (5.4.21) has 1 vulnerabilities
+liquibase-core (3.8.9) has 1 vulnerabilities
+Found total: 71
