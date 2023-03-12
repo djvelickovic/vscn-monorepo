@@ -24,8 +24,7 @@ class TransformService(object):
             return []
 
         sanitized_version = self.__sanitize_version(version)
-        expanded_product = self.__expand_product(product)
-        products = self.__transform_products(expanded_product)
+        products = self.__transform_products(product)
 
         def build_product_object(p):
             return {
@@ -40,56 +39,12 @@ class TransformService(object):
         with Repository(self.connection_string) as repo:
             return repo.get_product_mappings(product_name)
 
-    def __expand_product(self, product) -> list:
-
-        if statically_defined_products := self._get_mapping(product):
-            return statically_defined_products
-
-        rules_results = [
-            self.__remove_core_from_the_end_and_append_framework(product),
-            self.__remove_tokens(product)
-        ]
-
-        result = [product]
-        for rule_results in rules_results:
-            result.extend(rule_results)
-
-        return result
-
-    def __transform_products(self, products: list):
-        result = []
-        result.extend(products)
-        transformed = list(map(self.__replace_dash_with_downscore, products))
-        for items in transformed:
-            result.extend(items)
-        return result
-
-    def __replace_dash_with_downscore(self, product: str):
-        if '-' in product:
-            return [product.replace('-', '_')]
-        return []
-
-    def __remove_core_from_the_end_and_append_framework(self, product: str) -> list:
-        if product.endswith('-core') or product.endswith('_core'):
-            return [product[0:-5], f'{product[0:-5]}-framework']
-        return []
-
-    def __remove_tokens(self, product: str) -> list:
-        if (not (product.endswith('-core')
-                 or product.endswith('_core')
-                 or product.endswith('_common')
-                 or product.endswith('-common'))):
-            return []
-
-        tokens = re.split(r'-|_', product)
-
-        result = set()
-
-        for i in range(0, len(tokens)):
-            result.add('_'.join(tokens[0:len(tokens) - i]))
-            result.add('-'.join(tokens[0:len(tokens) - i]))
-
-        return list(result)
+    def __transform_products(self, product) -> list:
+        mapped_products = self._get_mapping(product)
+        if len(mapped_products) > 0:
+            return mapped_products
+        else:
+            return [product]
 
     def __should_skip_dependency(self, dependency) -> bool:
         return dependency['version'].endswith('SNAPSHOT')

@@ -54,6 +54,14 @@ create table product_mappings (
 create index idx__product_mappings__product_name on product_mappings (product_name);
 create index idx__product_mappings__cve_product_name on product_mappings (cve_product_name);
 
+create table unknown_product_mappings (
+      unknown_product_name varchar(256),
+      potential_matches jsonb
+);
+
+create index idx__unknown_product_mappings__product_name on unknown_product_mappings (unknown_product_name);
+
+
 
 insert into product_mappings (product_name, cve_product_name)
 values 

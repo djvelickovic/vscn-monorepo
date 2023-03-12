@@ -7,7 +7,7 @@
 	"settings": {
 		"python.envFile": "${workspaceFolder}/.env",
 		"files.associations": {
-			"*.sql" : "postgres"
+			"*.sql" : "sql"
 		},
 		"yaml.schemas": {
 			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/all.json": "kube/*.yml",
