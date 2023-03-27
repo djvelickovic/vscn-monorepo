@@ -536,4 +536,4 @@ Content-Type: application/json
 
 ### Get Cve
 
-GET http://localhost:11001/vscn/cve?id=CVE-2020-35490&id=CVE-2021-22096
+GET http://localhost:11001/vscn/cve?id=CVE-2022-1471
