@@ -11,6 +11,10 @@
 		},
 		"yaml.schemas": {
 			"https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.25.4-local/all.json": "kube/*.yml",
-		}
+		},
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.black-formatter"
+		},
+		"python.formatting.provider": "none"
 	}
 }
