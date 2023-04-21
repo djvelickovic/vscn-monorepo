@@ -1,8 +1,0 @@
-version: "3.9"
-services:
-  vscn-loader:
-    image: vscn-loader:latest
-    env_file:
-      - docker-compose.env
-    environment:
-      - YEARS=2023,2022,2021

@@ -1,22 +1,8 @@
 version: "3.9"
 
 services:
-  # vscn-server:
-  #   image: vscn-server:latest
-  #   restart: always
-  #   env_file:
-  #     - vscn-server/docker-compose.env
-  #   ports:
-  #     - "11001:80"
-  # vscn-loader:
-  #   image: vscn-loader:latest
-  #   env_file:
-  #     - vscn-loader/docker-compose.env
-  #   environment:
-  #     - YEARS=2023,2022,2021,2020,2019
   db:
     image: postgres:15
-    restart: always
     environment:
       POSTGRES_USER: postgresql
       POSTGRES_PASSWORD: postgresql

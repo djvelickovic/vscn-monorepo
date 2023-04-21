@@ -60,12 +60,3 @@ create table unknown_product_mappings (
 );
 
 create index idx__unknown_product_mappings__product_name on unknown_product_mappings (unknown_product_name);
-
-
-
-insert into product_mappings (product_name, cve_product_name)
-values 
-('bcpkix-jdk15on', 'legion-of-the-bouncy-castle-java-crytography-api'),
-('bcpkix-jdk15on', 'the_bouncy_castle_crypto_package_for_java'),
-('hibernate-core', 'hibernate_orm'),
-('postgresql', 'postgresql_jdbc_driver');
