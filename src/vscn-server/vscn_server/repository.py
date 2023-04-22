@@ -15,7 +15,7 @@ class Repository(object):
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.conn.close()
 
-    def fetch_potential_cves(self, product: str) -> List[Dict]:
+    def fetch_potential_cves(self, product_name: str) -> List[Dict]:
         with self.conn.cursor() as cur:
             cur.execute(
                 """
@@ -35,7 +35,7 @@ class Repository(object):
                 FROM cves
                 WHERE products ? %s
                 """,
-                (product,),
+                (product_name,),
             )
             result = cur.fetchall()
             return self._map_matcher(result)
@@ -75,30 +75,33 @@ class Repository(object):
             result = cur.fetchall()
             return list(map(lambda row: row[0], result))
 
-    def insert_unknown_products(self, unmatched_dependencies: Set) -> int:
+    def insert_unmatched_dependencies(self, unmatched_dependencies: Set[Tuple[str, str]], language: str, package_manager: str) -> int:
         with self.conn.cursor() as cur:
+            
             args_str = ",".join(
-                cur.mogrify("(%s, %s)", (name, version))
-                for name, version in unmatched_dependencies
+                cur.mogrify("(%s, %s, %s, %s)", (product_name, version, language, package_manager))
+                for product_name, version in unmatched_dependencies
             )
+            
             cur.execute(
                 f"""
-                INSERT INTO undetected_dependencies (dependency_name, version)
+                INSERT INTO unmatched_dependencies (product_name, version, language, package_manager)
                 VALUES {args_str}
                 """
             )
             self.conn.commit()
             return cur.rowcount
 
-    def get_product_mappings(self, dependency_name: str) -> List[str]:
+    #TODO: make bulk fetch
+    def get_product_mappings(self, dependency_name: str, language: str) -> List[str]:
         with self.conn.cursor() as cur:
             cur.execute(
                 """
-                SELECT cve_product_name
-                FROM product_mappings
-                WHERE dependency_name = %s
+                SELECT product_name
+                FROM dependency_product_mappings
+                WHERE dependency_name = %s AND language = %s
                 """,
-                (dependency_name,),
+                (dependency_name, language),
             )
             result = cur.fetchall()
             return list(map(lambda row: row[0], result))

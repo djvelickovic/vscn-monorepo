@@ -6,534 +6,561 @@ POST http://127.0.0.1:11001/vscn/scan
 Content-Type: application/json
 
 {
+  "metadata": {
+    "language": "java",
+    "package_manager": "maven",
+    "operating_system": {
+      "name": "macos",
+      "version": "13.3.1"
+    }
+  },
   "dependencies": [
     {
-      "product": "antlr",
+      "dependency_name": "antlr",
       "version": "2.7.7"
     },
     {
-      "product": "logback-classic",
+      "dependency_name": "logback-classic",
       "version": "1.2.3"
     },
     {
-      "product": "logback-core",
+      "dependency_name": "logback-core",
       "version": "1.2.3"
     },
     {
-      "product": "jackson-annotations",
+      "dependency_name": "jackson-annotations",
       "version": "2.11.2"
     },
     {
-      "product": "jackson-core",
+      "dependency_name": "jackson-core",
       "version": "2.11.2"
     },
     {
-      "product": "jackson-databind",
+      "dependency_name": "jackson-databind",
       "version": "2.11.2"
     },
     {
-      "product": "jackson-datatype-jdk8",
+      "dependency_name": "jackson-datatype-jdk8",
       "version": "2.11.2"
     },
     {
-      "product": "jackson-datatype-jsr310",
+      "dependency_name": "jackson-datatype-jsr310",
       "version": "2.11.2"
     },
     {
-      "product": "jackson-module-parameter-names",
+      "dependency_name": "jackson-module-parameter-names",
       "version": "2.11.2"
     },
     {
-      "product": "classmate",
+      "dependency_name": "classmate",
       "version": "1.5.1"
     },
     {
-      "product": "json-path",
+      "dependency_name": "json-path",
       "version": "2.4.0"
     },
     {
-      "product": "jakarta.activation",
+      "dependency_name": "jakarta.activation",
       "version": "1.2.2"
     },
     {
-      "product": "istack-commons-runtime",
+      "dependency_name": "istack-commons-runtime",
       "version": "3.0.11"
     },
     {
-      "product": "android-json",
+      "dependency_name": "android-json",
       "version": "0.0.20131108.vaadin1"
     },
     {
-      "product": "HikariCP",
+      "dependency_name": "HikariCP",
       "version": "3.4.5"
     },
     {
-      "product": "commons-codec",
+      "dependency_name": "commons-codec",
       "version": "1.14"
     },
     {
-      "product": "netty-buffer",
+      "dependency_name": "netty-buffer",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-codec-http2",
+      "dependency_name": "netty-codec-http2",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-codec-http",
+      "dependency_name": "netty-codec-http",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-codec-socks",
+      "dependency_name": "netty-codec-socks",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-codec",
+      "dependency_name": "netty-codec",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-common",
+      "dependency_name": "netty-common",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-handler-proxy",
+      "dependency_name": "netty-handler-proxy",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-handler",
+      "dependency_name": "netty-handler",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-resolver",
+      "dependency_name": "netty-resolver",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-transport-native-epoll",
+      "dependency_name": "netty-transport-native-epoll",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-transport-native-unix-common",
+      "dependency_name": "netty-transport-native-unix-common",
       "version": "4.1.52.Final"
     },
     {
-      "product": "netty-transport",
+      "dependency_name": "netty-transport",
       "version": "4.1.52.Final"
     },
     {
-      "product": "reactor-netty",
+      "dependency_name": "reactor-netty",
       "version": "0.9.12.RELEASE"
     },
     {
-      "product": "reactor-core",
+      "dependency_name": "reactor-core",
       "version": "3.3.10.RELEASE"
     },
     {
-      "product": "jakarta.activation-api",
+      "dependency_name": "jakarta.activation-api",
       "version": "1.2.2"
     },
     {
-      "product": "jakarta.annotation-api",
+      "dependency_name": "jakarta.annotation-api",
       "version": "1.3.5"
     },
     {
-      "product": "jakarta.persistence-api",
+      "dependency_name": "jakarta.persistence-api",
       "version": "2.2.3"
     },
     {
-      "product": "jakarta.transaction-api",
+      "dependency_name": "jakarta.transaction-api",
       "version": "1.3.3"
     },
     {
-      "product": "jakarta.xml.bind-api",
+      "dependency_name": "jakarta.xml.bind-api",
       "version": "2.3.3"
     },
     {
-      "product": "javax.activation-api",
+      "dependency_name": "javax.activation-api",
       "version": "1.2.0"
     },
     {
-      "product": "jaxb-api",
+      "dependency_name": "jaxb-api",
       "version": "2.3.1"
     },
     {
-      "product": "junit",
+      "dependency_name": "junit",
       "version": "4.13"
     },
     {
-      "product": "byte-buddy-agent",
+      "dependency_name": "byte-buddy-agent",
       "version": "1.10.14"
     },
     {
-      "product": "byte-buddy",
+      "dependency_name": "byte-buddy",
       "version": "1.10.14"
     },
     {
-      "product": "accessors-smart",
+      "dependency_name": "accessors-smart",
       "version": "1.2"
     },
     {
-      "product": "json-smart",
+      "dependency_name": "json-smart",
       "version": "2.3"
     },
     {
-      "product": "httpclient",
+      "dependency_name": "httpclient",
       "version": "4.5.12"
     },
     {
-      "product": "httpcore",
+      "dependency_name": "httpcore",
       "version": "4.4.13"
     },
     {
-      "product": "log4j-api",
+      "dependency_name": "log4j-api",
       "version": "2.13.3"
     },
     {
-      "product": "log4j-to-slf4j",
+      "dependency_name": "log4j-to-slf4j",
       "version": "2.13.3"
     },
     {
-      "product": "tomcat-embed-core",
+      "dependency_name": "tomcat-embed-core",
       "version": "9.0.38"
     },
     {
-      "product": "tomcat-embed-websocket",
+      "dependency_name": "tomcat-embed-websocket",
       "version": "9.0.38"
     },
     {
-      "product": "apiguardian-api",
+      "dependency_name": "apiguardian-api",
       "version": "1.1.0"
     },
     {
-      "product": "aspectjweaver",
+      "dependency_name": "aspectjweaver",
       "version": "1.9.6"
     },
     {
-      "product": "assertj-core",
+      "dependency_name": "assertj-core",
       "version": "3.16.1"
     },
     {
-      "product": "bcpkix-jdk15on",
+      "dependency_name": "bcpkix-jdk15on",
       "version": "1.65"
     },
     {
-      "product": "bcprov-jdk15on",
+      "dependency_name": "bcprov-jdk15on",
       "version": "1.65"
     },
     {
-      "product": "checker-qual",
+      "dependency_name": "checker-qual",
       "version": "3.5.0"
     },
     {
-      "product": "dom4j",
+      "dependency_name": "dom4j",
       "version": "2.1.3"
     },
     {
-      "product": "jaxb-runtime",
+      "dependency_name": "jaxb-runtime",
       "version": "2.3.3"
     },
     {
-      "product": "txw2",
+      "dependency_name": "txw2",
       "version": "2.3.3"
     },
     {
-      "product": "jakarta.el",
+      "dependency_name": "jakarta.el",
       "version": "3.0.3"
     },
     {
-      "product": "hamcrest",
+      "dependency_name": "hamcrest",
       "version": "2.2"
     },
     {
-      "product": "hibernate-commons-annotations",
+      "dependency_name": "hibernate-commons-annotations",
       "version": "5.1.0.Final"
     },
     {
-      "product": "hibernate-core",
+      "dependency_name": "hibernate-core",
       "version": "5.4.21.Final"
     },
     {
-      "product": "javassist",
+      "dependency_name": "javassist",
       "version": "3.24.0-GA"
     },
     {
-      "product": "jboss-logging",
+      "dependency_name": "jboss-logging",
       "version": "3.4.1.Final"
     },
     {
-      "product": "jandex",
+      "dependency_name": "jandex",
       "version": "2.1.3.Final"
     },
     {
-      "product": "junit-jupiter-api",
+      "dependency_name": "junit-jupiter-api",
       "version": "5.6.2"
     },
     {
-      "product": "junit-jupiter-engine",
+      "dependency_name": "junit-jupiter-engine",
       "version": "5.6.2"
     },
     {
-      "product": "junit-jupiter-params",
+      "dependency_name": "junit-jupiter-params",
       "version": "5.6.2"
     },
     {
-      "product": "junit-jupiter",
+      "dependency_name": "junit-jupiter",
       "version": "5.6.2"
     },
     {
-      "product": "junit-platform-commons",
+      "dependency_name": "junit-platform-commons",
       "version": "1.6.2"
     },
     {
-      "product": "junit-platform-engine",
+      "dependency_name": "junit-platform-engine",
       "version": "1.6.2"
     },
     {
-      "product": "junit-vintage-engine",
+      "dependency_name": "junit-vintage-engine",
       "version": "5.6.2"
     },
     {
-      "product": "keycloak-adapter-core",
+      "dependency_name": "keycloak-adapter-core",
       "version": "11.0.2"
     },
     {
-      "product": "keycloak-adapter-spi",
+      "dependency_name": "keycloak-adapter-spi",
       "version": "11.0.2"
     },
     {
-      "product": "keycloak-authz-client",
+      "dependency_name": "keycloak-authz-client",
       "version": "11.0.2"
     },
     {
-      "product": "keycloak-common",
+      "dependency_name": "keycloak-common",
       "version": "11.0.2"
     },
     {
-      "product": "keycloak-core",
+      "dependency_name": "keycloak-core",
       "version": "11.0.2"
     },
     {
-      "product": "keycloak-spring-boot-adapter-core",
+      "dependency_name": "keycloak-spring-boot-adapter-core",
       "version": "11.0.2"
     },
     {
-      "product": "keycloak-spring-boot-starter",
+      "dependency_name": "keycloak-spring-boot-starter",
       "version": "11.0.2"
     },
     {
-      "product": "keycloak-spring-security-adapter",
+      "dependency_name": "keycloak-spring-security-adapter",
       "version": "11.0.2"
     },
     {
-      "product": "spring-boot-container-bundle",
+      "dependency_name": "spring-boot-container-bundle",
       "version": "11.0.2"
     },
     {
-      "product": "mockito-core",
+      "dependency_name": "mockito-core",
       "version": "3.3.3"
     },
     {
-      "product": "mockito-junit-jupiter",
+      "dependency_name": "mockito-junit-jupiter",
       "version": "3.3.3"
     },
     {
-      "product": "objenesis",
+      "dependency_name": "objenesis",
       "version": "2.6"
     },
     {
-      "product": "opentest4j",
+      "dependency_name": "opentest4j",
       "version": "1.2.0"
     },
     {
-      "product": "asm",
+      "dependency_name": "asm",
       "version": "5.0.4"
     },
     {
-      "product": "postgresql",
+      "dependency_name": "postgresql",
       "version": "42.2.16"
     },
     {
-      "product": "lombok",
+      "dependency_name": "lombok",
       "version": "1.18.12"
     },
     {
-      "product": "reactive-streams",
+      "dependency_name": "reactive-streams",
       "version": "1.0.3"
     },
     {
-      "product": "jsonassert",
+      "dependency_name": "jsonassert",
       "version": "1.5.0"
     },
     {
-      "product": "jul-to-slf4j",
+      "dependency_name": "jul-to-slf4j",
       "version": "1.7.30"
     },
     {
-      "product": "slf4j-api",
+      "dependency_name": "slf4j-api",
       "version": "1.7.30"
     },
     {
-      "product": "spring-boot-autoconfigure",
+      "dependency_name": "spring-boot-autoconfigure",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-configuration-processor",
+      "dependency_name": "spring-boot-configuration-processor",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-aop",
+      "dependency_name": "spring-boot-starter-aop",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-data-jpa",
+      "dependency_name": "spring-boot-starter-data-jpa",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-jdbc",
+      "dependency_name": "spring-boot-starter-jdbc",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-json",
+      "dependency_name": "spring-boot-starter-json",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-logging",
+      "dependency_name": "spring-boot-starter-logging",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-reactor-netty",
+      "dependency_name": "spring-boot-starter-reactor-netty",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-security",
+      "dependency_name": "spring-boot-starter-security",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-test",
+      "dependency_name": "spring-boot-starter-test",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-tomcat",
+      "dependency_name": "spring-boot-starter-tomcat",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-web",
+      "dependency_name": "spring-boot-starter-web",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter-webflux",
+      "dependency_name": "spring-boot-starter-webflux",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-starter",
+      "dependency_name": "spring-boot-starter",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-test-autoconfigure",
+      "dependency_name": "spring-boot-test-autoconfigure",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot-test",
+      "dependency_name": "spring-boot-test",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-boot",
+      "dependency_name": "spring-boot",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-data-commons",
+      "dependency_name": "spring-data-commons",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-data-jpa",
+      "dependency_name": "spring-data-jpa",
       "version": "2.3.4.RELEASE"
     },
     {
-      "product": "spring-security-config",
+      "dependency_name": "spring-security-config",
       "version": "5.3.4.RELEASE"
     },
     {
-      "product": "spring-security-core",
+      "dependency_name": "spring-security-core",
       "version": "5.3.4.RELEASE"
     },
     {
-      "product": "spring-security-web",
+      "dependency_name": "spring-security-web",
       "version": "5.3.4.RELEASE"
     },
     {
-      "product": "spring-aop",
+      "dependency_name": "spring-aop",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-aspects",
+      "dependency_name": "spring-aspects",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-beans",
+      "dependency_name": "spring-beans",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-context",
+      "dependency_name": "spring-context",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-core",
+      "dependency_name": "spring-core",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-expression",
+      "dependency_name": "spring-expression",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-jcl",
+      "dependency_name": "spring-jcl",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-jdbc",
+      "dependency_name": "spring-jdbc",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-orm",
+      "dependency_name": "spring-orm",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-test",
+      "dependency_name": "spring-test",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-tx",
+      "dependency_name": "spring-tx",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-web",
+      "dependency_name": "spring-web",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-webflux",
+      "dependency_name": "spring-webflux",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "spring-webmvc",
+      "dependency_name": "spring-webmvc",
       "version": "5.2.9.RELEASE"
     },
     {
-      "product": "nio-multipart-parser",
+      "dependency_name": "nio-multipart-parser",
       "version": "1.1.0"
     },
     {
-      "product": "nio-stream-storage",
+      "dependency_name": "nio-stream-storage",
       "version": "1.1.3"
     },
     {
-      "product": "xmlunit-core",
+      "dependency_name": "xmlunit-core",
       "version": "2.7.0"
     },
     {
-      "product": "snakeyaml",
+      "dependency_name": "snakeyaml",
       "version": "1.26"
     }
   ]
 }
 
-### Get Cve
 
-GET http://localhost:11001/vscn/cve?id=CVE-2022-1471
+### Small request
+
+POST http://127.0.0.1:11001/vscn/scan
+Content-Type: application/json
+
+{
+  "metadata": {
+    "language": "java",
+    "package_manager": "maven",
+    "operating_system": {
+      "name": "macos",
+      "version": "13.3.1"
+    }
+  },
+  "dependencies": [
+    {
+      "dependency_name": "snakeyaml",
+      "version": "1.26"
+    }
+  ]
+}

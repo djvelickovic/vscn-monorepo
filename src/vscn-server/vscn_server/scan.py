@@ -1,6 +1,5 @@
 from typing import List, Dict
 from packaging import version
-from vscn_server.util import some, every
 from vscn_server.repository import Repository
 
 
@@ -10,130 +9,196 @@ class ScanService(object):
         with Repository(connection_string) as repo:
             self.products_set = set(repo.get_products())
 
-    def scan(self, dependencies: Dict) -> List:
+    def scan(self, dependencies: List, metadata: Dict) -> List:
         results = []
+        unmatched_dependencies = set()
 
-        unmatched_dependencies = set((d['original_product'], d['version']) for d in dependencies.values())
+        for dependency in dependencies:
+            product_name = dependency["product_name"]
+            dependency_name = dependency["dependency_name"]
+            version = dependency["version"]
 
-        print(str(unmatched_dependencies))
-
-        for dependency in dependencies.values():
-            product = dependency['product']
-            original_product_name = dependency['original_product']
-            version = dependency['version']
-
-            if product not in self.products_set:
+            # do not even bother searching if product doesn't exist in database
+            if product_name not in self.products_set:
+                # add into unknown set
+                unmatched_dependencies.add((product_name, version))
                 continue
 
-            print(f"{original_product_name} -> {version}")
+            potential_cves = self._fetch_potential_cves(product_name)
+            matched_cves = self._filter_potential_cves(
+                product_name, version, potential_cves
+            )
 
-            unmatched_dependencies.discard((original_product_name, version))
+            print(
+                f"Dependency: {dependency_name} with product name: {product_name} and version: {version} has {len(matched_cves)} vulnerabilities"
+            )
 
-            cves = self.__scan_for_cves(product)
-            matched_cves = filter(get_traverse_cve(dependencies), cves)
+            transformed_cves = self._transform_cve_results(matched_cves)
 
-            unique_and_sorted_cves = {cve for cve in sorted(map(lambda cve: cve['id'], matched_cves))}
+            if len(transformed_cves) > 0:
+                results.append(
+                    {
+                        "dependency": dependency,
+                        "vulnerabilities": sorted(
+                            transformed_cves,
+                            key=lambda cve: (None, cve["id"]),
+                            reverse=False,
+                        ),
+                    }
+                )
 
-            print(f'Dependency {dependency["product"]} has {len(unique_and_sorted_cves)} vulnerabilities')
-
-            if len(unique_and_sorted_cves) > 0:
-                results.append({
-                    'dependency': dependency,
-                    'vulnerabilities': list(unique_and_sorted_cves)
-                })
-
-        with Repository(self.connection_string) as conn:
-            conn.add_unknown_products(unmatched_dependencies)
+        if len(unmatched_dependencies) > 0:
+            with Repository(self.connection_string) as conn:
+                conn.insert_unmatched_dependencies(
+                    unmatched_dependencies,
+                    metadata["language"],
+                    metadata["package_manager"],
+                )
 
         return results
 
-    def __scan_for_cves(self, product: str) -> List:
+    def _transform_cve_results(self, cves: List):
+        transformed_cves = []
+        for cve in cves:
+            transformed_cve = {
+                "id": cve["id"],
+                "published_at": cve["published_at"],
+                "last_modified_at": cve["last_modified_at"],
+                "vulnerability_status": cve["vulnerability_status"],
+                "source_identifier": cve["source_identifier"],
+                "weaknesses": cve["weaknesses"],
+                "description": cve["description"],
+                "refs": cve["refs"],
+                # "configurations": cve["configurations"],   
+            }
+            transformed_cves.append(transformed_cve)
+        return transformed_cves
+
+    def _fetch_potential_cves(self, product_name: str) -> List:
         with Repository(self.connection_string) as repo:
-            result = repo.get_matchers(product)
+            result = repo.fetch_potential_cves(product_name)
             return result
 
+    def _filter_potential_cves(
+        self, product_name, version, potential_cves: List
+    ) -> List:
+        relevant_cves = []
+        for potential_cve in potential_cves:
+            if self.traverse_cve(product_name, version, potential_cve):
+                relevant_cves.append(potential_cve)
 
-def get_traverse_cve(dependencies):
-    def traverse_cve(cve):
-        if 'config' in cve and 'nodes' in cve['config']:
-            nodes = cve['config']['nodes']
-            return some(get_traverse_node(dependencies), nodes)
+        return relevant_cves
+
+    def traverse_cve(self, product_name, version, cve):
+        configurations = cve.get("configurations", [])
+        for configuration in configurations:
+            for node in configuration:
+                if self.traverse_node(product_name, version, node):
+                    return True
         return False
-    return traverse_cve
 
+    def traverse_node(self, product_name, version, node):
+        cpe_match = node["cpeMatch"]
+        operator = node["operator"]
+        negate = node["negate"]
 
-def get_traverse_node(dependencies):
-    def traverse_node(node):
-        cpe_match = node['cpe_match']
-        operator = node['operator']
-        children = node['children']
-
-        if operator == 'OR':
-            if children and len(children) > 0:
-                return some(traverse_node, children)
-            return some(get_has_cpe_match(dependencies), cpe_match)
-
-        if operator == 'AND':
-            if children and len(children) > 0:
-                return every(traverse_node, children)
-            return every(get_traverse_cve(dependencies), cpe_match)
-
-        return True
-    return traverse_node
-
-
-def get_has_cpe_match(dependencies: Dict):
-    def has_cpe_match(cpe_match: dict):
-        version_start_including = cpe_match.get('versionStartIncluding')
-        version_end_including = cpe_match.get('versionEndIncluding')
-        version_start_excluding = cpe_match.get('versionStartExcluding')
-        version_end_excluding = cpe_match.get('versionEndExcluding')
-        exact_version = cpe_match.get('exactVersion')
-        product = cpe_match.get('product')
-
-        dependency = dependencies.get(product)
-
-        if not dependency:
+        if len(cpe_match) == 0:
             return False
 
-        version = dependency['version']
+        result: bool = None
 
-        upper_bound_version = version_end_including if version_end_including else version_end_excluding
-        upper_bound = {'version': upper_bound_version,
-                       'include': True if version_end_including else False} if upper_bound_version else None
+        if operator == "OR":
+            result = False
+            for cpe in cpe_match:
+                if self.has_cpe_match(product_name, version, cpe):
+                    result = True
+                    break
+        elif operator == "AND":
+            result = True
+            for cpe in cpe_match:
+                if not self.has_cpe_match(product_name, version, cpe):
+                    result = False
+                    break
 
-        lower_bound_version = version_start_including if version_start_including else version_start_excluding
-        lower_bound = {'version': lower_bound_version,
-                       'include': True if version_start_including else False} if lower_bound_version else None
+        return not result if negate else result
 
-        if (version and (upper_bound or lower_bound)):
-            return is_between(lower_bound, upper_bound, version)
-        if version and exact_version:
+    def has_cpe_match(self, product_name, version, cpe: dict):
+        version_start_including = cpe.get("versionStartIncluding")
+        version_end_including = cpe.get("versionEndIncluding")
+        version_start_excluding = cpe.get("versionStartExcluding")
+        version_end_excluding = cpe.get("versionEndExcluding")
+        exact_version = cpe.get("exactVersion")
+        product = cpe.get("product")
+        vulnerable = cpe.get("vulnerable", False)
+
+        if product != product_name:
+            return False
+
+        if not vulnerable:
+            return False
+
+        if (
+            not version_start_including
+            and not version_start_excluding
+            and not version_end_including
+            and not version_end_excluding
+            and exact_version in ("*", "-")
+        ):
+            return True
+
+        upper_bound_version = (
+            version_end_including if version_end_including else version_end_excluding
+        )
+        upper_bound_including = True if version_end_including else False
+
+        lower_bound_version = (
+            version_start_including
+            if version_start_including
+            else version_start_excluding
+        )
+        lower_bound_including = True if version_start_including else False
+
+        if upper_bound_version or lower_bound_version:
+            return is_between(
+                upper_bound_version,
+                upper_bound_including,
+                lower_bound_version,
+                lower_bound_including,
+                version,
+            )
+        if exact_version:
             return exact_match(exact_version, version)
 
-        if not dependency.version and (upper_bound or lower_bound or exact_version):
-            return False
-
         return True
 
-    return has_cpe_match
 
-
-def is_between(lower_bound, upper_bound, current_version):
+def is_between(
+    upper_bound_version,
+    upper_bound_including,
+    lower_bound_version,
+    lower_bound_including,
+    current_version,
+):
     match_lower_bound = True
     match_upper_bound = True
 
     parsed_version = version.parse(current_version)
 
-    if lower_bound:
-        parsed_lower_bound = version.parse(lower_bound['version'])
-        match_lower_bound = parsed_lower_bound <= parsed_version if lower_bound[
-            'include'] else parsed_lower_bound < parsed_version
+    if lower_bound_version:
+        parsed_lower_bound = version.parse(lower_bound_version)
+        match_lower_bound = (
+            parsed_lower_bound <= parsed_version
+            if lower_bound_including
+            else parsed_lower_bound < parsed_version
+        )
 
-    if upper_bound:
-        parsed_upper_bound = version.parse(upper_bound['version'])
-        match_upper_bound = parsed_upper_bound >= parsed_version if upper_bound[
-            'include'] else parsed_upper_bound > parsed_version
+    if upper_bound_version:
+        parsed_upper_bound = version.parse(upper_bound_version)
+        match_upper_bound = (
+            parsed_upper_bound >= parsed_version
+            if upper_bound_including
+            else parsed_upper_bound > parsed_version
+        )
 
     return match_lower_bound and match_upper_bound
 

@@ -107,10 +107,16 @@ class CVETransformService(object):
             cpe["exactVersion"] = exact_version
             cpe["update"] = update
             cpe["target"] = sw_edition # ?
+            
+            cpe["versionStartIncluding"] = raw_cpe.get("versionStartIncluding")
+            cpe["versionEndIncluding"] = raw_cpe.get("versionEndIncluding")
+            cpe["versionStartExcluding"] = raw_cpe.get("versionStartExcluding")
+            cpe["versionEndExcluding"] = raw_cpe.get("versionEndExcluding")
 
             products.add(product)
             vendors.add(vendor)
             types.add(type)
+            
             cpes.append(cpe)
         
         return cpes
