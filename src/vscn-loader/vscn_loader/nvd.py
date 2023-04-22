@@ -31,8 +31,18 @@ class NVDClient(object):
         raise Exception("Retry number exceeded.")
             
 
-    def load_cve_page(self, published_start_date: str, published_end_date: str, start_index: int) -> Tuple[int, int, Any]:
+    def load_cve_page_by_published_date(self, published_start_date: str, published_end_date: str, start_index: int) -> Tuple[int, int, Any]:
         url = f"{NVD_BASE_URL}?pubStartDate={published_start_date}&pubEndDate={published_end_date}&resultsPerPage={self.page_size}&startIndex={start_index}"
+        print(f"Getting CVEs from: {url}")
+        response = self._request_with_retry(url)
+        cve_data = response.json()
+        returned_results_per_page = cve_data.get("resultsPerPage")
+        total_results = cve_data.get("totalResults")
+        
+        return (total_results, returned_results_per_page, cve_data.get("vulnerabilities"))
+
+    def load_cve_page_by_modified_date(self, modified_start_date: str, modified_end_date: str, start_index: int) -> Tuple[int, int, Any]:
+        url = f"{NVD_BASE_URL}?lastModStartDate={modified_start_date}&lastModEndDate={modified_end_date}&resultsPerPage={self.page_size}&startIndex={start_index}"
         print(f"Getting CVEs from: {url}")
         response = self._request_with_retry(url)
         cve_data = response.json()

@@ -1,3 +1,5 @@
+
+import os
 from typing import List, Tuple, Dict
 import json
 import psycopg
@@ -5,8 +7,15 @@ from datetime import datetime
 
 
 class Repository(object):
-    def __init__(self, connection_string):
-        self.connection_string = connection_string
+    def __init__(self):
+        postgresql_host = os.getenv("POSTGRES_HOST", "localhost")
+        postgresql_port = os.getenv("POSTGRES_PORT", "5432")
+        postgresql_database = os.getenv("POSTGRES_DATABASE", "vscn")
+
+        postgresql_username = os.getenv("POSTGRES_USER", "postgresql")
+        postgresql_password = os.getenv("POSTGRES_PASSWORD", "postgresql")
+
+        self.connection_string = f"postgresql://{postgresql_username}:{postgresql_password}@{postgresql_host}:{postgresql_port}/{postgresql_database}"
 
     def __enter__(self):
         self.conn: psycopg.Connection = psycopg.connect(
@@ -17,15 +26,28 @@ class Repository(object):
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.conn.close()
 
-    def get_last_modified_at(self) -> datetime:
-        pass
-        # with self.conn.cursor() as cur:
 
-    def get_last_modified_at(self) -> datetime:
-        pass
-        # with self.conn.cursor() as cur:
+    def get_last_modified_cve_raw(self) -> datetime:
+        with self.conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT max(last_modified_at) from cves_raw
+                """
+            )
+            result = cur.fetchone()
+            return result[0]
+    
+    def get_last_modified_cve(self) -> datetime:
+        with self.conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT max(last_modified_at) from cves
+                """
+            )
+            result = cur.fetchone()
+            return result[0]
 
-    def load_raw_cves(self, cves) -> int:
+    def upsert_raw_cves(self, cves) -> int:
         with self.conn.cursor() as cur:
             args_str = ",".join(
                 cur.mogrify(
@@ -66,12 +88,6 @@ class Repository(object):
                 for cve in cves
             )
 
-            # cur.execute(
-            #     f"""
-            #     INSERT INTO cves_raw (id, source_identifier, published_at, last_modified_at, vulnerability_status, descriptions, metrics, weaknesses, configurations, refs)
-            #     VALUES {args_str}
-            #     """
-            # )
             cur.execute(
                 f"""
                 WITH 
@@ -130,7 +146,7 @@ class Repository(object):
             print(f"Inserted cves batch ({len(cves)})")
         return cur.rowcount
 
-    def merge_transformed_cves(self, transformed_cves: list):
+    def upsert_transformed_cves(self, transformed_cves: list):
         with self.conn.cursor() as cur:
             args_str = ",".join(
                 cur.mogrify(
@@ -272,6 +288,29 @@ class Repository(object):
             )
             result = cur.fetchall()
             return self._map_raw_cves(result)
+    
+    def get_last_modified_cves(self, last_modified_at: datetime):
+        with self.conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT
+                    id,
+                    source_identifier,
+                    published_at,
+                    last_modified_at,
+                    vulnerability_status,
+                    descriptions,
+                    metrics,
+                    weaknesses,
+                    configurations,
+                    refs             
+                FROM cves_raw 
+                WHERE last_modified_at > %s
+                """,
+                (last_modified_at,),
+            )
+            result = cur.fetchall()
+            return self._map_raw_cves(result)
 
     def _map_raw_cves(self, raw_cves: List[Tuple]):
         cves = []
@@ -320,28 +359,3 @@ class Repository(object):
             )
             self.conn.commit()
             return cur.rowcount
-
-    # def get_matchers(self, product: str) -> List[Dict]:
-    #     with self.conn.cursor() as cur:
-    #         cur.execute("""
-    #             SELECT cve_id, year, hash, products, vendors, config, created_at
-    #             FROM matchers
-    #             WHERE products ? %s
-    #             """, (product,))
-    #         result = cur.fetchall()
-    #         return self._map_matcher(result)
-
-    # def _map_matcher(self, rows: List[Tuple]):
-    #     matchers = []
-    #     for (id, year, hash, products, vendors, config, created_at) in rows:
-    #         matchers.append({
-    #             "id": id,
-    #             "year": year,
-    #             "hash": hash,
-    #             "products": products,
-    #             "vendors": vendors,
-    #             "config": config,
-    #             "created_at": created_at
-    #         })
-
-    #     return matchers
