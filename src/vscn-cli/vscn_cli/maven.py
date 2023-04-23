@@ -46,6 +46,6 @@ def _map_dependency(dependency: str):
         version = dependency_parts[4]
 
     return {
-        'product': artifactId.strip(),
+        'dependency_name': artifactId.strip(),
         'version': version.strip()
     }

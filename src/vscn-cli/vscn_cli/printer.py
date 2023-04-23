@@ -3,55 +3,70 @@ from termcolor import cprint, colored
 
 def print_info(project_type, relative_root_path):
     cprint(
-        '---------------- [ Scanning Project -> Type: {}, Path: {}] ----------------'
-        .format(project_type, relative_root_path), 'blue')
+        "---------------- [ Scanning Project -> Type: {}, Path: {}] ----------------".format(
+            project_type, relative_root_path
+        ),
+        "blue",
+    )
 
 
 def print_pre_scan_summary(dependencies_for_scanning: list):
-    for d in sorted(dependencies_for_scanning, key=lambda d: d['product']):
-        cprint('{} ({})'.format(d['product'], d['version']), 'white')
+    for d in sorted(dependencies_for_scanning, key=lambda d: d["dependency_name"]):
+        cprint("{} ({})".format(d["dependency_name"], d["version"]), "white")
 
 
 def print_found_info(affected_dependencies: list):
-    cprint('---------------- [ Scanning Result ] ----------------', 'blue')
+    cprint("---------------- [ Scanning Result ] ----------------", "blue")
 
-    for d in sorted(affected_dependencies, key=lambda d: len(d['vulnerabilities']), reverse=True):
-        number_of_vulnerabilities = len(d['vulnerabilities'])
-        dependency = d['dependency']
-        print(colored('{} ({})'.format(dependency['original_product'], dependency['version']), 'red'),
-              'has', colored(number_of_vulnerabilities, 'red'),
-              'vulnerabilities')
+    for dependency in affected_dependencies:
+        dependency_name = dependency["dependency"]["dependency_name"]
+        product_name = dependency["dependency"]["product_name"]
+        version = dependency["dependency"]["version"]
+        number_of_vulnerabilities = len(dependency["vulnerabilities"])
+        print(
+            colored(
+                f"{dependency_name} ({product_name}) - {version}",
+                "red",
+            ),
+            "has",
+            colored(number_of_vulnerabilities, "red"),
+            "vulnerabilities",
+        )
+    
+    unique_vulnerabilities = get_unique_vulnerabilities(affected_dependencies)
+    total_number = len(unique_vulnerabilities)
 
-    total_number = sum(map(lambda v: len(v['vulnerabilities']), affected_dependencies))
+    cprint(f"Found total: {total_number}", "red")
 
-    cprint(f'Found total: {total_number}', 'red')
+def get_unique_vulnerabilities(affected_dependencies):
+    cves = set()
+    for dependency in affected_dependencies:
+        for vulnerability in dependency.get("vulnerabilities", []):
+            cves.add(vulnerability["id"])
+    return cves
 
+def print_cve_details(affected_dependencies):
+    cprint("---------------- [ CVE Details] ----------------\n", "blue")
 
-def print_cve_details(affected_dependencies, cves):
-    cprint('---------------- [ CVE Details] ----------------\n', 'blue')
+    for dependency in affected_dependencies:
+        dependency_name = dependency["dependency"]["dependency_name"]
+        product_name = dependency["dependency"]["product_name"]
+        version = dependency["dependency"]["version"]
+        vulnerabilities = dependency["vulnerabilities"]
 
-    for d in sorted(affected_dependencies, key=lambda d: len(d['vulnerabilities']), reverse=True):
-        vulnerabilities = sorted(d['vulnerabilities'], reverse=True)
-        dependency = d['dependency']
+        cprint(f"[*] {dependency_name} ({version})\n", "red")
+        for vulnerability in vulnerabilities:
+            id = vulnerability["id"]
+            # severity = vulnerability["severity"]
+            desc = vulnerability["description"]
+            ref = vulnerability["refs"]
+            published = vulnerability["published_at"]
 
-        cve_product = dependency['product']
-        original_product = dependency['original_product']
-        version = dependency['version']
-
-        cprint(f'[*] {original_product} ({version})\n', 'red')
-        for id in vulnerabilities:
-
-            cve = cves.get(id)
-            severity = cve['severity']
-            desc = cve['description']
-            ref = cve['refs']
-            published = cve['published_at']
-
-            cprint(f'[*] {original_product} ({version})\n', 'yellow')
-            cprint(f'CVE: {id}\n', 'yellow')
-            cprint(f'Published: {published}', 'light_grey')
-            cprint(f'CVE Name: {cve_product}', 'light_grey')
-            cprint(f'Severity: {severity}', 'light_grey')
-            cprint('')
-            cprint(f'{desc}\n')
-            cprint('References:\n{}\n\n'.format('\n'.join(ref)), 'light_grey')
+            cprint(f"[*] {dependency_name} ({version})\n", "yellow")
+            cprint(f"CVE: {id}\n", "yellow")
+            cprint(f"Published: {published}", "light_grey")
+            cprint(f"CVE Product Name: {product_name}", "light_grey")
+            # cprint(f"Severity: {severity}", "light_grey")
+            cprint("")
+            cprint(f"{desc}\n")
+            cprint("References:\n{}\n\n".format("\n".join(ref)), "light_grey")

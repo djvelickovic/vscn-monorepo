@@ -9,34 +9,38 @@ def cli():
 
 
 @cli.command()
-@click.option('-u', '--url', type=str, help='Type of the project', default='http://localhost:11001')
-@click.option('-t', '--type', type=str, help='Type of the project', required=True)
-@click.option('-d', '--dir', type=str, help='Root of the project', required=True)
+@click.option(
+    "-u",
+    "--url",
+    type=str,
+    help="Url of the backend service",
+    default="http://localhost:11001",
+)
+@click.option("-t", "--type", type=str, help="Package Manager", required=True)
+@click.option(
+    "-d", "--dir", type=str, help="Root directory of the project", required=True
+)
 def scan(url, type, dir):
-
     printer.print_info(type, dir)
 
     if not validate_project_type(type):
-        print('Error project type')
+        print("Error project type")
         return
 
     if not validate_root_dir(dir):
-        print('Error root dir')
+        print("Error root dir")
         return
 
-    dependencies_for_scanning = _get_dependencies_for_scanning(type, dir)
+    language = get_language(type)
+
+    dependencies_for_scanning = get_dependencies_for_scanning(type, dir)
+
     printer.print_pre_scan_summary(dependencies_for_scanning)
-    affected_dependencies = client.scan(url, dependencies_for_scanning)
-    cves_list = map(lambda d: d['vulnerabilities'], affected_dependencies)
 
-    cves = set()
-
-    for c in cves_list:
-        cves.update(c)
-
-    if len(cves) > 0:
-        cve_details = client.load_cve(url, cves)
-        printer.print_cve_details(affected_dependencies, cve_details)
+    affected_dependencies = client.scan(url, dependencies_for_scanning, type, language)
+    
+    if len(affected_dependencies) > 0:
+        printer.print_cve_details(affected_dependencies)
 
     printer.print_found_info(affected_dependencies)
 
@@ -46,14 +50,20 @@ def validate_project_type(project_type) -> bool:
 
 
 def validate_root_dir(relative_root_path) -> bool:
-    if path.exists(relative_root_path) and path.isdir(relative_root_path):
-        return True
-    return False
+    return path.exists(relative_root_path) and path.isdir(relative_root_path)
 
 
-def _get_dependencies_for_scanning(type, relative_path):
-    if type == 'mvn':
+def get_language(type):
+    if type == "mvn":
+        return "java"
+    if type == "pip":
+        return "python"
+    return None
+
+
+def get_dependencies_for_scanning(type, relative_path):
+    if type == "mvn":
         return maven.scan(relative_path)
-    if type == 'pip':
+    if type == "pip":
         return pip.scan(relative_path)
     return None
