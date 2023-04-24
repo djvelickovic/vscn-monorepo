@@ -85,7 +85,7 @@ class Repository(object):
             
             cur.execute(
                 f"""
-                INSERT INTO unmatched_dependencies (product_name, version, language, package_manager)
+                INSERT INTO unmatched_dependencies (dependency_name, version, language, package_manager)
                 VALUES {args_str}
                 """
             )

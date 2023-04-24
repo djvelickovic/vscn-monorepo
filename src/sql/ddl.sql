@@ -51,14 +51,14 @@ create index idx__cves__vendors on cves using gin((vendors) jsonb_path_ops);
 
 create table unmatched_dependencies (
       id serial primary key,
-      product_name varchar(128),
+      dependency_name varchar(128),
       version varchar(32),
       language varchar(32),
       package_manager varchar(32),
       reported_at timestamptz default now()
 );
 
-create index idx__unmatched_dependencies__product_name on unmatched_dependencies (product_name);
+create index idx__unmatched_dependencies__dependency_name on unmatched_dependencies (dependency_name);
 create index idx__unmatched_dependencies__language on unmatched_dependencies (language);
 create index idx__unmatched_dependencies__created_at on unmatched_dependencies (reported_at);
 
@@ -72,7 +72,6 @@ create table dependency_product_mappings (
 create index idx__product_mappings__dependency_name on dependency_product_mappings (dependency_name);
 create index idx__product_mappings__product_name on dependency_product_mappings (product_name);
 create index idx__product_mappings__language on dependency_product_mappings (language);
-
 
 
 create schema analytics;

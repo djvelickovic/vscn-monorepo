@@ -20,7 +20,7 @@ class ScanService(object):
 
             # do not even bother searching if product doesn't exist in database
             if product_name not in self.products_set:
-                # add into unknown set
+                # product_name is dependency_name if it doesn't exist in global map
                 unmatched_dependencies.add((product_name, version))
                 continue
 
@@ -69,7 +69,7 @@ class ScanService(object):
                 "weaknesses": cve["weaknesses"],
                 "description": cve["description"],
                 "refs": cve["refs"],
-                # "configurations": cve["configurations"],   
+                "configurations": cve["configurations"],   
             }
             transformed_cves.append(transformed_cve)
         return transformed_cves
