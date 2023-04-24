@@ -14,7 +14,7 @@ class CVETransformService(object):
         raw_cves = []
         last_modified_at = None
         with self.repository as repo:
-            last_modified_at = repo.get_last_modified_cve_raw()
+            last_modified_at = repo.get_last_modified_cve()
         
         print(f"Found last modified cve: {last_modified_at}")
         
