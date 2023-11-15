@@ -34,9 +34,9 @@ pip install dist/vscnc-1.0.0-py3-none-any.whl
 # Run
 
 ```bash
-vscnc scan -t mvn -r {root_dir_path}
-vscnc scan -t pip -r {venv_dir_path}
+vscnc scan -t mvn -d {root_dir_path}
+vscnc scan -t pip -d {venv_dir_path}
 
 # override url
-vscnc scan -u http://localhost:3000 -t mvn -r {root_dir_path}
+vscnc scan -u http://localhost:3000 -t mvn -d {root_dir_path}
 ```

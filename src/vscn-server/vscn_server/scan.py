@@ -69,7 +69,7 @@ class ScanService(object):
                 "weaknesses": cve["weaknesses"],
                 "description": cve["description"],
                 "refs": cve["refs"],
-                "configurations": cve["configurations"],   
+                # "configurations": cve["configurations"],   
             }
             transformed_cves.append(transformed_cve)
         return transformed_cves

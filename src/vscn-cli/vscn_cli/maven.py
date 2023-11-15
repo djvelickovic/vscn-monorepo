@@ -30,7 +30,12 @@ def _extract_dependencies(std_out: str) -> list:
     raw_dependencies = map(lambda line: line.split('--')[0], lines)
     filtered_dependencies = filter(lambda line: not line.endswith('test'), raw_dependencies)
 
-    return list(map(_map_dependency, filtered_dependencies))
+    dependencies = []
+    for dependency in filtered_dependencies:
+        mapped_dependency = _map_dependency(dependency)
+        if mapped_dependency:
+            dependencies.append(mapped_dependency)
+    return dependencies
 
 
 def _map_dependency(dependency: str):
@@ -40,12 +45,12 @@ def _map_dependency(dependency: str):
     if len(dependency_parts) in [4, 5]:
         artifactId = dependency_parts[1]
         version = dependency_parts[3]
-
-    if len(dependency_parts) == 6:
+    elif len(dependency_parts) == 6:
         artifactId = dependency_parts[1]
         version = dependency_parts[4]
 
-    return {
-        'dependency_name': artifactId.strip(),
-        'version': version.strip()
-    }
+    if artifactId:
+        return {
+            'dependency_name': artifactId.strip(),
+            'version': version.strip()
+        }

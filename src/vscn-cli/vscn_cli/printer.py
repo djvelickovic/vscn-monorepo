@@ -11,8 +11,9 @@ def print_info(project_type, relative_root_path):
 
 
 def print_pre_scan_summary(dependencies_for_scanning: list):
-    for d in sorted(dependencies_for_scanning, key=lambda d: d["dependency_name"]):
-        cprint("{} ({})".format(d["dependency_name"], d["version"]), "white")
+    print(f'Found {len(dependencies_for_scanning)} dependencies')
+    # for d in sorted(dependencies_for_scanning, key=lambda d: d["dependency_name"]):
+    #     cprint("{} ({})".format(d["dependency_name"], d["version"]), "white")
 
 
 def print_found_info(affected_dependencies: list):

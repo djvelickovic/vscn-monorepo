@@ -1,6 +1,7 @@
 from vscn_cli import maven, pip, client, printer, const
 from os import path
 import click
+from halo import Halo
 
 
 @click.group()
@@ -33,11 +34,22 @@ def scan(url, type, dir):
 
     language = get_language(type)
 
+    maven_spinner = Halo(text='Listing Maven Dependencies', spinner='bouncingBall')
+    maven_spinner.start()
+    
     dependencies_for_scanning = get_dependencies_for_scanning(type, dir)
+
+    maven_spinner.stop()
 
     printer.print_pre_scan_summary(dependencies_for_scanning)
 
+    server_spinner = Halo(text='Checking dependencies', spinner='bouncingBall')
+    server_spinner.start()
+
     affected_dependencies = client.scan(url, dependencies_for_scanning, type, language)
+    
+    server_spinner.stop()
+
     
     if len(affected_dependencies) > 0:
         printer.print_cve_details(affected_dependencies)

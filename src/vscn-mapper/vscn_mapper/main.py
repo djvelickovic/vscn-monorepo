@@ -16,7 +16,7 @@ def run():
     postgresql_url = f"postgresql://{postgresql_username}:{postgresql_password}@{postgresql_host}:{postgresql_port}/{postgresql_database}"
 
     mapper_service = MapperService(postgresql_url)
-    mapper_service.run_unknown_mapper(similarity=80)
+    mapper_service.run_unknown_mapper(similarity=60)
 
 
 if __name__ == "__main__":

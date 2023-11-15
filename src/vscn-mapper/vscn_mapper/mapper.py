@@ -33,7 +33,7 @@ class MapperService(object):
                 partial_ratio = fuzz.partial_ratio(dependency_name, product)
                 ratio = fuzz.ratio(dependency_name, product)
                 # print(f"compared {unmatched_dependency} with {product}, similarity: {ratio}")
-                if (ratio + partial_ratio) / 2 >= similarity and (ratio >= similarity / 2 and partial_ratio >= similarity / 2) :
+                if ratio >= similarity and partial_ratio >= similarity:
                     potential_matches.append({
                         "product": product,
                         "ratio": ratio,
